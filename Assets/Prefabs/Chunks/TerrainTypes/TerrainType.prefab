@@ -1,0 +1,65 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &507758870438714621
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4533463745919030250}
+  - component: {fileID: 2213256206651887179}
+  m_Layer: 0
+  m_Name: TerrainType
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4533463745919030250
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 507758870438714621}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2213256206651887179
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 507758870438714621}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70a1c106998d404459f36e33baf28ca0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Bits:
+  - Weight: 400
+    Prefab: {fileID: 1275163788343110045, guid: 96bd3ec784bf29b4d9ca241b6819b521, type: 3}
+  - Weight: 10
+    Prefab: {fileID: 4527085382792645027, guid: 190042bb7d995d549a7378f54d7b4288, type: 3}
+  - Weight: 8
+    Prefab: {fileID: 4732371765883024081, guid: 6966943802059e34f9c94a2f18278c70, type: 3}
+  - Weight: 8
+    Prefab: {fileID: 1115978279233846818, guid: e63f9a25f23603a449f9bbe84309af73, type: 3}
+  - Weight: 8
+    Prefab: {fileID: 7735913488779748393, guid: e0c4b8138bb53fa4e86eb8673ea78346, type: 3}
+  - Weight: 8
+    Prefab: {fileID: 8581711439864285935, guid: 9785038b496abaf4f8e57b85c41f9662, type: 3}
+  - Weight: 8
+    Prefab: {fileID: 7970577659988538241, guid: 3ffe9c0eaa11e2845a97fbd24b218ce2, type: 3}
+  - Weight: 1
+    Prefab: {fileID: 5391021798400579762, guid: 8f4474a9683e8d74993d6fb4f978bcce, type: 3}
+  - Weight: 1
+    Prefab: {fileID: 5389643269012974641, guid: 69ec1fb794d38374bad8b3f7bfa9ef59, type: 3}
+  player_distance: -1

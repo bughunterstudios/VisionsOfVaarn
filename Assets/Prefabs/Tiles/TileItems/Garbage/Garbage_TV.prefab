@@ -1,0 +1,138 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &7238591165070071075
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3662171793198837236}
+  - component: {fileID: 3430615791956570834}
+  - component: {fileID: 8768425414852345556}
+  - component: {fileID: 4431163112744077459}
+  - component: {fileID: 1741304774706668769}
+  m_Layer: 0
+  m_Name: Garbage_TV
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3662171793198837236
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7238591165070071075}
+  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 50, y: 50, z: 50}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
+--- !u!33 &3430615791956570834
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7238591165070071075}
+  m_Mesh: {fileID: 7240493346068470835, guid: 682e1ebfcc3e891478f8d9d92b16765d, type: 3}
+--- !u!23 &8768425414852345556
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7238591165070071075}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 85c7b66bcb83c09489b6352409c5ad37, type: 2}
+  - {fileID: 2100000, guid: f365f09055ae9ff429a519eb226734ea, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &4431163112744077459
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7238591165070071075}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7223294b0295810408a3bbddf356b27c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotationlimits: {x: 180, y: 180, z: 180}
+  translatelimits: {x: 2, y: 0, z: 2}
+  scalelimits: {x: 5, y: 5, z: 5}
+  discrete: 0
+--- !u!114 &1741304774706668769
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7238591165070071075}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 774ea02cc137e1d408c71fcea451e1b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Mats:
+  - Weight: 1
+    Mat: {fileID: 2100000, guid: 85c7b66bcb83c09489b6352409c5ad37, type: 2}
+  - Weight: 1
+    Mat: {fileID: 2100000, guid: fe48bcf95942e9046978c95798b91c81, type: 2}
+  - Weight: 1
+    Mat: {fileID: 2100000, guid: f7e34837f222b174d89962b058211135, type: 2}
+  - Weight: 1
+    Mat: {fileID: 2100000, guid: 06fc323b6fa22bf4195f2e3166270533, type: 2}
+  - Weight: 1
+    Mat: {fileID: 2100000, guid: efdc97267b6772d42a30039e2210ff77, type: 2}
+  - Weight: 1
+    Mat: {fileID: 2100000, guid: f365f09055ae9ff429a519eb226734ea, type: 2}
+  - Weight: 1
+    Mat: {fileID: 2100000, guid: 4be025c279cd75747872ce682a649d4d, type: 2}
+  - Weight: 1
+    Mat: {fileID: 2100000, guid: ebb04fc675d2f634c98cd546c0ba86ba, type: 2}
+  - Weight: 1
+    Mat: {fileID: 2100000, guid: 861e257a0bc0a644eb9e98989503215b, type: 2}
+  - Weight: 1
+    Mat: {fileID: 2100000, guid: 3c52b0f319e9cbe4fbe7bcc878939fbc, type: 2}
+  - Weight: 1
+    Mat: {fileID: 2100000, guid: ba48c3de45c3bed4c961f4d3153540ac, type: 2}
+  oninit: 0

@@ -1,0 +1,56 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2138807532965439214
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2002179390579167352}
+  - component: {fileID: 6718075879176844633}
+  m_Layer: 0
+  m_Name: RandomCactus
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2002179390579167352
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2138807532965439214}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6718075879176844633
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2138807532965439214}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70a1c106998d404459f36e33baf28ca0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Bits:
+  - Weight: 20
+    Prefab: {fileID: 7506256559949907908, guid: 5728b3f807155dc44bd62641f02eedb1, type: 3}
+  - Weight: 10
+    Prefab: {fileID: 889940830813963568, guid: c4525bbd462611a458db2db54c79cdca, type: 3}
+  - Weight: 10
+    Prefab: {fileID: 3666689163939534267, guid: 1ca291978d9d4c640aebc385e28c5079, type: 3}
+  - Weight: 1
+    Prefab: {fileID: 5720067345938422234, guid: 46b0f5bfaafe65240a14425577d8c9d7, type: 3}
+  - Weight: 1
+    Prefab: {fileID: 5386941892660370597, guid: 4a0b8fe68988b0f4a8c83dc97c659965, type: 3}
