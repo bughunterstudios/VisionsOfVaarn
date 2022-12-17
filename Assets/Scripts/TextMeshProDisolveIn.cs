@@ -18,6 +18,7 @@ public class TextMeshProDisolveIn : MonoBehaviour
     private float time = 0;
 
     private bool select = false;
+    private bool fadeout;
 
     // Start is called before the first frame update
     void Start()
@@ -29,18 +30,35 @@ public class TextMeshProDisolveIn : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (time <= dilate_time + fade_in_time && text != null && dilate_text != null)
+        if (text != null && dilate_text != null)
         {
-            time += Time.deltaTime;
-            dilate_text.text = text.text;
-            dilate_text.fontMaterial.SetFloat(ShaderUtilities.ID_FaceDilate, Mathf.Lerp(-1, 0, dilate_curve.Evaluate(time / dilate_time)));
-            text.color = new Color(text.color.r, text.color.g, text.color.b, Mathf.Lerp(0, 1, (time - dilate_time) / fade_in_time));
+            if ((time <= dilate_time + fade_in_time && !fadeout) || (time > 0 && fadeout))
+            {
+                if (!fadeout)
+                    time += Time.deltaTime;
+                else
+                    time -= Time.deltaTime;
+                dilate_text.text = text.text;
+                dilate_text.fontSize = text.fontSize;
+                dilate_text.fontMaterial.SetFloat(ShaderUtilities.ID_FaceDilate, Mathf.Lerp(-1, 0, dilate_curve.Evaluate(time / dilate_time)));
+                text.color = new Color(text.color.r, text.color.g, text.color.b, Mathf.Lerp(0, 1, (time - dilate_time) / fade_in_time));
+            }
+            if (select)
+            {
+                dilate_text.fontMaterial.SetFloat(ShaderUtilities.ID_FaceDilate, 0.2f);
+                text.color = new Color(text.color.r, text.color.g, text.color.b, 0.5f);
+            }
         }
-        if (select)
-        {
-            dilate_text.fontMaterial.SetFloat(ShaderUtilities.ID_FaceDilate, 0.2f);
-            text.color = new Color(text.color.r, text.color.g, text.color.b, 0.5f);
-        }
+    }
+
+    public void FadeOut()
+    {
+        fadeout = true;
+    }
+
+    public bool DoneFading()
+    {
+        return time <= 0 && fadeout;
     }
 
     public void Select()

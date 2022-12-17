@@ -29,6 +29,8 @@ public class PlayerControl : MonoBehaviour
     void Start()
     {
         controller = GetComponent<CharacterController>();
+
+        LockCursor();
     }
 
     private void LateUpdate()
@@ -53,10 +55,25 @@ public class PlayerControl : MonoBehaviour
         GUI.Label(new Rect(0, 0, 100, 100), ((int)(1.0f / Time.smoothDeltaTime)).ToString());
     }
 
+    public void LockCursor()
+    {
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+        locked = true;
+    }
+
+    public void UnlockCursor()
+    {
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.SetCursor(Circle, new Vector2(center, center), CursorMode.Auto);
+        Cursor.visible = true;
+        locked = false;
+    }
+
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        /*if (Input.GetMouseButtonDown(0))
         {
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
@@ -69,7 +86,7 @@ public class PlayerControl : MonoBehaviour
             Cursor.SetCursor(Circle, new Vector2(center, center), CursorMode.Auto);
             Cursor.visible = true;
             locked = false;
-        }
+        }*/
 
         if (locked)
         {

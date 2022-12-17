@@ -96,8 +96,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 30
-  m_fontSizeBase: 30
+  m_fontSize: 20
+  m_fontSizeBase: 20
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -230,7 +230,6 @@ GameObject:
   - component: {fileID: 4017092784656097963}
   - component: {fileID: 5700951285158337480}
   - component: {fileID: 7132295686732797101}
-  - component: {fileID: 6429365072711111820}
   m_Layer: 5
   m_Name: DilateText
   m_TagString: Untagged
@@ -394,42 +393,3 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_HorizontalFit: 0
   m_VerticalFit: 2
---- !u!114 &6429365072711111820
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4146048949229475001}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4a53e12a1f2243140baf5a6034c1ce79, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dilate_time: 5
-  dilate_curve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0.1946464
-      outSlope: 0.1946464
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0.22892249
-    - serializedVersion: 3
-      time: 1
-      value: 1
-      inSlope: 0.31928337
-      outSlope: 0.31928337
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.22166353
-      outWeight: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  fade_in_time: 3
-  dilate_text: {fileID: 0}
