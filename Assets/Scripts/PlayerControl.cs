@@ -4,33 +4,26 @@ using UnityEngine;
 
 public class PlayerControl : MonoBehaviour
 {
-    public float rotatespeed;
     public float movespeed;
     public float sprint;
 
-    public Texture2D UpArrow;
-    public Texture2D DownArrow;
-    public Texture2D LeftArrow;
-    public Texture2D RightArrow;
     public Texture2D Circle;
 
     public float center;
-
-    public bool mouselook;
 
     public float mousesensitivity;
     public float verticalviewangle;
     public Transform camholder;
     private float rotationX;
 
-    private Vector2 hotspot = new Vector2(16f, 16f);
-    private bool held;
-
     private CharacterController controller;
 
     private Transform movingobject;
     private Vector3 previousposition;
     private float previousrotation;
+
+    private bool locked;
+    private bool wp = Application.platform == RuntimePlatform.WebGLPlayer;
 
     // Start is called before the first frame update
     void Start()
@@ -63,21 +56,23 @@ public class PlayerControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (mouselook)
+        if (Input.GetMouseButtonDown(0))
         {
-            if (Input.GetMouseButtonDown(0))
-            {
-                Cursor.lockState = CursorLockMode.Locked;
-                Cursor.visible = false;
-            }
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
+            locked = true;
+        }
 
-            if (Input.GetKeyDown(KeyCode.Escape))
-            {
-                Cursor.lockState = CursorLockMode.None;
-                Cursor.visible = true;
-            }
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.SetCursor(Circle, new Vector2(center, center), CursorMode.Auto);
+            Cursor.visible = true;
+            locked = false;
+        }
 
-            bool wp = Application.platform == RuntimePlatform.WebGLPlayer;
+        if (locked)
+        {
             gameObject.transform.Rotate(Vector3.up * Input.GetAxis("Mouse X") * mousesensitivity * Time.deltaTime * (wp ? 0.1f : 1f));
             rotationX += -Input.GetAxis("Mouse Y") * mousesensitivity * Time.deltaTime * (wp ? 0.1f : 1f);
             rotationX = Mathf.Clamp(rotationX, -verticalviewangle, verticalviewangle);
@@ -90,58 +85,6 @@ public class PlayerControl : MonoBehaviour
             moveDirection *= (movespeed + (Input.GetKey(KeyCode.LeftShift) ? sprint : 0)) * Time.deltaTime;
             moveDirection.y -= 20 * Time.deltaTime;
             controller.Move(moveDirection);
-        }
-        else
-        {
-            gameObject.transform.Rotate(Vector3.up * Input.GetAxis("Horizontal") * rotatespeed * Time.deltaTime);
-            Vector3 moveDirection = gameObject.transform.forward * Input.GetAxis("Vertical") * (movespeed + (Input.GetKey(KeyCode.LeftShift) ? sprint : 0)) * Time.deltaTime;
-            moveDirection.y -= 20 * Time.deltaTime;
-            controller.Move(moveDirection);
-
-            Vector3 mousePos = Input.mousePosition;
-            float x = ((Mathf.Clamp(mousePos.x, 0, Screen.width) / Screen.width) - 0.5f) * 2f;
-            float y = ((Mathf.Clamp(mousePos.y, 0, Screen.height) / Screen.height) - 0.5f) * 2f;
-
-            if (held)
-            {
-                gameObject.transform.Rotate(Vector3.up * x * rotatespeed * Time.deltaTime);
-                moveDirection = gameObject.transform.forward * y * movespeed * Time.deltaTime;
-                moveDirection.y -= 20 * Time.deltaTime;
-                controller.Move(moveDirection);
-            }
-
-            if (x >= -center && x <= center && y >= -center && y <= center)
-            {
-                Cursor.SetCursor(Circle, hotspot, CursorMode.Auto);
-            }
-            else
-            {
-                if (y > center)
-                {
-                    Cursor.SetCursor(UpArrow, hotspot, CursorMode.Auto);
-                }
-                else if (y < -center)
-                {
-                    Cursor.SetCursor(DownArrow, hotspot, CursorMode.Auto);
-                }
-                else
-                {
-                    if (x > center)
-                    {
-                        Cursor.SetCursor(RightArrow, hotspot, CursorMode.Auto);
-                    }
-                    else if (x < -center)
-                    {
-                        Cursor.SetCursor(LeftArrow, hotspot, CursorMode.Auto);
-                    }
-                }
-
-                if (Input.GetMouseButtonDown(0))
-                    held = true;
-            }
-
-            if (!Input.GetMouseButton(0))
-                held = false;
         }
     }
 }
