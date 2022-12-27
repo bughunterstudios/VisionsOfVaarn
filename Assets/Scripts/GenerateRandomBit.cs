@@ -20,6 +20,13 @@ public class GenerateRandomBit : MonoBehaviour
 
     private float time;
 
+    private Transform cam;
+
+    private void Start()
+    {
+        cam = Camera.main.transform;
+    }
+
     private void Update()
     {
         if (!generated)
@@ -32,7 +39,7 @@ public class GenerateRandomBit : MonoBehaviour
             }
             else
             {
-                if (Vector3.Distance(Camera.main.transform.position, transform.position) < (player_distance * 50))
+                if (Vector3.Distance(cam.position, transform.position) < (player_distance * 50))
                     player_distance = -1;
             }
         }
@@ -64,22 +71,6 @@ public class GenerateRandomBit : MonoBehaviour
         }
         generated = true;
         this.enabled = false;
-    }
-
-    public void PlayerDistance(int distance)
-    {
-        if (distance <= player_distance)
-        {
-            if (seed != null)
-            {
-                player_distance = -1;
-            }
-        }
-
-        for (int i = 0; i < transform.childCount; i++)
-        {
-            transform.GetChild(i).SendMessage("PlayerDistance", distance, SendMessageOptions.DontRequireReceiver);
-        }
     }
 
     public void Generate(Seed seed)

@@ -19,6 +19,7 @@ public class Mood
 public class AI : MonoBehaviour
 {
     public CharacterController controller;
+    public Rigidbody rb;
     public Animator animator;
     public AimConstraint headaim;
 
@@ -55,6 +56,7 @@ public class AI : MonoBehaviour
 
     private void LateUpdate()
     {
+        //Check for following moving object
         if (controller != null)
         {
             RaycastHit hit;
@@ -122,6 +124,23 @@ public class AI : MonoBehaviour
             controller.Move(moveDirection);
 
             controller.gameObject.transform.Rotate(Vector3.up * turnvelocity * Time.deltaTime);
+        }
+        else if (rb != null)
+        {
+            //rb.position += transform.forward * movevelocity * Time.deltaTime;
+            //rb.MoveRotation(Vector3.up * turnvelocity * Time.deltaTime);
+
+            if (movevelocity != 0)
+            {
+                Vector3 forwardvelocity = transform.forward * movevelocity * Time.deltaTime;
+                rb.velocity = new Vector3(forwardvelocity.x, rb.velocity.y, forwardvelocity.z);
+            }
+            if (turnvelocity != 0)
+                rb.angularVelocity = new Vector3(0, turnvelocity * Time.deltaTime, 0);
+            rb.MoveRotation(Quaternion.Euler(0, rb.rotation.eulerAngles.y, 0));
+
+            //rb.AddForce(transform.forward * movevelocity * Time.deltaTime);
+            //rb.AddTorque(Vector3.up * turnvelocity * Time.deltaTime);
         }
         else
         {

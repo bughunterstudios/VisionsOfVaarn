@@ -13,12 +13,4 @@ public class PassOnGenerate : MonoBehaviour
             transform.GetChild(i).SendMessage("Generate", newseed, SendMessageOptions.DontRequireReceiver);
         }
     }
-
-    public void PlayerDistance(int distance)
-    {
-        for (int i = 0; i < transform.childCount; i++)
-        {
-            transform.GetChild(i).SendMessage("PlayerDistance", distance, SendMessageOptions.DontRequireReceiver);
-        }
-    }
 }

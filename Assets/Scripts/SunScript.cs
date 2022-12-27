@@ -49,7 +49,7 @@ public class SunScript : MonoBehaviour
     void Update()
     {
         float dotproduct = (Vector3.Dot(transform.forward, Vector3.down) + 1f) / 2f;
-        if (dotproduct > 0.6f && transition)
+        if (dotproduct > 0.6f && transition) //Day
         {
             light.intensity = max_intensity;
             //light.shadowNormalBias = 0.3f;
@@ -71,7 +71,7 @@ public class SunScript : MonoBehaviour
 
             transition = false;
         }
-        else if (dotproduct < 0.4f && transition)
+        else if (dotproduct < 0.4f && transition) //Night
         {
             light.intensity = 0.01f;
             //light.shadowNormalBias = 1f;
@@ -93,7 +93,7 @@ public class SunScript : MonoBehaviour
 
             transition = false;
         }
-        else if (dotproduct <= 0.6f && dotproduct >= 0.4f)
+        else if (dotproduct <= 0.6f && dotproduct >= 0.4f) //Dusk/Dawn
         {
             float duskscale = (dotproduct - 0.4f) * 5f;
             light.intensity = Mathf.Lerp(0.01f, max_intensity, duskscale);

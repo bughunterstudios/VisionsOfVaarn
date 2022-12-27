@@ -18,9 +18,16 @@ public class Seed
 }
 
 [System.Serializable]
-public class SetChunk
+public class SetHunk
 {
     public int X, Y;
+    public GameObject Prefab;
+}
+
+[System.Serializable]
+public class RandomHunk
+{
+    public int Weight;
     public GameObject Prefab;
 }
 
@@ -28,8 +35,8 @@ public class GenerateWorld : MonoBehaviour
 {
     public int seedoffset;
     public Transform player;
-    public List<SetChunk> SetChunks;
-    public List<RandomBit> Bits;
+    public List<SetHunk> SetHunks;
+    public List<RandomHunk> Hunks;
     public int scale;
     public int viewscale;
 
@@ -37,6 +44,8 @@ public class GenerateWorld : MonoBehaviour
     private int Y;
 
     private GameObject[,] chunks;
+
+    private bool[,] mask;
 
     // Start is called before the first frame update
     void Start()
@@ -47,16 +56,18 @@ public class GenerateWorld : MonoBehaviour
     private void Initialize()
     {
         chunks = new GameObject[viewscale, viewscale];
+        mask = new bool[viewscale, viewscale];
         for (int i = 0; i < viewscale; i++)
         {
             for (int j = 0; j < viewscale; j++)
             {
                 if (Vector2.Distance(new Vector2(i - (viewscale / 2), j - (viewscale / 2)), Vector2.zero) <= viewscale / 2)
                 {
+                    mask[i, j] = true;
                     chunks[i, j] = GenerateChunk(i - (viewscale / 2), j - (viewscale / 2));
-                    int distance = Mathf.Max(Mathf.Abs(i - (viewscale / 2)), Mathf.Abs(j - (viewscale / 2)));
-                    chunks[i, j].SendMessage("PlayerDistance", distance, SendMessageOptions.DontRequireReceiver);
                 }
+                else
+                    mask[i, j] = false;
             }
         }
     }
@@ -89,18 +100,13 @@ public class GenerateWorld : MonoBehaviour
             {
                 if (chunks[i, j] != null && (i - X_Shift < 0 || i - X_Shift > viewscale - 1 || j - Y_Shift < 0 || j - Y_Shift > viewscale - 1))
                     Destroy(chunks[i, j], Random.Range(0f, 3f));
-                if (chunks[i, j] != null && (Vector2.Distance(new Vector2(i - (viewscale / 2), j - (viewscale / 2)), Vector2.zero) > viewscale / 2))
+                if (chunks[i, j] != null && !mask[i, j])
                     Destroy(chunks[i, j], Random.Range(0f, 3f));
                 if (i + X_Shift >= 0 && i + X_Shift < viewscale && j + Y_Shift >= 0 && j + Y_Shift < viewscale)
                 {
                     newchunks[i, j] = chunks[i + X_Shift, j + Y_Shift];
-                    /*if (newchunks[i, j] != null)
-                    {
-                        int distance = Mathf.Max(Mathf.Abs(i - (viewscale / 2)), Mathf.Abs(j - (viewscale / 2)));
-                        newchunks[i, j].SendMessage("PlayerDistance", distance, SendMessageOptions.DontRequireReceiver);
-                    }*/
                 }
-                if (newchunks[i, j] == null && (Vector2.Distance(new Vector2(i - (viewscale / 2), j - (viewscale / 2)), Vector2.zero) < viewscale / 2))
+                if (newchunks[i, j] == null && mask[i, j])
                 {
                     newchunks[i, j] = GenerateChunk(i - (viewscale / 2) + X, j - (viewscale / 2) + Y);
                 }
@@ -112,69 +118,62 @@ public class GenerateWorld : MonoBehaviour
 
     private GameObject GenerateChunk(int x, int y)
     {
+        int hunk_X = Mathf.RoundToInt(x / 5f);
+        int hunk_Y = Mathf.RoundToInt(y / 5f);
+
+        Random.InitState(seedoffset);
+        Random.InitState(Random.Range(int.MinValue, int.MaxValue) + hunk_X);
+        Random.InitState(Random.Range(int.MinValue, int.MaxValue) + hunk_Y);
+
+        GameObject chosenhunk = ChooseObject(Hunks);
+
         Random.InitState(seedoffset);
         Random.InitState(Random.Range(int.MinValue, int.MaxValue) + x);
         Random.InitState(Random.Range(int.MinValue, int.MaxValue) + y);
         Seed seed = new Seed(Random.Range(int.MinValue, int.MaxValue), x, y);
 
-        foreach (SetChunk C in SetChunks)
+        foreach (SetHunk C in SetHunks)
         {
-            if (C.X == x && C.Y == y)
-            {
-                GameObject chunk = Instantiate(C.Prefab, transform);
-                chunk.transform.position = new Vector3(x * scale, 0, y * scale);
-                chunk.SendMessage("Generate", seed, SendMessageOptions.DontRequireReceiver);
-                return chunk;
-            }
+            if (C.X == hunk_X && C.Y == hunk_Y)
+                chosenhunk = C.Prefab;
         }
 
-        GameObject chosenbit = ChooseObject(Bits);
-        if (chosenbit)
+        if (chosenhunk)
         {
-            //return FindLowestChunk(seed, chosenbit, x, y);
-            GameObject chunk = Instantiate(chosenbit, transform);
-            chunk.transform.position = new Vector3(x * scale, 0, y * scale);
-            chunk.SendMessage("Generate", seed, SendMessageOptions.DontRequireReceiver);
-            return chunk;
+            int inner_x = (x - (hunk_X * 5)) * scale;
+            int inner_y = (y - (hunk_Y * 5)) * scale;
+
+            for (int i = 0; i < chosenhunk.transform.childCount; i++)
+            {
+                if (chosenhunk.transform.GetChild(i).transform.localPosition.x == inner_x &&
+                    chosenhunk.transform.GetChild(i).transform.localPosition.z == inner_y)
+                {
+                    GameObject chunk = Instantiate(chosenhunk.transform.GetChild(i).gameObject, transform);
+                    chunk.transform.position = new Vector3(x * scale, chunk.transform.position.y, y * scale);
+                    chunk.SendMessage("Generate", seed, SendMessageOptions.DontRequireReceiver);
+                    return chunk;
+                }
+            }
         }
 
         return null;
     }
 
-    private GameObject FindLowestChunk(Seed seed, GameObject chosenchunk, int x, int y)
-    {
-        if (chosenchunk.transform.childCount == 0)
-        {
-            if (chosenchunk.GetComponents(typeof(Component)).Length == 2)
-            {
-                if (chosenchunk.GetComponent<GenerateRandomBit>())
-                {
-                    return FindLowestChunk(seed, ChooseObject(chosenchunk.GetComponent<GenerateRandomBit>().Bits), x, y);
-                }
-            }
-        }
-
-        GameObject chunk = Instantiate(chosenchunk, transform);
-        chunk.transform.position = new Vector3(x * scale, 0, y * scale);
-        chunk.SendMessage("Generate", seed, SendMessageOptions.DontRequireReceiver);
-        return chunk;
-    }
-
-    private GameObject ChooseObject(List<RandomBit> randombits)
+    private GameObject ChooseObject(List<RandomHunk> randomhunks)
     {
         int totalweight = 0;
-        foreach (RandomBit Bit in randombits)
+        foreach (RandomHunk Hunk in randomhunks)
         {
-            totalweight += Bit.Weight;
+            totalweight += Hunk.Weight;
         }
         int chosenvalue = Random.Range(1, totalweight + 1);
         totalweight = 0;
-        foreach (RandomBit Bit in randombits)
+        foreach (RandomHunk Hunk in randomhunks)
         {
-            totalweight += Bit.Weight;
+            totalweight += Hunk.Weight;
             if (chosenvalue <= totalweight)
             {
-                return Bit.Prefab;
+                return Hunk.Prefab;
             }
         }
 
