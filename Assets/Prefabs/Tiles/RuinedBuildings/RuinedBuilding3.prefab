@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6630678107330853534}
   - component: {fileID: 886341448809838115}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Audio Reverb Zone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -69,7 +69,7 @@ GameObject:
   - component: {fileID: 4507055560023130280}
   - component: {fileID: 5206119752370970728}
   - component: {fileID: 6075663793838961224}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: RuinedBuilding3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -203,7 +203,7 @@ GameObject:
   - component: {fileID: 4507055560164715688}
   - component: {fileID: 219962286652346650}
   - component: {fileID: 3480720533102000277}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: RuinedBuilding3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -265,7 +265,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4471879036203257301}
   - component: {fileID: 5873566723615563818}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: IndoorZone
   m_TagString: Indoors
   m_Icon: {fileID: 0}
@@ -321,6 +321,10 @@ PrefabInstance:
     - target: {fileID: 1964860341168145124, guid: 77161654641f2fa4a8cdde8084e146ef, type: 3}
       propertyPath: m_LocalRotation.z
       value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2099574092479165554, guid: 77161654641f2fa4a8cdde8084e146ef, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 77161654641f2fa4a8cdde8084e146ef, type: 3}

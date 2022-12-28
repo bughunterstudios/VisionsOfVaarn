@@ -12,6 +12,7 @@ public class PlayerControl : MonoBehaviour
     public float center;
 
     public float mousesensitivity;
+    public float joysticklooksensitivity;
     public float verticalviewangle;
     public Transform camholder;
     private float rotationX;
@@ -90,8 +91,15 @@ public class PlayerControl : MonoBehaviour
 
         if (locked)
         {
-            gameObject.transform.Rotate(Vector3.up * Input.GetAxis("Mouse X") * mousesensitivity * Time.deltaTime * (wp ? 0.1f : 1f));
-            rotationX += -Input.GetAxis("Mouse Y") * mousesensitivity * Time.deltaTime * (wp ? 0.1f : 1f);
+            if (Input.GetAxis("Joy X") != 0)
+                gameObject.transform.Rotate(Vector3.up * Input.GetAxis("Joy X") * joysticklooksensitivity * Time.deltaTime * (wp ? 0.1f : 1f));
+            else
+                gameObject.transform.Rotate(Vector3.up * Input.GetAxis("Mouse X") * mousesensitivity * Time.deltaTime * (wp ? 0.1f : 1f));
+            
+            if (Input.GetAxis("Joy Y") != 0)
+                rotationX += -Input.GetAxis("Joy Y") * joysticklooksensitivity * Time.deltaTime * (wp ? 0.1f : 1f);
+            else
+                rotationX += -Input.GetAxis("Mouse Y") * mousesensitivity * Time.deltaTime * (wp ? 0.1f : 1f);
             rotationX = Mathf.Clamp(rotationX, -verticalviewangle, verticalviewangle);
             camholder.localRotation = Quaternion.Euler(rotationX, 0, 0);
 
@@ -99,7 +107,7 @@ public class PlayerControl : MonoBehaviour
             Vector3 moveDirection = gameObject.transform.forward * Input.GetAxis("Vertical");
             moveDirection += gameObject.transform.right * Input.GetAxis("Horizontal");
             //moveDirection.Normalize();
-            moveDirection *= (movespeed + (Input.GetKey(KeyCode.LeftShift) ? sprint : 0)) * Time.deltaTime;
+            moveDirection *= (movespeed + (Input.GetAxis("Sprint") != 0 ? sprint : 0)) * Time.deltaTime;
             moveDirection.y -= 20 * Time.deltaTime;
             controller.Move(moveDirection);
         }

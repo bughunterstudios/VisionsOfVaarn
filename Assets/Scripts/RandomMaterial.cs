@@ -30,24 +30,32 @@ public class RandomMaterial : MonoBehaviour
 
     public void Generate()
     {
-        int totalweight = 0;
-        foreach (RandomMaterialItem Mat in Mats)
+        var renderer = GetComponent<MeshRenderer>();
+        Material[] currentmats = renderer.materials;
+
+        for (int i = 0; i < currentmats.Length; i++)
         {
-            totalweight += Mat.Weight;
-        }
-        int chosenvalue = Random.Range(1, totalweight + 1);
-        totalweight = 0;
-        foreach (RandomMaterialItem Mat in Mats)
-        {
-            totalweight += Mat.Weight;
-            if (chosenvalue <= totalweight)
+            int totalweight = 0;
+            foreach (RandomMaterialItem Mat in Mats)
             {
-                if (Mat.Mat != null)
+                totalweight += Mat.Weight;
+            }
+            int chosenvalue = Random.Range(1, totalweight + 1);
+            totalweight = 0;
+            foreach (RandomMaterialItem Mat in Mats)
+            {
+                totalweight += Mat.Weight;
+                if (chosenvalue <= totalweight)
                 {
-                    GetComponent<MeshRenderer>().material = Mat.Mat;
+                    if (Mat.Mat != null)
+                    {
+                        currentmats[i] = Mat.Mat;
+                        //GetComponent<MeshRenderer>().materials[i] = Mat.Mat;
+                    }
+                    break;
                 }
-                break;
             }
         }
+        renderer.materials = currentmats;
     }
 }

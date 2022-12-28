@@ -5210,6 +5210,7 @@ MonoBehaviour:
   Circle: {fileID: 2800000, guid: d9ca7f06bb921fb4686533c039010972, type: 3}
   center: 16
   mousesensitivity: 100
+  joysticklooksensitivity: 150
   verticalviewangle: 60
   camholder: {fileID: 305952392}
 --- !u!143 &251091760
@@ -20498,8 +20499,12 @@ PrefabInstance:
       value: 460
       objectReference: {fileID: 0}
     - target: {fileID: 20690878572351014, guid: 3d5d1ed9e2204494b8f6ffe02e4c8e97, type: 3}
+      propertyPath: near clip plane
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 20690878572351014, guid: 3d5d1ed9e2204494b8f6ffe02e4c8e97, type: 3}
       propertyPath: m_CullingMask.m_Bits
-      value: 55
+      value: 183
       objectReference: {fileID: 0}
     - target: {fileID: 114158257989079230, guid: 3d5d1ed9e2204494b8f6ffe02e4c8e97, type: 3}
       propertyPath: favorRed
@@ -20730,7 +20735,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1154460219
 Transform:
   m_ObjectHideFlags: 0
@@ -26115,7 +26120,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!20 &1506887447
 Camera:
   m_ObjectHideFlags: 0

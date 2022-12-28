@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 595386167949302509}
   - component: {fileID: 3873673195835418463}
   - component: {fileID: 468791443971788496}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: RuinedBuilding7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -77,7 +77,7 @@ GameObject:
   - component: {fileID: 595386168078333677}
   - component: {fileID: 9146988841002522157}
   - component: {fileID: 7106226869672117261}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: RuinedBuilding7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -210,7 +210,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7695417201355361499}
   - component: {fileID: 4216373576646672486}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Audio Reverb Zone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -265,7 +265,7 @@ GameObject:
   m_Component:
   - component: {fileID: 630563312554539920}
   - component: {fileID: 7443432480670258799}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: IndoorZone
   m_TagString: Indoors
   m_Icon: {fileID: 0}
@@ -353,6 +353,10 @@ PrefabInstance:
     - target: {fileID: 2099574092479165554, guid: 77161654641f2fa4a8cdde8084e146ef, type: 3}
       propertyPath: m_Name
       value: RandomDesertBitWeirderProbability
+      objectReference: {fileID: 0}
+    - target: {fileID: 2099574092479165554, guid: 77161654641f2fa4a8cdde8084e146ef, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 77161654641f2fa4a8cdde8084e146ef, type: 3}
