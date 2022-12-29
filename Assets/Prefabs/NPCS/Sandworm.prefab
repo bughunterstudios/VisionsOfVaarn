@@ -139,7 +139,6 @@ GameObject:
   - component: {fileID: 7708671001784818227}
   - component: {fileID: 5618715066090026472}
   - component: {fileID: 7471705157449491974}
-  - component: {fileID: 2034957852307824628}
   m_Layer: 0
   m_Name: Sphere
   m_TagString: Moving
@@ -223,30 +222,6 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.55
   m_Center: {x: 0, y: 0, z: 0}
---- !u!205 &2034957852307824628
-LODGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1216882083764809349}
-  serializedVersion: 2
-  m_LocalReferencePoint: {x: 0, y: 0, z: 0}
-  m_Size: 1
-  m_FadeMode: 0
-  m_AnimateCrossFading: 0
-  m_LastLODIsBillboard: 0
-  m_LODs:
-  - screenRelativeHeight: 0.6
-    fadeTransitionWidth: 0
-    renderers: []
-  - screenRelativeHeight: 0.3
-    fadeTransitionWidth: 0
-    renderers: []
-  - screenRelativeHeight: 0.1
-    fadeTransitionWidth: 0
-    renderers: []
-  m_Enabled: 1
 --- !u!1 &2284469812958647554
 GameObject:
   m_ObjectHideFlags: 0
@@ -10043,7 +10018,6 @@ GameObject:
   - component: {fileID: 8960334309786039394}
   - component: {fileID: 3055330433932294444}
   - component: {fileID: 3572503113369358163}
-  - component: {fileID: 2573491961401302627}
   m_Layer: 0
   m_Name: SandwormBaleen
   m_TagString: Untagged
@@ -10072,7 +10046,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6573084631825299017}
-  m_Mesh: {fileID: -4043997167425712193, guid: 682e1ebfcc3e891478f8d9d92b16765d, type: 3}
+  m_Mesh: {fileID: -4043997167425712193, guid: ede91e63cae5bf540a00f4b7eb8f979f, type: 3}
 --- !u!23 &3572503113369358163
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -10114,30 +10088,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!205 &2573491961401302627
-LODGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6573084631825299017}
-  serializedVersion: 2
-  m_LocalReferencePoint: {x: 0, y: 0, z: 0}
-  m_Size: 1
-  m_FadeMode: 0
-  m_AnimateCrossFading: 0
-  m_LastLODIsBillboard: 0
-  m_LODs:
-  - screenRelativeHeight: 0.6
-    fadeTransitionWidth: 0
-    renderers: []
-  - screenRelativeHeight: 0.3
-    fadeTransitionWidth: 0
-    renderers: []
-  - screenRelativeHeight: 0.1
-    fadeTransitionWidth: 0
-    renderers: []
-  m_Enabled: 1
 --- !u!1 &7293767739591047206
 GameObject:
   m_ObjectHideFlags: 0
@@ -10348,7 +10298,6 @@ GameObject:
   - component: {fileID: 6885056856072378075}
   - component: {fileID: 1740642663800831698}
   - component: {fileID: 5628420714593647327}
-  - component: {fileID: 6341335843554167690}
   m_Layer: 0
   m_Name: SandwormHead
   m_TagString: Moving
@@ -10387,7 +10336,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8173741272660629545}
-  m_Mesh: {fileID: -5273780875055890948, guid: 682e1ebfcc3e891478f8d9d92b16765d, type: 3}
+  m_Mesh: {fileID: -5273780875055890948, guid: ede91e63cae5bf540a00f4b7eb8f979f, type: 3}
 --- !u!23 &4411212142636044037
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -10530,30 +10479,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c2131c73b277114598d9b202620894a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!205 &6341335843554167690
-LODGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8173741272660629545}
-  serializedVersion: 2
-  m_LocalReferencePoint: {x: 0, y: 0, z: 0}
-  m_Size: 1
-  m_FadeMode: 0
-  m_AnimateCrossFading: 0
-  m_LastLODIsBillboard: 0
-  m_LODs:
-  - screenRelativeHeight: 0.6
-    fadeTransitionWidth: 0
-    renderers: []
-  - screenRelativeHeight: 0.3
-    fadeTransitionWidth: 0
-    renderers: []
-  - screenRelativeHeight: 0.1
-    fadeTransitionWidth: 0
-    renderers: []
-  m_Enabled: 1
 --- !u!1 &8178681642416171734
 GameObject:
   m_ObjectHideFlags: 0
@@ -15379,7 +15304,6 @@ GameObject:
   - component: {fileID: 2694968128417980834}
   - component: {fileID: 3232795939405366146}
   - component: {fileID: 5295209380853019420}
-  - component: {fileID: 7449911939202930254}
   m_Layer: 0
   m_Name: Sphere (1)
   m_TagString: Untagged
@@ -15450,27 +15374,3 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!205 &7449911939202930254
-LODGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8688685167247726401}
-  serializedVersion: 2
-  m_LocalReferencePoint: {x: 0, y: 0, z: 0}
-  m_Size: 1
-  m_FadeMode: 0
-  m_AnimateCrossFading: 0
-  m_LastLODIsBillboard: 0
-  m_LODs:
-  - screenRelativeHeight: 0.6
-    fadeTransitionWidth: 0
-    renderers: []
-  - screenRelativeHeight: 0.3
-    fadeTransitionWidth: 0
-    renderers: []
-  - screenRelativeHeight: 0.1
-    fadeTransitionWidth: 0
-    renderers: []
-  m_Enabled: 1

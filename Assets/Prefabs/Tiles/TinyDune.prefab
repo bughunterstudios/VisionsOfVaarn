@@ -151,7 +151,7 @@ GameObject:
   - component: {fileID: 2677336968677743992}
   - component: {fileID: 7620882316904512530}
   - component: {fileID: 1541607217953053009}
-  - component: {fileID: 3348471431137678967}
+  - component: {fileID: 7082583560970716516}
   m_Layer: 0
   m_Name: TinyDune
   m_TagString: Untagged
@@ -180,7 +180,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7779436342631570015}
-  m_Mesh: {fileID: -6482862636074432745, guid: 682e1ebfcc3e891478f8d9d92b16765d, type: 3}
+  m_Mesh: {fileID: -6482862636074432745, guid: 87cd2cc328a5a9644bcd8e8e3de75557, type: 3}
 --- !u!23 &1541607217953053009
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -222,7 +222,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &3348471431137678967
+--- !u!64 &7082583560970716516
 MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -235,4 +235,4 @@ MeshCollider:
   serializedVersion: 4
   m_Convex: 1
   m_CookingOptions: 30
-  m_Mesh: {fileID: -6482862636074432745, guid: 682e1ebfcc3e891478f8d9d92b16765d, type: 3}
+  m_Mesh: {fileID: -6482862636074432745, guid: 87cd2cc328a5a9644bcd8e8e3de75557, type: 3}
