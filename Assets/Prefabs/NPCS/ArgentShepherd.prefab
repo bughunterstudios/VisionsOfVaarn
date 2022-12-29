@@ -306,7 +306,7 @@ CharacterController:
   serializedVersion: 2
   m_Height: 3
   m_Radius: 0.6
-  m_SlopeLimit: 70
+  m_SlopeLimit: 30
   m_StepOffset: 0.3
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
@@ -324,6 +324,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controller: {fileID: 5250217689763275035}
+  rb: {fileID: 0}
   animator: {fileID: 0}
   headaim: {fileID: 0}
   movespeed: 2
