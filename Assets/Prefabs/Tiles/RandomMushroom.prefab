@@ -50,6 +50,7 @@ MonoBehaviour:
     Prefab: {fileID: 4325791625822068237, guid: 68c8d0d78ebb8e2418f5575201a6b152, type: 3}
   - Weight: 4
     Prefab: {fileID: 0}
+  player_distance: -1
 --- !u!1 &1487330292362388260
 GameObject:
   m_ObjectHideFlags: 0
@@ -100,6 +101,7 @@ MonoBehaviour:
     Prefab: {fileID: 7402810569297146502, guid: 68f73ed73917e5b4b84a9ee2419990dd, type: 3}
   - Weight: 1
     Prefab: {fileID: 2765926836625972122, guid: a0374283bee07e44cb27692bfb692e07, type: 3}
+  player_distance: -1
 --- !u!1 &1847090450513678068
 GameObject:
   m_ObjectHideFlags: 0
@@ -138,6 +140,7 @@ Transform:
   - {fileID: 3045755643875342867}
   - {fileID: 7956601763078936364}
   - {fileID: 7167886028742926655}
+  - {fileID: 2675745148118072157}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -203,6 +206,7 @@ MonoBehaviour:
     Prefab: {fileID: 4325791625822068237, guid: 68c8d0d78ebb8e2418f5575201a6b152, type: 3}
   - Weight: 4
     Prefab: {fileID: 0}
+  player_distance: -1
 --- !u!1 &2823908026714285563
 GameObject:
   m_ObjectHideFlags: 0
@@ -253,6 +257,7 @@ MonoBehaviour:
     Prefab: {fileID: 4325791625822068237, guid: 68c8d0d78ebb8e2418f5575201a6b152, type: 3}
   - Weight: 4
     Prefab: {fileID: 0}
+  player_distance: -1
 --- !u!1 &2949452524965644432
 GameObject:
   m_ObjectHideFlags: 0
@@ -303,6 +308,7 @@ MonoBehaviour:
     Prefab: {fileID: 4325791625822068237, guid: 68c8d0d78ebb8e2418f5575201a6b152, type: 3}
   - Weight: 4
     Prefab: {fileID: 0}
+  player_distance: -1
 --- !u!1 &4596193691799398543
 GameObject:
   m_ObjectHideFlags: 0
@@ -353,6 +359,177 @@ MonoBehaviour:
     Prefab: {fileID: 4325791625822068237, guid: 68c8d0d78ebb8e2418f5575201a6b152, type: 3}
   - Weight: 4
     Prefab: {fileID: 0}
+  player_distance: -1
+--- !u!1 &4662774052211278266
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2675745148118072157}
+  - component: {fileID: 5357847393391875192}
+  - component: {fileID: 7830277940548760218}
+  m_Layer: 0
+  m_Name: MushroomHolder
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2675745148118072157
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4662774052211278266}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 3801533626226934429}
+  m_Father: {fileID: 1847090450513678069}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5357847393391875192
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4662774052211278266}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7223294b0295810408a3bbddf356b27c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotationlimits: {x: 0, y: 180, z: 0}
+  translatelimits: {x: 0.5, y: 0.1, z: 0.5}
+  scalelimits: {x: 0, y: 0, z: 0}
+  discrete: 0
+--- !u!114 &7830277940548760218
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4662774052211278266}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71afeb5ee9614d546b9ea331c678b739, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &4947582770157319432
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3801533626226934429}
+  - component: {fileID: 2166287547293903988}
+  - component: {fileID: 4873085798305312309}
+  - component: {fileID: 4851509138704866484}
+  m_Layer: 0
+  m_Name: TinyMushrooms
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3801533626226934429
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4947582770157319432}
+  m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 100, y: 100, z: 100}
+  m_Children: []
+  m_Father: {fileID: 2675745148118072157}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
+--- !u!33 &2166287547293903988
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4947582770157319432}
+  m_Mesh: {fileID: 1665035521383754820, guid: 682e1ebfcc3e891478f8d9d92b16765d, type: 3}
+--- !u!23 &4873085798305312309
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4947582770157319432}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2787622440745788814, guid: 682e1ebfcc3e891478f8d9d92b16765d, type: 3}
+  - {fileID: 1305419580565577215, guid: 682e1ebfcc3e891478f8d9d92b16765d, type: 3}
+  - {fileID: 6554143453754992419, guid: 682e1ebfcc3e891478f8d9d92b16765d, type: 3}
+  - {fileID: -2564355575911159326, guid: 682e1ebfcc3e891478f8d9d92b16765d, type: 3}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &4851509138704866484
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4947582770157319432}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 774ea02cc137e1d408c71fcea451e1b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Mats:
+  - Weight: 1
+    Mat: {fileID: 2100000, guid: ebb04fc675d2f634c98cd546c0ba86ba, type: 2}
+  - Weight: 1
+    Mat: {fileID: 2100000, guid: e1753de7c39faa449b7a3eb9c0b9546e, type: 2}
+  - Weight: 1
+    Mat: {fileID: 2100000, guid: 9375e841393ef3c4ea5bf7a75d8d4160, type: 2}
+  - Weight: 1
+    Mat: {fileID: 2100000, guid: cbbfe3edef3694d438a91f81cf05243a, type: 2}
+  - Weight: 3
+    Mat: {fileID: 2100000, guid: 06fc323b6fa22bf4195f2e3166270533, type: 2}
+  oninit: 0
 --- !u!1 &6165563692605265664
 GameObject:
   m_ObjectHideFlags: 0
@@ -403,6 +580,7 @@ MonoBehaviour:
     Prefab: {fileID: 4325791625822068237, guid: 68c8d0d78ebb8e2418f5575201a6b152, type: 3}
   - Weight: 4
     Prefab: {fileID: 0}
+  player_distance: -1
 --- !u!1 &7228543501581656533
 GameObject:
   m_ObjectHideFlags: 0
@@ -453,6 +631,7 @@ MonoBehaviour:
     Prefab: {fileID: 4325791625822068237, guid: 68c8d0d78ebb8e2418f5575201a6b152, type: 3}
   - Weight: 4
     Prefab: {fileID: 0}
+  player_distance: -1
 --- !u!1 &7845865236176657209
 GameObject:
   m_ObjectHideFlags: 0
@@ -503,6 +682,7 @@ MonoBehaviour:
     Prefab: {fileID: 4325791625822068237, guid: 68c8d0d78ebb8e2418f5575201a6b152, type: 3}
   - Weight: 4
     Prefab: {fileID: 0}
+  player_distance: -1
 --- !u!1 &8272647126095400043
 GameObject:
   m_ObjectHideFlags: 0
@@ -553,3 +733,4 @@ MonoBehaviour:
     Prefab: {fileID: 4325791625822068237, guid: 68c8d0d78ebb8e2418f5575201a6b152, type: 3}
   - Weight: 4
     Prefab: {fileID: 0}
+  player_distance: -1

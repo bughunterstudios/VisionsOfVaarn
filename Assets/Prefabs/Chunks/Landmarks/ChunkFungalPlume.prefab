@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4331950739880128818}
   - component: {fileID: 4599172878430856555}
   - component: {fileID: 2102442132726062650}
+  - component: {fileID: 3118022540867407546}
   m_Layer: 0
   m_Name: FungalPlume
   m_TagString: Untagged
@@ -28,7 +29,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2883649311147301836}
   m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 2.3, z: -0}
+  m_LocalPosition: {x: 0, y: 0, z: -0}
   m_LocalScale: {x: 100, y: 100, z: 100}
   m_Children: []
   m_Father: {fileID: 5532598041645292397}
@@ -109,10 +110,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7223294b0295810408a3bbddf356b27c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationlimits: {x: 10, y: 180, z: 0}
-  translatelimits: {x: 0, y: 0, z: 0}
-  scalelimits: {x: 0, y: 0, z: 0}
+  rotationlimits: {x: 10, y: 0, z: 180}
+  translatelimits: {x: 5, y: 4, z: 5}
+  scalelimits: {x: 10, y: 10, z: 20}
   discrete: 0
+--- !u!114 &3118022540867407546
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2883649311147301836}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 774ea02cc137e1d408c71fcea451e1b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Mats:
+  - Weight: 3
+    Mat: {fileID: 2100000, guid: b1529e2bf32e4734eb17840cf5d8fd56, type: 2}
+  - Weight: 1
+    Mat: {fileID: 2100000, guid: f1b79209e2047e84c9f979fc0df18441, type: 2}
+  - Weight: 1
+    Mat: {fileID: 2100000, guid: d2695c0e1776e264d8dc5698ef512408, type: 2}
+  - Weight: 1
+    Mat: {fileID: 2100000, guid: 1fa43346ef5902043aafebfad44d1259, type: 2}
+  - Weight: 1
+    Mat: {fileID: 2100000, guid: cbc59e23b728e544398e31048e8412fb, type: 2}
+  oninit: 0
 --- !u!1 &8441515753493632122
 GameObject:
   m_ObjectHideFlags: 0
