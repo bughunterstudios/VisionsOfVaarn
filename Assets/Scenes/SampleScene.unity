@@ -5226,8 +5226,8 @@ CharacterController:
   serializedVersion: 2
   m_Height: 2
   m_Radius: 0.5
-  m_SlopeLimit: 70
-  m_StepOffset: 0.5
+  m_SlopeLimit: 60
+  m_StepOffset: 0.4
   m_SkinWidth: 0.1
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0, z: 0}
@@ -31049,7 +31049,7 @@ AudioSource:
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 80
+  Priority: 0
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
@@ -31532,7 +31532,7 @@ AudioSource:
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 128
+  Priority: 0
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
@@ -36809,12 +36809,6 @@ MonoBehaviour:
   - X: 0
     Y: 0
     Prefab: {fileID: 7054622127531699829, guid: 04919deac7c3cd742a5814ee1682f994, type: 3}
-  - X: 1
-    Y: 0
-    Prefab: {fileID: 6631827832447108482, guid: 24caf8abf2f0be44390fc7bbe3b85c7c, type: 3}
-  - X: 1
-    Y: -1
-    Prefab: {fileID: 7224827826911189019, guid: 161203b453482554d95a56a42b554346, type: 3}
   Hunks:
   - Weight: 35
     Prefab: {fileID: 1398564715498050034, guid: ea6cf0a054efb4e4f9b2c4bbbc6d5215, type: 3}
@@ -36842,6 +36836,8 @@ MonoBehaviour:
     Prefab: {fileID: 724662174296445446, guid: 234bea88d22132444add6227b1d81aa8, type: 3}
   - Weight: 1
     Prefab: {fileID: 8996879698810329021, guid: 28c0f0d03bd378a48895300bb10185c5, type: 3}
+  - Weight: 1
+    Prefab: {fileID: 7224827826911189019, guid: 161203b453482554d95a56a42b554346, type: 3}
   scale: 50
   viewscale: 22
 --- !u!4 &2026100847

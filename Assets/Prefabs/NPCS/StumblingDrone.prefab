@@ -278,6 +278,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controller: {fileID: 479768284109299211}
+  rb: {fileID: 0}
   animator: {fileID: 3384653106721948288}
   headaim: {fileID: 0}
   movespeed: 6
@@ -577,7 +578,7 @@ AudioSource:
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 171
+  Priority: 128
   DopplerLevel: 3
   MinDistance: 2
   MaxDistance: 50
@@ -930,7 +931,7 @@ AudioSource:
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 171
+  Priority: 128
   DopplerLevel: 3
   MinDistance: 1
   MaxDistance: 40

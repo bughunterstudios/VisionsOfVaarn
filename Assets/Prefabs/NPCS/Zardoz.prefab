@@ -343,7 +343,7 @@ AudioSource:
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 50
+  Priority: 128
   DopplerLevel: 2
   MinDistance: 50
   MaxDistance: 300
@@ -552,6 +552,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controller: {fileID: 0}
+  rb: {fileID: 0}
   animator: {fileID: 1160266728931735282}
   headaim: {fileID: 0}
   movespeed: 30

@@ -84,7 +84,7 @@ MonoBehaviour:
   rb: {fileID: 0}
   animator: {fileID: 0}
   headaim: {fileID: 0}
-  movespeed: 9
+  movespeed: 8
   turnspeed: 60
   move_acceleration: 5
   turn_acceleration: 2
@@ -124,7 +124,7 @@ CharacterController:
   m_Height: 5.04
   m_Radius: 0.5
   m_SlopeLimit: 70
-  m_StepOffset: 1
+  m_StepOffset: 2
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: -2.36, z: 0}
@@ -284,7 +284,7 @@ AudioSource:
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 195
+  Priority: 128
   DopplerLevel: 1
   MinDistance: 5
   MaxDistance: 100

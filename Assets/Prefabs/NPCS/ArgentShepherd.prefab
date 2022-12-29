@@ -306,8 +306,8 @@ CharacterController:
   serializedVersion: 2
   m_Height: 3
   m_Radius: 0.6
-  m_SlopeLimit: 30
-  m_StepOffset: 0.3
+  m_SlopeLimit: 20
+  m_StepOffset: 0.1
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 1.61, z: 0.12}
@@ -637,7 +637,7 @@ AudioSource:
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 51
+  Priority: 128
   DopplerLevel: 1
   MinDistance: 20
   MaxDistance: 120
