@@ -10404,6 +10404,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2bbe25d83d497245b5e25970443670e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tag: Predator
   controller: {fileID: 1740642663800831698}
   rb: {fileID: 0}
   animator: {fileID: 0}
@@ -10420,6 +10421,7 @@ MonoBehaviour:
     animation: 
     move: 1
     turn: 0
+    tag_in_range: 
   - name: Right
     weight: 1
     min_time: 2
@@ -10427,6 +10429,7 @@ MonoBehaviour:
     animation: 
     move: 1
     turn: 1
+    tag_in_range: 
   - name: Left
     weight: 1
     min_time: 2
@@ -10434,6 +10437,7 @@ MonoBehaviour:
     animation: 
     move: 1
     turn: -1
+    tag_in_range: 
 --- !u!114 &6885056856072378075
 MonoBehaviour:
   m_ObjectHideFlags: 0

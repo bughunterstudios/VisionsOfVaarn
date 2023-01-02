@@ -213,6 +213,7 @@ GameObject:
   - component: {fileID: 6327242309012456891}
   - component: {fileID: 6034580846657046266}
   - component: {fileID: 6709087334550077709}
+  - component: {fileID: 3184258454450899104}
   m_Layer: 0
   m_Name: Addax
   m_TagString: Untagged
@@ -306,6 +307,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2bbe25d83d497245b5e25970443670e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tag: Prey
   controller: {fileID: 0}
   rb: {fileID: 5236058938558244018}
   animator: {fileID: 673469239032040199}
@@ -322,6 +324,7 @@ MonoBehaviour:
     animation: 
     move: 0
     turn: 0
+    tag_in_range: 
   - name: RotateRight
     weight: 3
     min_time: 0.5
@@ -329,6 +332,7 @@ MonoBehaviour:
     animation: WalkRight
     move: 0.3
     turn: 1
+    tag_in_range: 
   - name: RotateLeft
     weight: 3
     min_time: 0.5
@@ -336,6 +340,7 @@ MonoBehaviour:
     animation: WalkLeft
     move: 0.3
     turn: -1
+    tag_in_range: 
   - name: Walk
     weight: 2
     min_time: 0.5
@@ -343,6 +348,7 @@ MonoBehaviour:
     animation: Walk
     move: 0.5
     turn: 0
+    tag_in_range: 
   - name: WalkRight
     weight: 2
     min_time: 0.5
@@ -350,6 +356,7 @@ MonoBehaviour:
     animation: WalkRight
     move: 0.5
     turn: 1
+    tag_in_range: 
   - name: WalkLeft
     weight: 2
     min_time: 0.5
@@ -357,6 +364,7 @@ MonoBehaviour:
     animation: WalkLeft
     move: 0.5
     turn: -1
+    tag_in_range: 
   - name: Run
     weight: 1
     min_time: 0.5
@@ -364,6 +372,15 @@ MonoBehaviour:
     animation: Run
     move: 1
     turn: 0
+    tag_in_range: 
+  - name: Flee
+    weight: 100
+    min_time: 0.5
+    max_time: 2
+    animation: Run
+    move: 4
+    turn: -4
+    tag_in_range: Predator
   - name: RunRight
     weight: 1
     min_time: 0.5
@@ -371,6 +388,7 @@ MonoBehaviour:
     animation: RunRight
     move: 1
     turn: 1
+    tag_in_range: 
   - name: RunLeft
     weight: 1
     min_time: 0.5
@@ -378,6 +396,7 @@ MonoBehaviour:
     animation: RunLeft
     move: 1
     turn: -1
+    tag_in_range: 
 --- !u!114 &6327242309012456891
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -390,6 +409,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2bbe25d83d497245b5e25970443670e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tag: Prey
   controller: {fileID: 0}
   rb: {fileID: 0}
   animator: {fileID: 673469239032040199}
@@ -406,6 +426,7 @@ MonoBehaviour:
     animation: 
     move: 0
     turn: 0
+    tag_in_range: 
   - name: TailSwing
     weight: 1
     min_time: 1
@@ -413,6 +434,7 @@ MonoBehaviour:
     animation: TailSwing
     move: 0
     turn: 0
+    tag_in_range: 
 --- !u!114 &6034580846657046266
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -425,6 +447,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2bbe25d83d497245b5e25970443670e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tag: Prey
   controller: {fileID: 0}
   rb: {fileID: 0}
   animator: {fileID: 673469239032040199}
@@ -441,6 +464,7 @@ MonoBehaviour:
     animation: 
     move: 0
     turn: 0
+    tag_in_range: 
   - name: EarsShake
     weight: 1
     min_time: 1
@@ -448,6 +472,7 @@ MonoBehaviour:
     animation: EarsShake
     move: 0
     turn: 0
+    tag_in_range: 
   - name: EarsPrick
     weight: 1
     min_time: 1
@@ -455,6 +480,7 @@ MonoBehaviour:
     animation: EarsPrick
     move: 0
     turn: 0
+    tag_in_range: 
 --- !u!114 &6709087334550077709
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -467,6 +493,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2bbe25d83d497245b5e25970443670e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tag: Prey
   controller: {fileID: 0}
   rb: {fileID: 0}
   animator: {fileID: 673469239032040199}
@@ -483,6 +510,7 @@ MonoBehaviour:
     animation: 
     move: 0
     turn: 0
+    tag_in_range: 
   - name: HeadBob
     weight: 2
     min_time: 1
@@ -490,6 +518,7 @@ MonoBehaviour:
     animation: HeadBob
     move: 0
     turn: 0
+    tag_in_range: 
   - name: HeadShake
     weight: 1
     min_time: 1
@@ -497,6 +526,7 @@ MonoBehaviour:
     animation: HeadShake
     move: 0
     turn: 0
+    tag_in_range: 
   - name: HeadDip
     weight: 2
     min_time: 1
@@ -504,6 +534,20 @@ MonoBehaviour:
     animation: HeadDip
     move: 0
     turn: 0
+    tag_in_range: 
+--- !u!135 &3184258454450899104
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2631588940078508072}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 20
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &3013249937035034649
 GameObject:
   m_ObjectHideFlags: 0

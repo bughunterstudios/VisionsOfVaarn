@@ -252,6 +252,7 @@ GameObject:
   - component: {fileID: 2367789635753664180}
   - component: {fileID: 5157156933624755319}
   - component: {fileID: 4794464751545949258}
+  - component: {fileID: 3646524184706755807}
   m_Layer: 0
   m_Name: Flamingo
   m_TagString: Untagged
@@ -305,7 +306,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2bbe25d83d497245b5e25970443670e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tag: Prey
   controller: {fileID: 5157156933624755319}
+  rb: {fileID: 0}
   animator: {fileID: 3633476231842812654}
   headaim: {fileID: 0}
   movespeed: 1
@@ -320,6 +323,7 @@ MonoBehaviour:
     animation: StandHeadStill
     move: 0
     turn: 0
+    tag_in_range: 
   - name: StandHeadBob
     weight: 2
     min_time: 1
@@ -327,6 +331,7 @@ MonoBehaviour:
     animation: StandHeadBob
     move: 0
     turn: 0
+    tag_in_range: 
   - name: StandHeadDive
     weight: 4
     min_time: 2
@@ -334,6 +339,7 @@ MonoBehaviour:
     animation: StandHeadDive
     move: 0
     turn: 0
+    tag_in_range: 
   - name: StandHeadLook
     weight: 1
     min_time: 1
@@ -341,6 +347,7 @@ MonoBehaviour:
     animation: StandHeadLook
     move: 0
     turn: 0
+    tag_in_range: 
   - name: rotateright
     weight: 2
     min_time: 0.5
@@ -348,6 +355,7 @@ MonoBehaviour:
     animation: WalkHeadBob
     move: 0.1
     turn: 1
+    tag_in_range: 
   - name: rotateleft
     weight: 2
     min_time: 0.5
@@ -355,6 +363,7 @@ MonoBehaviour:
     animation: WalkHeadBob
     move: 0.1
     turn: -1
+    tag_in_range: 
   - name: run
     weight: 1
     min_time: 0.5
@@ -362,6 +371,15 @@ MonoBehaviour:
     animation: WalkHeadBob
     move: 1
     turn: 0
+    tag_in_range: 
+  - name: Flee
+    weight: 100
+    min_time: 0.5
+    max_time: 2
+    animation: WalkHeadBob
+    move: 4
+    turn: -4
+    tag_in_range: Predator
   - name: run
     weight: 1
     min_time: 0.5
@@ -369,6 +387,7 @@ MonoBehaviour:
     animation: WalkHeadLook
     move: 1
     turn: 0
+    tag_in_range: 
   - name: runright
     weight: 2
     min_time: 0.5
@@ -376,6 +395,7 @@ MonoBehaviour:
     animation: WalkHeadBob
     move: 1
     turn: 1
+    tag_in_range: 
   - name: runright
     weight: 2
     min_time: 0.5
@@ -383,6 +403,7 @@ MonoBehaviour:
     animation: WalkHeadLook
     move: 1
     turn: 1
+    tag_in_range: 
   - name: runleft
     weight: 2
     min_time: 0.5
@@ -390,6 +411,7 @@ MonoBehaviour:
     animation: WalkHeadBob
     move: 1
     turn: -1
+    tag_in_range: 
   - name: runleft
     weight: 2
     min_time: 0.5
@@ -397,6 +419,20 @@ MonoBehaviour:
     animation: WalkHeadLook
     move: 1
     turn: -1
+    tag_in_range: 
+--- !u!135 &3646524184706755807
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3141195372689523726}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 20
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &3924605972730203762
 GameObject:
   m_ObjectHideFlags: 0

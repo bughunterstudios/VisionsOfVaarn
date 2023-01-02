@@ -13,6 +13,10 @@ public class RandomMaterial : MonoBehaviour
 {
     public List<RandomMaterialItem> Mats;
     public bool oninit;
+    public float inheritmaterialchance;
+    public string inherittag;
+
+    private Material chosenmat;
 
     private void Start()
     {
@@ -31,31 +35,61 @@ public class RandomMaterial : MonoBehaviour
     public void Generate()
     {
         var renderer = GetComponent<MeshRenderer>();
-        Material[] currentmats = renderer.materials;
-
-        for (int i = 0; i < currentmats.Length; i++)
+        if (renderer != null)
         {
-            int totalweight = 0;
-            foreach (RandomMaterialItem Mat in Mats)
+            Material[] currentmats = renderer.materials;
+            for (int i = 0; i < currentmats.Length; i++)
             {
-                totalweight += Mat.Weight;
+                chosenmat = ChooseMaterial();
+                currentmats[i] = chosenmat;
             }
-            int chosenvalue = Random.Range(1, totalweight + 1);
-            totalweight = 0;
-            foreach (RandomMaterialItem Mat in Mats)
+            renderer.materials = currentmats;
+        }
+        else
+        {
+            chosenmat = ChooseMaterial();
+        }
+    }
+
+    public Material GetMaterial()
+    {
+        return chosenmat;
+    }
+
+    private Material ChooseMaterial()
+    {
+        if (inheritmaterialchance != 0)
+        {
+            if (inheritmaterialchance == 1 || Random.Range(0f, 1f) <= inheritmaterialchance)
             {
-                totalweight += Mat.Weight;
-                if (chosenvalue <= totalweight)
+                RandomMaterial parentmat = transform.parent.GetComponentInParent<RandomMaterial>();
+                if (parentmat != null)
                 {
-                    if (Mat.Mat != null)
-                    {
-                        currentmats[i] = Mat.Mat;
-                        //GetComponent<MeshRenderer>().materials[i] = Mat.Mat;
-                    }
-                    break;
+                    if (parentmat.inherittag == inherittag)
+                        return parentmat.GetMaterial();
                 }
             }
         }
-        renderer.materials = currentmats;
+
+        int totalweight = 0;
+        foreach (RandomMaterialItem Mat in Mats)
+        {
+            totalweight += Mat.Weight;
+        }
+        int chosenvalue = Random.Range(1, totalweight + 1);
+        totalweight = 0;
+        foreach (RandomMaterialItem Mat in Mats)
+        {
+            totalweight += Mat.Weight;
+            if (chosenvalue <= totalweight)
+            {
+                if (Mat.Mat != null)
+                {
+                    return Mat.Mat;
+                }
+                break;
+            }
+        }
+        return null;
     }
 }

@@ -14,10 +14,13 @@ public class Mood
 
     public float move;
     public float turn;
+
+    public string tag_in_range;
 }
 
 public class AI : MonoBehaviour
 {
+    public string tag;
     public CharacterController controller;
     public Rigidbody rb;
     public Animator animator;
@@ -40,6 +43,9 @@ public class AI : MonoBehaviour
     private Vector3 previousposition;
     private float previousrotation;
 
+    private List<string> tagsinrange;
+    private List<GameObject> npcsinrange;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -52,6 +58,8 @@ public class AI : MonoBehaviour
             headaim.constraintActive = true;
         }
         time = -1;
+        tagsinrange = new List<string>();
+        npcsinrange = new List<GameObject>();
     }
 
     private void LateUpdate()
@@ -113,7 +121,22 @@ public class AI : MonoBehaviour
         if (selectedmood != null)
         {
             movevelocity = Mathf.Lerp(movevelocity, selectedmood.move * movespeed, move_acceleration * Time.deltaTime);
-            turnvelocity = Mathf.Lerp(turnvelocity, selectedmood.turn * turnspeed, turn_acceleration * Time.deltaTime);
+            float turn = selectedmood.turn;
+            if (selectedmood.tag_in_range != "")
+            {
+                if (tagsinrange.IndexOf(selectedmood.tag_in_range) != -1)
+                {
+                    GameObject npc = npcsinrange[tagsinrange.IndexOf(selectedmood.tag_in_range)];
+                    if (npc != null)
+                    {
+                        Vector3 targetDirection = (npc.transform.position - transform.position).normalized;
+                        Quaternion targetRotation = Quaternion.LookRotation(targetDirection * (selectedmood.turn > 0 ? 1f : -1f));
+                        Quaternion rotateTowards = Quaternion.RotateTowards(transform.rotation, targetRotation, Mathf.Abs(selectedmood.turn));
+                        turn = Mathf.Clamp(rotateTowards.eulerAngles.y - transform.eulerAngles.y, -Mathf.Abs(selectedmood.turn), Mathf.Abs(selectedmood.turn));
+                    }
+                }
+            }
+            turnvelocity = Mathf.Lerp(turnvelocity, turn * turnspeed, turn_acceleration * Time.deltaTime);
         }
 
         if (controller != null)
@@ -164,12 +187,18 @@ public class AI : MonoBehaviour
         int totalweight = 0;
         foreach (Mood mood in moods)
         {
+            //Does this mood rely on a tag and is that tag not in range?
+            if (mood.tag_in_range != "" && !tagsinrange.Contains(mood.tag_in_range))
+                continue;
             totalweight += mood.weight;
         }
         int chosenvalue = Random.Range(1, totalweight + 1);
         totalweight = 0;
         foreach (Mood mood in moods)
         {
+            //Does this mood rely on a tag and is that tag not in range?
+            if (mood.tag_in_range != "" && !tagsinrange.Contains(mood.tag_in_range))
+                continue;
             totalweight += mood.weight;
             if (chosenvalue <= totalweight)
             {
@@ -198,6 +227,34 @@ public class AI : MonoBehaviour
                 selectedmood = mood;
                 return;
             }
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (!npcsinrange.Contains(other.gameObject))
+        {
+            if (other.tag == "Player")
+            {
+                tagsinrange.Add("Player");
+                npcsinrange.Add(other.gameObject);
+                return;
+            }
+
+            if (other.GetComponent<AI>())
+            {
+                tagsinrange.Add(other.GetComponent<AI>().tag);
+                npcsinrange.Add(other.gameObject);
+            }
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (npcsinrange.Contains(other.gameObject))
+        {
+            tagsinrange.RemoveAt(npcsinrange.IndexOf(other.gameObject));
+            npcsinrange.Remove(other.gameObject);
         }
     }
 }

@@ -133,6 +133,7 @@ GameObject:
   - component: {fileID: 3937331720480873573}
   - component: {fileID: 4237959365566047809}
   - component: {fileID: 7336154390970778377}
+  - component: {fileID: 4618277202201857522}
   m_Layer: 0
   m_Name: Yurling
   m_TagString: Untagged
@@ -186,6 +187,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2bbe25d83d497245b5e25970443670e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tag: Prey
   controller: {fileID: 4237959365566047809}
   rb: {fileID: 0}
   animator: {fileID: 2110919864909074132}
@@ -202,6 +204,7 @@ MonoBehaviour:
     animation: 
     move: 0
     turn: 0
+    tag_in_range: 
   - name: rotateright
     weight: 2
     min_time: 0.5
@@ -209,6 +212,15 @@ MonoBehaviour:
     animation: Turning
     move: 0.1
     turn: 1
+    tag_in_range: 
+  - name: rotate towards player
+    weight: 5
+    min_time: 0.5
+    max_time: 4
+    animation: Turning
+    move: 0.1
+    turn: 2
+    tag_in_range: Player
   - name: rotateleft
     weight: 2
     min_time: 0.5
@@ -216,6 +228,7 @@ MonoBehaviour:
     animation: Turning
     move: 0.1
     turn: -1
+    tag_in_range: 
   - name: run
     weight: 2
     min_time: 0.5
@@ -223,6 +236,15 @@ MonoBehaviour:
     animation: Running
     move: 1
     turn: 0
+    tag_in_range: 
+  - name: flee
+    weight: 100
+    min_time: 0.5
+    max_time: 2
+    animation: Running
+    move: 1
+    turn: -4
+    tag_in_range: Predator
   - name: runright
     weight: 1
     min_time: 0.5
@@ -230,6 +252,7 @@ MonoBehaviour:
     animation: Running
     move: 1
     turn: 1
+    tag_in_range: 
   - name: runleft
     weight: 1
     min_time: 0.5
@@ -237,6 +260,7 @@ MonoBehaviour:
     animation: Running
     move: 1
     turn: -1
+    tag_in_range: 
   - name: jump
     weight: 2
     min_time: 1
@@ -244,6 +268,23 @@ MonoBehaviour:
     animation: Jumping
     move: 0
     turn: 0
+    tag_in_range: 
+  - name: jump player
+    weight: 4
+    min_time: 1
+    max_time: 2
+    animation: Jumping
+    move: 0
+    turn: 0
+    tag_in_range: Player
+  - name: jump prey
+    weight: 4
+    min_time: 1
+    max_time: 2
+    animation: Jumping
+    move: 0
+    turn: 0
+    tag_in_range: Prey
   - name: shake
     weight: 1
     min_time: 0.5
@@ -251,6 +292,7 @@ MonoBehaviour:
     animation: Shaking
     move: 0
     turn: 0
+    tag_in_range: 
   - name: sit
     weight: 2
     min_time: 2
@@ -258,6 +300,20 @@ MonoBehaviour:
     animation: Sitting
     move: 0
     turn: 0
+    tag_in_range: 
+--- !u!135 &4618277202201857522
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4463039718649726687}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 20
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &7716790311609921715
 GameObject:
   m_ObjectHideFlags: 0

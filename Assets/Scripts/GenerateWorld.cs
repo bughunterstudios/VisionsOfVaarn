@@ -148,7 +148,27 @@ public class GenerateWorld : MonoBehaviour
                 if (chosenhunk.transform.GetChild(i).transform.localPosition.x == inner_x &&
                     chosenhunk.transform.GetChild(i).transform.localPosition.z == inner_y)
                 {
-                    GameObject chunk = Instantiate(chosenhunk.transform.GetChild(i).gameObject, transform);
+                    //Copy components of chosen hunk to a new parent.
+                    GameObject chunk_parent = new GameObject();
+                    var components = chosenhunk.GetComponents<Component>();
+                    for (int j = 0; j < components.Length; j++)
+                    {
+                        UnityEditorInternal.ComponentUtility.CopyComponent(components[j]);
+                        UnityEditorInternal.ComponentUtility.PasteComponentAsNew(chunk_parent);
+                    }
+                    chunk_parent.name = chosenhunk.name;
+                    chunk_parent.transform.SetParent(transform);
+                    chunk_parent.transform.position = new Vector3(x * scale, 0, y * scale);
+                    if (components.Length > 0)
+                    {
+                        Random.InitState(seedoffset);
+                        Random.InitState(Random.Range(int.MinValue, int.MaxValue) + hunk_X);
+                        Random.InitState(Random.Range(int.MinValue, int.MaxValue) + hunk_Y);
+                        Seed hunk_seed = new Seed(Random.Range(int.MinValue, int.MaxValue), x, y);
+                        chunk_parent.SendMessage("Generate", hunk_seed, SendMessageOptions.DontRequireReceiver);
+                    }
+
+                    GameObject chunk = Instantiate(chosenhunk.transform.GetChild(i).gameObject, chunk_parent.transform);
                     chunk.transform.position = new Vector3(x * scale, chunk.transform.position.y, y * scale);
                     chunk.SendMessage("Generate", seed, SendMessageOptions.DontRequireReceiver);
                     return chunk;

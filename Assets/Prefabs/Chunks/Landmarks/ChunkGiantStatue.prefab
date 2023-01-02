@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 272431494189998770}
+  - component: {fileID: 7646648072730042773}
   - component: {fileID: 2891880364002294517}
   m_Layer: 0
   m_Name: ChunkGiantStatue
@@ -34,6 +35,64 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7646648072730042773
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4190082963943386533}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 774ea02cc137e1d408c71fcea451e1b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Mats:
+  - Weight: 10
+    Mat: {fileID: 2100000, guid: 861e257a0bc0a644eb9e98989503215b, type: 2}
+  - Weight: 10
+    Mat: {fileID: 2100000, guid: 47cfb789515f74249a76e9ee1b4c7139, type: 2}
+  - Weight: 5
+    Mat: {fileID: 2100000, guid: 8305aed273b64af42bb178ab97cd34f1, type: 2}
+  - Weight: 5
+    Mat: {fileID: 2100000, guid: 48b64cb2c34c7954ba0a7d6b1255cfb7, type: 2}
+  - Weight: 3
+    Mat: {fileID: 2100000, guid: da6dca724d077544bbb5cc495a1fcdee, type: 2}
+  - Weight: 3
+    Mat: {fileID: 2100000, guid: 5f00eaf6de3de93468a27c35eab60ace, type: 2}
+  - Weight: 3
+    Mat: {fileID: 2100000, guid: aa1db8e7b455c9e458ba4e914dc22ec1, type: 2}
+  - Weight: 2
+    Mat: {fileID: 2100000, guid: bdfb5f4db8061a64caaa0c15754464db, type: 2}
+  - Weight: 2
+    Mat: {fileID: 2100000, guid: f997923a6cf77904ca8839bd05e83ec6, type: 2}
+  - Weight: 1
+    Mat: {fileID: 2100000, guid: 59516e57bf436fd47b1651ed7964c4c8, type: 2}
+  - Weight: 1
+    Mat: {fileID: 2100000, guid: d4406ef3e6bf2864d842c92415405936, type: 2}
+  - Weight: 1
+    Mat: {fileID: 2100000, guid: 4be025c279cd75747872ce682a649d4d, type: 2}
+  - Weight: 1
+    Mat: {fileID: 2100000, guid: 3c52b0f319e9cbe4fbe7bcc878939fbc, type: 2}
+  - Weight: 1
+    Mat: {fileID: 2100000, guid: efdc97267b6772d42a30039e2210ff77, type: 2}
+  - Weight: 1
+    Mat: {fileID: 2100000, guid: ef2025d10e67bb24ca1aff97ab1fe7f5, type: 2}
+  - Weight: 1
+    Mat: {fileID: 2100000, guid: b1529e2bf32e4734eb17840cf5d8fd56, type: 2}
+  - Weight: 1
+    Mat: {fileID: 2100000, guid: 645da6b58861d214ea5d9b6142728ba1, type: 2}
+  - Weight: 1
+    Mat: {fileID: 2100000, guid: d2695c0e1776e264d8dc5698ef512408, type: 2}
+  - Weight: 1
+    Mat: {fileID: 2100000, guid: ba48c3de45c3bed4c961f4d3153540ac, type: 2}
+  - Weight: 1
+    Mat: {fileID: 2100000, guid: 4998d10a76f070749ba03bbbec177dbe, type: 2}
+  - Weight: 1
+    Mat: {fileID: 2100000, guid: 85c7b66bcb83c09489b6352409c5ad37, type: 2}
+  oninit: 0
+  inheritmaterialchance: 0.9
+  inherittag: statue
 --- !u!114 &2891880364002294517
 MonoBehaviour:
   m_ObjectHideFlags: 0
