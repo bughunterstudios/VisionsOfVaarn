@@ -153,8 +153,10 @@ public class GenerateWorld : MonoBehaviour
                     var components = chosenhunk.GetComponents<Component>();
                     for (int j = 0; j < components.Length; j++)
                     {
-                        UnityEditorInternal.ComponentUtility.CopyComponent(components[j]);
-                        UnityEditorInternal.ComponentUtility.PasteComponentAsNew(chunk_parent);
+                        if (components[j].GetType() != typeof(Transform))
+                            CopyComponent(components[j], chunk_parent);
+                        //UnityEditorInternal.ComponentUtility.CopyComponent(components[j]);
+                        //UnityEditorInternal.ComponentUtility.PasteComponentAsNew(chunk_parent);
                     }
                     chunk_parent.name = chosenhunk.name;
                     chunk_parent.transform.SetParent(transform);
@@ -177,6 +179,15 @@ public class GenerateWorld : MonoBehaviour
         }
 
         return null;
+    }
+
+    public static T CopyComponent<T>(T original, GameObject destination) where T : Component
+    {
+        var type = original.GetType();
+        var copy = destination.AddComponent(type);
+        var fields = type.GetFields();
+        foreach (var field in fields) field.SetValue(copy, field.GetValue(original));
+        return copy as T;
     }
 
     private GameObject ChooseObject(List<RandomHunk> randomhunks)

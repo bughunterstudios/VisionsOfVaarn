@@ -20,7 +20,6 @@ public class Mood
 
 public class AI : MonoBehaviour
 {
-    public string tag;
     public CharacterController controller;
     public Rigidbody rb;
     public Animator animator;
@@ -35,6 +34,9 @@ public class AI : MonoBehaviour
 
     public List<Mood> moods;
 
+    private AITags aitags;
+    public bool always_activate;
+
     private float time;
     private float waittime = 0.4f;
     private Mood selectedmood;
@@ -43,8 +45,20 @@ public class AI : MonoBehaviour
     private Vector3 previousposition;
     private float previousrotation;
 
-    private List<string> tagsinrange;
-    private List<GameObject> npcsinrange;
+    private Transform npc;
+    private RaycastHit hit;
+    private Vector3 targetDirection;
+    private Quaternion targetRotation;
+    private Quaternion rotateTowards;
+    private float turn;
+    private Vector3 moveDirection;
+    private int totalweight;
+    private int chosenvalue;
+    private Vector3 forwardvelocity;
+    private Vector3 relativePos;
+    private Vector3 forward;
+    private float angle;
+    private Transform cam;
 
     // Start is called before the first frame update
     void Start()
@@ -58,16 +72,17 @@ public class AI : MonoBehaviour
             headaim.constraintActive = true;
         }
         time = -1;
-        tagsinrange = new List<string>();
-        npcsinrange = new List<GameObject>();
+        cam = Camera.main.transform;
+        aitags = GetComponent<AITags>();
+
+        GameObject.Find("TheWorld").GetComponent<AIControl>().AddAI(this);
     }
 
-    private void LateUpdate()
+    public void UpdateFrame()
     {
         //Check for following moving object
         if (controller != null)
         {
-            RaycastHit hit;
             if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.down), out hit, 2, ~LayerMask.GetMask("Ignore Raycast")))
             {
                 if (hit.transform == movingobject)
@@ -81,16 +96,11 @@ public class AI : MonoBehaviour
                 previousrotation = movingobject.eulerAngles.y;
             }
         }
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
         if (selectedmood != null)
         {
             if (selectedmood.move != 0 && selectedmood.turn == 0)
             {
-                RaycastHit hit;
                 if (Physics.Raycast(transform.position + (transform.up * 1), transform.TransformDirection(Vector3.forward), out hit, 4, ~LayerMask.GetMask("Ignore Raycast")))
                 {
                     time = 0;
@@ -104,7 +114,7 @@ public class AI : MonoBehaviour
         if (time <= 0)
         {
             if (animator != null && selectedmood != null)
-            animator.SetBool(selectedmood.animation, false);
+                animator.SetBool(selectedmood.animation, false);
             SelectRandomMood();
             time = Random.Range(selectedmood.min_time, selectedmood.max_time);
             gameObject.SendMessage(selectedmood.name, SendMessageOptions.DontRequireReceiver);
@@ -121,19 +131,16 @@ public class AI : MonoBehaviour
         if (selectedmood != null)
         {
             movevelocity = Mathf.Lerp(movevelocity, selectedmood.move * movespeed, move_acceleration * Time.deltaTime);
-            float turn = selectedmood.turn;
+            turn = selectedmood.turn;
             if (selectedmood.tag_in_range != "")
             {
-                if (tagsinrange.IndexOf(selectedmood.tag_in_range) != -1)
+                npc = aitags.TransformInRange(selectedmood.tag_in_range);
+                if (npc != null)
                 {
-                    GameObject npc = npcsinrange[tagsinrange.IndexOf(selectedmood.tag_in_range)];
-                    if (npc != null)
-                    {
-                        Vector3 targetDirection = (npc.transform.position - transform.position).normalized;
-                        Quaternion targetRotation = Quaternion.LookRotation(targetDirection * (selectedmood.turn > 0 ? 1f : -1f));
-                        Quaternion rotateTowards = Quaternion.RotateTowards(transform.rotation, targetRotation, Mathf.Abs(selectedmood.turn));
-                        turn = Mathf.Clamp(rotateTowards.eulerAngles.y - transform.eulerAngles.y, -Mathf.Abs(selectedmood.turn), Mathf.Abs(selectedmood.turn));
-                    }
+                    targetDirection = (npc.position - transform.position).normalized;
+                    targetRotation = Quaternion.LookRotation(targetDirection * (selectedmood.turn > 0 ? 1f : -1f));
+                    rotateTowards = Quaternion.RotateTowards(transform.rotation, targetRotation, Mathf.Abs(selectedmood.turn));
+                    turn = Mathf.Clamp(rotateTowards.eulerAngles.y - transform.eulerAngles.y, -Mathf.Abs(selectedmood.turn), Mathf.Abs(selectedmood.turn));
                 }
             }
             turnvelocity = Mathf.Lerp(turnvelocity, turn * turnspeed, turn_acceleration * Time.deltaTime);
@@ -141,7 +148,7 @@ public class AI : MonoBehaviour
 
         if (controller != null)
         {
-            Vector3 moveDirection = controller.gameObject.transform.forward * movevelocity * Time.deltaTime;
+            moveDirection = controller.gameObject.transform.forward * movevelocity * Time.deltaTime;
             if (waittime < 0)
                 moveDirection.y -= 20 * Time.deltaTime;
             controller.Move(moveDirection);
@@ -150,20 +157,14 @@ public class AI : MonoBehaviour
         }
         else if (rb != null)
         {
-            //rb.position += transform.forward * movevelocity * Time.deltaTime;
-            //rb.MoveRotation(Vector3.up * turnvelocity * Time.deltaTime);
-
             if (movevelocity != 0)
             {
-                Vector3 forwardvelocity = transform.forward * movevelocity * Time.deltaTime;
+                forwardvelocity = transform.forward * movevelocity * Time.deltaTime;
                 rb.velocity = new Vector3(forwardvelocity.x, rb.velocity.y, forwardvelocity.z);
             }
             if (turnvelocity != 0)
                 rb.angularVelocity = new Vector3(0, turnvelocity * Time.deltaTime, 0);
             rb.MoveRotation(Quaternion.Euler(0, rb.rotation.eulerAngles.y, 0));
-
-            //rb.AddForce(transform.forward * movevelocity * Time.deltaTime);
-            //rb.AddTorque(Vector3.up * turnvelocity * Time.deltaTime);
         }
         else
         {
@@ -173,31 +174,29 @@ public class AI : MonoBehaviour
 
         if (headaim != null)
         {
-            //float dotproduct = (Vector3.Dot(controller.gameObject.transform.forward, Camera.main.transform.forward) + 1f) / 2f;
-            //headaim.weight = 1 - dotproduct;
-            Vector3 relativePos = Camera.main.transform.position - transform.position;
-            Vector3 forward = transform.forward;
-            float angle = Vector3.Angle(relativePos, forward);
+            relativePos = cam.position - transform.position;
+            forward = transform.forward;
+            angle = Vector3.Angle(relativePos, forward);
             headaim.weight = 1f - (angle / 180f);
         }
     }
 
     private void SelectRandomMood()
     {
-        int totalweight = 0;
-        foreach (Mood mood in moods)
-        {
-            //Does this mood rely on a tag and is that tag not in range?
-            if (mood.tag_in_range != "" && !tagsinrange.Contains(mood.tag_in_range))
-                continue;
-            totalweight += mood.weight;
-        }
-        int chosenvalue = Random.Range(1, totalweight + 1);
         totalweight = 0;
         foreach (Mood mood in moods)
         {
             //Does this mood rely on a tag and is that tag not in range?
-            if (mood.tag_in_range != "" && !tagsinrange.Contains(mood.tag_in_range))
+            if (mood.tag_in_range != "" && !aitags.TagInRange(mood.tag_in_range))
+                continue;
+            totalweight += mood.weight;
+        }
+        chosenvalue = Random.Range(1, totalweight + 1);
+        totalweight = 0;
+        foreach (Mood mood in moods)
+        {
+            //Does this mood rely on a tag and is that tag not in range?
+            if (mood.tag_in_range != "" && !aitags.TagInRange(mood.tag_in_range))
                 continue;
             totalweight += mood.weight;
             if (chosenvalue <= totalweight)
@@ -230,7 +229,7 @@ public class AI : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter(Collider other)
+    /*private void OnTriggerEnter(Collider other)
     {
         if (!npcsinrange.Contains(other.gameObject))
         {
@@ -256,5 +255,5 @@ public class AI : MonoBehaviour
             tagsinrange.RemoveAt(npcsinrange.IndexOf(other.gameObject));
             npcsinrange.Remove(other.gameObject);
         }
-    }
+    }*/
 }

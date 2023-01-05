@@ -15,8 +15,9 @@ public class RandomMaterial : MonoBehaviour
     public bool oninit;
     public float inheritmaterialchance;
     public string inherittag;
+    public int mat_count = 1;
 
-    private Material chosenmat;
+    private Material[] chosenmat;
 
     private void Start()
     {
@@ -38,25 +39,28 @@ public class RandomMaterial : MonoBehaviour
         if (renderer != null)
         {
             Material[] currentmats = renderer.materials;
+            chosenmat = new Material[currentmats.Length];
             for (int i = 0; i < currentmats.Length; i++)
             {
-                chosenmat = ChooseMaterial();
-                currentmats[i] = chosenmat;
+                chosenmat[i] = ChooseMaterial(i);
+                currentmats[i] = chosenmat[i];
             }
             renderer.materials = currentmats;
         }
         else
         {
-            chosenmat = ChooseMaterial();
+            chosenmat = new Material[mat_count];
+            for (int i = 0; i < mat_count; i++)
+                chosenmat[i] = ChooseMaterial(i);
         }
     }
 
-    public Material GetMaterial()
+    public Material GetMaterial(int index)
     {
-        return chosenmat;
+        return chosenmat[index];
     }
 
-    private Material ChooseMaterial()
+    private Material ChooseMaterial(int index)
     {
         if (inheritmaterialchance != 0)
         {
@@ -66,7 +70,7 @@ public class RandomMaterial : MonoBehaviour
                 if (parentmat != null)
                 {
                     if (parentmat.inherittag == inherittag)
-                        return parentmat.GetMaterial();
+                        return parentmat.GetMaterial(index);
                 }
             }
         }

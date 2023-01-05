@@ -722,7 +722,7 @@ GameObject:
   - component: {fileID: 9042831941121721577}
   - component: {fileID: 6705629764488412649}
   - component: {fileID: 1508372759788690581}
-  - component: {fileID: 5771649816080511662}
+  - component: {fileID: 6734322107290110966}
   m_Layer: 0
   m_Name: LittleTorino
   m_TagString: Untagged
@@ -776,7 +776,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2bbe25d83d497245b5e25970443670e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tag: Prey
   controller: {fileID: 6705629764488412649}
   rb: {fileID: 0}
   animator: {fileID: 5829952404542234242}
@@ -802,14 +801,14 @@ MonoBehaviour:
     move: 1
     turn: 0
     tag_in_range: 
-  - name: run at player
+  - name: run friend
     weight: 5
     min_time: 0.5
     max_time: 2
     animation: Run
     move: 1
     turn: 4
-    tag_in_range: Player
+    tag_in_range: Friend
   - name: flee
     weight: 100
     min_time: 0.5
@@ -858,14 +857,14 @@ MonoBehaviour:
     move: 0.5
     turn: 0
     tag_in_range: 
-  - name: saunter at Player
+  - name: saunter at friend
     weight: 1
     min_time: 0.5
     max_time: 2
     animation: Saunter
     move: 0.5
     turn: 2
-    tag_in_range: Player
+    tag_in_range: Friend
   - name: sploot
     weight: 2
     min_time: 1
@@ -874,14 +873,14 @@ MonoBehaviour:
     move: 0
     turn: 0
     tag_in_range: 
-  - name: sploot player
+  - name: sploot at friend
     weight: 2
     min_time: 1
     max_time: 4
     animation: Sploot
     move: 0
     turn: 0
-    tag_in_range: Player
+    tag_in_range: Friend
   - name: stretch
     weight: 2
     min_time: 1
@@ -890,14 +889,14 @@ MonoBehaviour:
     move: 0
     turn: 0
     tag_in_range: 
-  - name: stretch Player
+  - name: stretch at friend
     weight: 2
     min_time: 1
     max_time: 4
     animation: Stretch
     move: 0
     turn: 0
-    tag_in_range: Player
+    tag_in_range: Friend
   - name: kick
     weight: 1
     min_time: 1
@@ -906,16 +905,29 @@ MonoBehaviour:
     move: 0
     turn: 0
     tag_in_range: 
---- !u!135 &5771649816080511662
-SphereCollider:
+  - name: kick at friend
+    weight: 1
+    min_time: 1
+    max_time: 2
+    animation: Kick
+    move: 0
+    turn: 0
+    tag_in_range: Friend
+  always_activate: 0
+--- !u!114 &6734322107290110966
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8517792412149325395}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
   m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 20
-  m_Center: {x: 0, y: 0, z: 0}
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e30c2bee0866cf40b33040a045d6730, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Tags:
+  - Prey
+  - Friend
+  - Torino
+  vision_range: 40

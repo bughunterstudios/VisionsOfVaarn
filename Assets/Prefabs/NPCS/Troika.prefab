@@ -43,7 +43,7 @@ GameObject:
   - component: {fileID: 396085494050859977}
   - component: {fileID: 396085494050859983}
   - component: {fileID: 1732269475370204481}
-  - component: {fileID: 8773996502584437285}
+  - component: {fileID: 3084406604850193111}
   m_Layer: 0
   m_Name: Troika
   m_TagString: Untagged
@@ -81,7 +81,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2bbe25d83d497245b5e25970443670e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tag: Predator
   controller: {fileID: 396085494050859983}
   rb: {fileID: 0}
   animator: {fileID: 0}
@@ -94,7 +93,7 @@ MonoBehaviour:
   - name: Forward
     weight: 5
     min_time: 1
-    max_time: 10
+    max_time: 4
     animation: 
     move: 1
     turn: 0
@@ -102,7 +101,7 @@ MonoBehaviour:
   - name: Attack
     weight: 10
     min_time: 1
-    max_time: 10
+    max_time: 4
     animation: 
     move: 1
     turn: 1
@@ -110,7 +109,7 @@ MonoBehaviour:
   - name: Attack
     weight: 10
     min_time: 1
-    max_time: 10
+    max_time: 4
     animation: 
     move: 1
     turn: 1
@@ -118,7 +117,7 @@ MonoBehaviour:
   - name: Right
     weight: 1
     min_time: 1
-    max_time: 10
+    max_time: 4
     animation: 
     move: 1
     turn: 1
@@ -126,11 +125,12 @@ MonoBehaviour:
   - name: Left
     weight: 1
     min_time: 1
-    max_time: 10
+    max_time: 4
     animation: 
     move: 1
     turn: -1
     tag_in_range: 
+  always_activate: 1
 --- !u!143 &396085494050859983
 CharacterController:
   m_ObjectHideFlags: 0
@@ -163,19 +163,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxdistance: 500
   child: {fileID: 1023721209464254838}
---- !u!135 &8773996502584437285
-SphereCollider:
+--- !u!114 &3084406604850193111
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 396085494050859980}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
   m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 100
-  m_Center: {x: 0, y: 0, z: 0}
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e30c2bee0866cf40b33040a045d6730, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Tags:
+  - Predator
+  - Synth
+  - Troika
+  vision_range: 100
 --- !u!1 &700022228333834184
 GameObject:
   m_ObjectHideFlags: 0

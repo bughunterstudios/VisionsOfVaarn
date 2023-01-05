@@ -282,7 +282,7 @@ GameObject:
   - component: {fileID: 479768284109299211}
   - component: {fileID: 4792976053069855330}
   - component: {fileID: 5950844451460427523}
-  - component: {fileID: 9068566508445966127}
+  - component: {fileID: 7211127070846922656}
   m_Layer: 0
   m_Name: StumblingDrone
   m_TagString: Untagged
@@ -338,7 +338,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2bbe25d83d497245b5e25970443670e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tag: Predator
   controller: {fileID: 479768284109299211}
   rb: {fileID: 0}
   animator: {fileID: 3384653106721948288}
@@ -396,6 +395,7 @@ MonoBehaviour:
     move: 1
     turn: -1
     tag_in_range: 
+  always_activate: 0
 --- !u!54 &5950844451460427523
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -412,19 +412,23 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
---- !u!135 &9068566508445966127
-SphereCollider:
+--- !u!114 &7211127070846922656
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2794130711488841979}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
   m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 30
-  m_Center: {x: 0, y: 0, z: 0}
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e30c2bee0866cf40b33040a045d6730, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Tags:
+  - Predator
+  - Synth
+  - StumblingDrone
+  vision_range: 40
 --- !u!1 &3912539728519512571
 GameObject:
   m_ObjectHideFlags: 0

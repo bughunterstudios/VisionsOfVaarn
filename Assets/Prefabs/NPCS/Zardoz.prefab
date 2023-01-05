@@ -515,6 +515,7 @@ GameObject:
   - component: {fileID: 6866419188331657071}
   - component: {fileID: 1160266728931735282}
   - component: {fileID: 3480921324658285319}
+  - component: {fileID: 341285222968402237}
   m_Layer: 0
   m_Name: Zardoz
   m_TagString: Untagged
@@ -551,6 +552,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2bbe25d83d497245b5e25970443670e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tags: []
   controller: {fileID: 0}
   rb: {fileID: 0}
   animator: {fileID: 1160266728931735282}
@@ -567,6 +569,7 @@ MonoBehaviour:
     animation: 
     move: 1
     turn: 0
+    tag_in_range: 
   - name: Right
     weight: 1
     min_time: 2
@@ -574,6 +577,7 @@ MonoBehaviour:
     animation: 
     move: 1
     turn: 1
+    tag_in_range: 
   - name: Left
     weight: 1
     min_time: 2
@@ -581,6 +585,7 @@ MonoBehaviour:
     animation: 
     move: 1
     turn: -1
+    tag_in_range: 
   - name: Pause
     weight: 1
     min_time: 2
@@ -588,6 +593,7 @@ MonoBehaviour:
     animation: 
     move: 0.5
     turn: 0
+    tag_in_range: 
   - name: Descend
     weight: 1
     min_time: 1
@@ -595,6 +601,9 @@ MonoBehaviour:
     animation: Descend
     move: 1
     turn: 0
+    tag_in_range: 
+  aitags: {fileID: 0}
+  always_activate: 1
 --- !u!114 &6866419188331657071
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -640,6 +649,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c2131c73b277114598d9b202620894a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &341285222968402237
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7307331708337971869}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e30c2bee0866cf40b33040a045d6730, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Tags:
+  - Predator
+  - Zardoz
+  vision_range: 0
 --- !u!1 &7307331708339541062
 GameObject:
   m_ObjectHideFlags: 0

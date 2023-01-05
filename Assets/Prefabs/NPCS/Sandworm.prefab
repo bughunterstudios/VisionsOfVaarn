@@ -10298,6 +10298,7 @@ GameObject:
   - component: {fileID: 6885056856072378075}
   - component: {fileID: 1740642663800831698}
   - component: {fileID: 5628420714593647327}
+  - component: {fileID: 7104299030485723499}
   m_Layer: 0
   m_Name: SandwormHead
   m_TagString: Moving
@@ -10404,7 +10405,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2bbe25d83d497245b5e25970443670e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tag: Predator
   controller: {fileID: 1740642663800831698}
   rb: {fileID: 0}
   animator: {fileID: 0}
@@ -10438,6 +10438,7 @@ MonoBehaviour:
     move: 1
     turn: -1
     tag_in_range: 
+  always_activate: 1
 --- !u!114 &6885056856072378075
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10467,7 +10468,7 @@ CharacterController:
   m_Height: 0.01
   m_Radius: 0.05
   m_SlopeLimit: 70
-  m_StepOffset: 0.1
+  m_StepOffset: 0.01
   m_SkinWidth: 0.1
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0.02, z: 0.22}
@@ -10483,6 +10484,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c2131c73b277114598d9b202620894a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &7104299030485723499
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8173741272660629545}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e30c2bee0866cf40b33040a045d6730, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Tags:
+  - Predator
+  - Sandworm
+  vision_range: 0
+  tagsinrange: []
 --- !u!1 &8178681642416171734
 GameObject:
   m_ObjectHideFlags: 0

@@ -252,7 +252,7 @@ GameObject:
   - component: {fileID: 2367789635753664180}
   - component: {fileID: 5157156933624755319}
   - component: {fileID: 4794464751545949258}
-  - component: {fileID: 3646524184706755807}
+  - component: {fileID: 256211640553642534}
   m_Layer: 0
   m_Name: Flamingo
   m_TagString: Untagged
@@ -306,7 +306,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2bbe25d83d497245b5e25970443670e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tag: Prey
+  tags:
+  - Prey
+  - Friend
+  - Flamingo
   controller: {fileID: 5157156933624755319}
   rb: {fileID: 0}
   animator: {fileID: 3633476231842812654}
@@ -420,19 +423,25 @@ MonoBehaviour:
     move: 1
     turn: -1
     tag_in_range: 
---- !u!135 &3646524184706755807
-SphereCollider:
+  aitags: {fileID: 0}
+  always_activate: 0
+--- !u!114 &256211640553642534
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3141195372689523726}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
   m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 20
-  m_Center: {x: 0, y: 0, z: 0}
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e30c2bee0866cf40b33040a045d6730, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Tags:
+  - Prey
+  - Friend
+  - Flamingo
+  vision_range: 20
 --- !u!1 &3924605972730203762
 GameObject:
   m_ObjectHideFlags: 0
