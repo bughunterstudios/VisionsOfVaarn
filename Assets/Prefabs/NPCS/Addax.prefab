@@ -413,6 +413,10 @@ MonoBehaviour:
     turn: -1
     tag_in_range: 
   always_activate: 0
+  forward_ray_start: 2.1
+  forward_ray_length: 6
+  stand_ray_start: 0
+  stand_ray_length: 0.51
 --- !u!114 &6327242309012456891
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -451,6 +455,10 @@ MonoBehaviour:
     turn: 0
     tag_in_range: 
   always_activate: 0
+  forward_ray_start: 1
+  forward_ray_length: 0
+  stand_ray_start: 1
+  stand_ray_length: 0
 --- !u!114 &6034580846657046266
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -497,6 +505,10 @@ MonoBehaviour:
     turn: 0
     tag_in_range: 
   always_activate: 0
+  forward_ray_start: 1
+  forward_ray_length: 0
+  stand_ray_start: 1
+  stand_ray_length: 0
 --- !u!114 &6709087334550077709
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -551,6 +563,10 @@ MonoBehaviour:
     turn: 0
     tag_in_range: 
   always_activate: 0
+  forward_ray_start: 1
+  forward_ray_length: 0
+  stand_ray_start: 1
+  stand_ray_length: 0
 --- !u!114 &6804208745599682361
 MonoBehaviour:
   m_ObjectHideFlags: 0

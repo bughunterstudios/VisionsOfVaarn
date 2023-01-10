@@ -293,6 +293,10 @@ MonoBehaviour:
     turn: 0
     tag_in_range: 
   always_activate: 0
+  forward_ray_start: 0.42
+  forward_ray_length: 4
+  stand_ray_start: 0
+  stand_ray_length: 0.67
 --- !u!114 &4466308999667712734
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -310,6 +314,7 @@ MonoBehaviour:
   - Friend
   - Yurling
   vision_range: 40
+  tagsinrange: []
 --- !u!1 &7716790311609921715
 GameObject:
   m_ObjectHideFlags: 0

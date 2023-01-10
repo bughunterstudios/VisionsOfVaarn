@@ -306,10 +306,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2bbe25d83d497245b5e25970443670e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tags:
-  - Prey
-  - Friend
-  - Flamingo
   controller: {fileID: 5157156933624755319}
   rb: {fileID: 0}
   animator: {fileID: 3633476231842812654}
@@ -423,8 +419,11 @@ MonoBehaviour:
     move: 1
     turn: -1
     tag_in_range: 
-  aitags: {fileID: 0}
   always_activate: 0
+  forward_ray_start: 0.27
+  forward_ray_length: 2
+  stand_ray_start: 0
+  stand_ray_length: 0.4
 --- !u!114 &256211640553642534
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -442,6 +441,7 @@ MonoBehaviour:
   - Friend
   - Flamingo
   vision_range: 20
+  tagsinrange: []
 --- !u!1 &3924605972730203762
 GameObject:
   m_ObjectHideFlags: 0

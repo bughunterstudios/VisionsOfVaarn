@@ -382,6 +382,10 @@ MonoBehaviour:
     turn: -1
     tag_in_range: 
   always_activate: 1
+  forward_ray_start: 1
+  forward_ray_length: 4
+  stand_ray_start: 0
+  stand_ray_length: 0.67
 --- !u!114 &146884058836338036
 MonoBehaviour:
   m_ObjectHideFlags: 0

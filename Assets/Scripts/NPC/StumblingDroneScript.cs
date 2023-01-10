@@ -8,6 +8,7 @@ public class StumblingDroneScript : MonoBehaviour
     public AI ai;
     public Rigidbody rb;
     public Animator animator;
+    public List<GameObject> colliders;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -18,6 +19,8 @@ public class StumblingDroneScript : MonoBehaviour
             rb.constraints = RigidbodyConstraints.None;
             ai.enabled = false;
             animator.SetTrigger("Fall");
+            foreach (GameObject col in colliders)
+                col.SetActive(true);
         }
     }
 }

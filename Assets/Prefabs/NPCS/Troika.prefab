@@ -131,6 +131,10 @@ MonoBehaviour:
     turn: -1
     tag_in_range: 
   always_activate: 1
+  forward_ray_start: 5.39
+  forward_ray_length: 10
+  stand_ray_start: 5.17
+  stand_ray_length: 2
 --- !u!143 &396085494050859983
 CharacterController:
   m_ObjectHideFlags: 0
@@ -180,6 +184,7 @@ MonoBehaviour:
   - Synth
   - Troika
   vision_range: 100
+  tagsinrange: []
 --- !u!1 &700022228333834184
 GameObject:
   m_ObjectHideFlags: 0

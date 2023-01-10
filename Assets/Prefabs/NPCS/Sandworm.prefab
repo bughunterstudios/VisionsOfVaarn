@@ -10392,7 +10392,7 @@ MeshCollider:
   serializedVersion: 4
   m_Convex: 1
   m_CookingOptions: 30
-  m_Mesh: {fileID: -5273780875055890948, guid: 682e1ebfcc3e891478f8d9d92b16765d, type: 3}
+  m_Mesh: {fileID: -5273780875055890948, guid: ede91e63cae5bf540a00f4b7eb8f979f, type: 3}
 --- !u!114 &1284574080796123007
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10439,6 +10439,10 @@ MonoBehaviour:
     turn: -1
     tag_in_range: 
   always_activate: 1
+  forward_ray_start: 18.17
+  forward_ray_length: 60
+  stand_ray_start: 1
+  stand_ray_length: 0
 --- !u!114 &6885056856072378075
 MonoBehaviour:
   m_ObjectHideFlags: 0

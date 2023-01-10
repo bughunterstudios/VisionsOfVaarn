@@ -14,9 +14,9 @@ public class RandomMove : MonoBehaviour
         Random.InitState(seed.seed);
         if (discrete)
         {
-            transform.Rotate(Random.Range(-1, 2) * rotationlimits.x,
-                Random.Range(-1, 2) * rotationlimits.y,
-                Random.Range(-1, 2) * rotationlimits.z, Space.Self);
+            transform.Rotate(Random.Range(-1000, 1000) * rotationlimits.x,
+                Random.Range(-1000, 1000) * rotationlimits.y,
+                Random.Range(-1000, 1000) * rotationlimits.z, Space.Self);
             transform.Translate(Random.Range(-1, 2) * translatelimits.x,
                 Random.Range(-1, 2) * translatelimits.y,
                 Random.Range(-1, 2) * translatelimits.z, Space.World);

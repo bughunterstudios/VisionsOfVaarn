@@ -30,7 +30,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3282402542054347329}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &3764941005430413429
 MonoBehaviour:
@@ -44,10 +44,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a288b62441546c44da3d8db4f6a4d259, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  controller: {fileID: 479768284109299211}
+  controller: {fileID: 0}
   ai: {fileID: 4792976053069855330}
   rb: {fileID: 5950844451460427523}
   animator: {fileID: 3384653106721948288}
+  colliders:
+  - {fileID: 868300092659497049}
+  - {fileID: 4140557174752797980}
+  - {fileID: 5537499473881556972}
 --- !u!135 &1112531712920463674
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -72,7 +76,7 @@ GameObject:
   - component: {fileID: 694450124716751171}
   - component: {fileID: 5924823566171614109}
   - component: {fileID: 4971648819288129613}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Collidersgun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -87,7 +91,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 803973693898698737}
   m_LocalRotation: {x: -0.7082028, y: 0.0000003366515, z: 0.0000003376975, w: 0.7060091}
-  m_LocalPosition: {x: -0.00572324, y: -0.0003535375, z: 0.023104554}
+  m_LocalPosition: {x: -0.0057, y: 0.0046, z: 0.022}
   m_LocalScale: {x: 0.02, y: 0.02, z: 0.02}
   m_Children: []
   m_Father: {fileID: 4534635390622005540}
@@ -144,12 +148,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 868300092659497049}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0.00000008940697, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.032883283, z: 0.00014174357}
+  m_LocalScale: {x: 0.02, y: 0.02, z: 0.02}
   m_Children: []
-  m_Father: {fileID: 3282402542054347329}
-  m_RootOrder: 2
+  m_Father: {fileID: 1895697391343201632}
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &8379777339449822243
 BoxCollider:
@@ -279,7 +283,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3282402542054347329}
-  - component: {fileID: 479768284109299211}
+  - component: {fileID: 5654203772855673888}
   - component: {fileID: 4792976053069855330}
   - component: {fileID: 5950844451460427523}
   - component: {fileID: 7211127070846922656}
@@ -303,12 +307,11 @@ Transform:
   m_Children:
   - {fileID: 5854040606687806175}
   - {fileID: 7179804816658699994}
-  - {fileID: 7469669891527147783}
   - {fileID: 7940338870822486031}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!143 &479768284109299211
+--- !u!143 &5654203772855673888
 CharacterController:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -338,7 +341,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2bbe25d83d497245b5e25970443670e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  controller: {fileID: 479768284109299211}
+  controller: {fileID: 5654203772855673888}
   rb: {fileID: 0}
   animator: {fileID: 3384653106721948288}
   headaim: {fileID: 0}
@@ -396,6 +399,10 @@ MonoBehaviour:
     turn: -1
     tag_in_range: 
   always_activate: 0
+  forward_ray_start: 0.44
+  forward_ray_length: 6
+  stand_ray_start: 0
+  stand_ray_length: 1
 --- !u!54 &5950844451460427523
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -429,6 +436,7 @@ MonoBehaviour:
   - Synth
   - StumblingDrone
   vision_range: 40
+  tagsinrange: []
 --- !u!1 &3912539728519512571
 GameObject:
   m_ObjectHideFlags: 0
@@ -476,7 +484,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2811086388605922363
 Transform:
   m_ObjectHideFlags: 0
@@ -566,6 +574,7 @@ Transform:
   - {fileID: 4534635390622005540}
   - {fileID: 5837938060913486553}
   - {fileID: 7199210208862029932}
+  - {fileID: 7469669891527147783}
   m_Father: {fileID: 5854040606687806175}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -831,7 +840,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8057684673036037344
 Transform:
   m_ObjectHideFlags: 0

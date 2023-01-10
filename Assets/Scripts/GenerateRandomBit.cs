@@ -17,6 +17,7 @@ public class GenerateRandomBit : MonoBehaviour
     private Seed seed;
 
     private bool generated;
+    private bool received_seed;
 
     private float time;
 
@@ -29,7 +30,7 @@ public class GenerateRandomBit : MonoBehaviour
 
     private void Update()
     {
-        if (!generated)
+        if (!generated && received_seed)
         {
             if (player_distance == -1)
             {
@@ -47,6 +48,11 @@ public class GenerateRandomBit : MonoBehaviour
 
     private void ActuallyGenerate()
     {
+        if (seed == null)
+        {
+            Debug.LogError("Generate Random Bit Error In " + this.name);
+            return;
+        }
         Random.InitState(seed.seed);
         int totalweight = 0;
         foreach (RandomBit Bit in Bits)
@@ -76,6 +82,7 @@ public class GenerateRandomBit : MonoBehaviour
     public void Generate(Seed seed)
     {
         generated = false;
+        received_seed = true;
         this.seed = seed;
         time = Random.Range(0f, 0.5f);
 

@@ -52,7 +52,7 @@ public class SunScript : MonoBehaviour
         if (dotproduct > 0.6f && transition) //Day
         {
             light.intensity = max_intensity;
-            //light.shadowNormalBias = 0.3f;
+            light.shadowNormalBias = 0.5f;
             RenderSettings.fogColor = fog.Evaluate(1);
             RenderSettings.ambientLight = environment.Evaluate(1);
             if (star_particles != null)
@@ -74,7 +74,7 @@ public class SunScript : MonoBehaviour
         else if (dotproduct < 0.4f && transition) //Night
         {
             light.intensity = 0.01f;
-            //light.shadowNormalBias = 1f;
+            light.shadowNormalBias = 1f;
             RenderSettings.fogColor = fog.Evaluate(0);
             RenderSettings.ambientLight = environment.Evaluate(0);
             if (star_particles != null)
@@ -97,7 +97,7 @@ public class SunScript : MonoBehaviour
         {
             float duskscale = (dotproduct - 0.4f) * 5f;
             light.intensity = Mathf.Lerp(0.01f, max_intensity, duskscale);
-            //light.shadowNormalBias = Mathf.Lerp(1f, 0.3f, duskscale);
+            light.shadowNormalBias = Mathf.Lerp(1f, 0.5f, duskscale);
             RenderSettings.fogColor = fog.Evaluate(duskscale);
             RenderSettings.ambientLight = environment.Evaluate(duskscale);
             if (star_particles != null)
@@ -122,7 +122,7 @@ public class SunScript : MonoBehaviour
         {
             float eclipsescale = (eclipseproduct - 0.99f) * 100f;
             light.intensity = Mathf.Lerp(max_intensity, 0.01f, eclipsescale);
-            //light.shadowNormalBias = Mathf.Lerp(0.3f, 1f, eclipsescale);
+            light.shadowNormalBias = Mathf.Lerp(0.5f, 1f, eclipsescale);
             RenderSettings.fogColor = fog.Evaluate(1 - eclipsescale);
             RenderSettings.ambientLight = environment.Evaluate(1 - eclipsescale);
         }

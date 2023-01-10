@@ -914,6 +914,10 @@ MonoBehaviour:
     turn: 0
     tag_in_range: Friend
   always_activate: 0
+  forward_ray_start: 1
+  forward_ray_length: 4
+  stand_ray_start: 0
+  stand_ray_length: 0.28
 --- !u!114 &6734322107290110966
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -931,3 +935,4 @@ MonoBehaviour:
   - Friend
   - Torino
   vision_range: 40
+  tagsinrange: []

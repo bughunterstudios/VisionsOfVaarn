@@ -9,8 +9,8 @@ Material:
   m_PrefabAsset: {fileID: 0}
   m_Name: Water
   m_Shader: {fileID: 4800000, guid: 94cb0d6305cd4a743b1d2ec684e277de, type: 3}
-  m_ShaderKeywords: DIFF_VERTEX SPEC_GOURAUD TRANSPARENT _ALPHABLEND_ON _DIFFMODEL_VERTEX
-    _DRAWDIST_ON _EMISSION _EMISSION_MAP _SPECMODEL_GOURAUD
+  m_ShaderKeywords: DEPTH_WRITE DIFF_VERTEX SPEC_GOURAUD TRANSPARENT _ALPHABLEND_ON
+    _DIFFMODEL_VERTEX _DRAWDIST_ON _EMISSION _EMISSION_MAP _SPECMODEL_GOURAUD
   m_LightmapFlags: 2
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -106,7 +106,7 @@ Material:
     - _UVSec: 0
     - _Unlit: 0
     - _VertexInaccuracy: -1
-    - _ZWrite: 1
+    - _ZWrite: 0
     m_Colors:
     - _Color: {r: 0.827451, g: 0.9632029, b: 1, a: 0.3529412}
     - _Emission: {r: 0.6226415, g: 0.6226415, b: 0.6226415, a: 1}
