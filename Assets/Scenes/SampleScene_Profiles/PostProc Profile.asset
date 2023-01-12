@@ -1,5 +1,42 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-4791752437435606531
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3f6f3f7c722b4544b97e3c75840aa33, type: 3}
+  m_Name: AutoExposure
+  m_EditorClassIdentifier: 
+  active: 1
+  enabled:
+    overrideState: 1
+    value: 1
+  filtering:
+    overrideState: 1
+    value: {x: 6.793721, y: 91.275055}
+  minLuminance:
+    overrideState: 1
+    value: -1
+  maxLuminance:
+    overrideState: 1
+    value: 1
+  keyValue:
+    overrideState: 1
+    value: 0.7
+  eyeAdaptation:
+    overrideState: 1
+    value: 0
+  speedUp:
+    overrideState: 1
+    value: 8
+  speedDown:
+    overrideState: 1
+    value: 1
 --- !u!114 &-2986215090769812638
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -1354,6 +1391,7 @@ MonoBehaviour:
   - {fileID: 3904338998856749287}
   - {fileID: 6802383297017217093}
   - {fileID: -215396764245442632}
+  - {fileID: -4791752437435606531}
 --- !u!114 &3904338998856749287
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -1372,7 +1410,7 @@ MonoBehaviour:
     value: 1
   intensity:
     overrideState: 1
-    value: 10
+    value: 0.5
   threshold:
     overrideState: 1
     value: 1.1
@@ -1384,7 +1422,7 @@ MonoBehaviour:
     value: 65472
   diffusion:
     overrideState: 0
-    value: 7
+    value: 2.38
   anamorphicRatio:
     overrideState: 0
     value: 0

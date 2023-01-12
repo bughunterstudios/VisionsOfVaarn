@@ -64,6 +64,9 @@ public class AI : MonoBehaviour
     public float forward_ray_length = 3;
     public float stand_ray_start = 1;
     public float stand_ray_length = 1;
+    private Vector3 stand_ray_pos;
+    private Vector3 forward_ray_pos;
+    private int layer_mask;
 
     // Start is called before the first frame update
     void Start()
@@ -79,14 +82,18 @@ public class AI : MonoBehaviour
         time = -1;
         cam = Camera.main.transform;
         aitags = GetComponent<AITags>();
+        layer_mask = ~LayerMask.GetMask("Ignore Raycast");
+
+        stand_ray_pos = transform.position + (transform.TransformDirection(Vector3.down) * stand_ray_start);
+        forward_ray_pos = transform.position + (transform.up * 1) + (transform.TransformDirection(Vector3.forward) * forward_ray_start);
 
         GameObject.Find("TheWorld").GetComponent<AIControl>().AddAI(this);
     }
 
-    private void OnDrawGizmos()
+    /*private void OnDrawGizmos()
     {
-        Gizmos.DrawRay(transform.position + (transform.TransformDirection(Vector3.down) * stand_ray_start), transform.TransformDirection(Vector3.down) * stand_ray_length);
-        Gizmos.DrawRay(transform.position + (transform.up * 1) + (transform.TransformDirection(Vector3.forward) * forward_ray_start), transform.TransformDirection(Vector3.forward) * forward_ray_length);
+        Gizmos.DrawRay(stand_ray_pos, transform.TransformDirection(Vector3.down) * stand_ray_length);
+        Gizmos.DrawRay(forward_ray_pos, transform.TransformDirection(Vector3.forward) * forward_ray_length);
     }//*/
 
     public void UpdateFrame()
@@ -94,7 +101,7 @@ public class AI : MonoBehaviour
         //Check for following moving object
         if (controller != null && movespeed > 0)
         {
-            if (Physics.Raycast(transform.position + (transform.TransformDirection(Vector3.down) * stand_ray_start), transform.TransformDirection(Vector3.down), out hit, stand_ray_length, ~LayerMask.GetMask("Ignore Raycast")))
+            if (Physics.Raycast(stand_ray_pos, Vector3.down, out hit, stand_ray_length, layer_mask))
             {
                 if (hit.transform == movingobject)
                 {
@@ -112,7 +119,7 @@ public class AI : MonoBehaviour
         {
             if (selectedmood.move != 0 && selectedmood.turn == 0 && movespeed > 0 && selectedmood.tag_in_range != "")
             {
-                if (Physics.Raycast(transform.position + (transform.up * 1) + (transform.TransformDirection(Vector3.forward) * forward_ray_start), transform.TransformDirection(Vector3.forward), out hit, forward_ray_length, ~LayerMask.GetMask("Ignore Raycast")))
+                if (Physics.Raycast(forward_ray_pos, transform.TransformDirection(Vector3.forward), out hit, forward_ray_length, layer_mask))
                 {
                     if (hit.collider.gameObject != this.gameObject && this.gameObject.name == "SandwormHead")
                         Debug.Log("hit something else");
