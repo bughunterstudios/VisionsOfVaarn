@@ -116,7 +116,7 @@ GameObject:
   - component: {fileID: 2961575712495682364}
   - component: {fileID: 5734650143648299170}
   - component: {fileID: 2782729056053076215}
-  m_Layer: 7
+  m_Layer: 3
   m_Name: GiantHead
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -244,6 +244,9 @@ MonoBehaviour:
   - Weight: 1
     Mat: {fileID: 2100000, guid: d4406ef3e6bf2864d842c92415405936, type: 2}
   oninit: 0
+  inheritmaterialchance: 0
+  inherittag: 
+  mat_count: 1
 --- !u!114 &2782729056053076215
 MonoBehaviour:
   m_ObjectHideFlags: 0

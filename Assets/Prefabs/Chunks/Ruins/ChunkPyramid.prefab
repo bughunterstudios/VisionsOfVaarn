@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1367381575492647190}
   - component: {fileID: 751201056320519855}
   - component: {fileID: 6317147076625876910}
-  m_Layer: 7
+  m_Layer: 3
   m_Name: Pyramid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -142,6 +142,9 @@ MonoBehaviour:
   - Weight: 1
     Mat: {fileID: 2100000, guid: d4406ef3e6bf2864d842c92415405936, type: 2}
   oninit: 0
+  inheritmaterialchance: 0
+  inherittag: 
+  mat_count: 1
 --- !u!114 &6317147076625876910
 MonoBehaviour:
   m_ObjectHideFlags: 0

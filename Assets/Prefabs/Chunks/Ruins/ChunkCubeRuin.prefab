@@ -69,7 +69,7 @@ GameObject:
   - component: {fileID: 6277522229764840719}
   - component: {fileID: 991004872314005196}
   - component: {fileID: 3227387530375144021}
-  m_Layer: 7
+  m_Layer: 3
   m_Name: GiantCube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -184,6 +184,9 @@ MonoBehaviour:
   - Weight: 1
     Mat: {fileID: 2100000, guid: d4406ef3e6bf2864d842c92415405936, type: 2}
   oninit: 0
+  inheritmaterialchance: 0
+  inherittag: 
+  mat_count: 1
 --- !u!64 &991004872314005196
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -270,7 +273,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6880951177494696174}
   - component: {fileID: 832163566030882298}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: IndoorZone
   m_TagString: Indoors
   m_Icon: {fileID: 0}

@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8358379037050233578}
   - component: {fileID: 5923008729148749310}
-  m_Layer: 7
+  m_Layer: 3
   m_Name: Audio Reverb Zone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -65,7 +65,7 @@ GameObject:
   m_Component:
   - component: {fileID: 618623145554860752}
   - component: {fileID: 1497268806946228631}
-  m_Layer: 7
+  m_Layer: 3
   m_Name: IndoorZone
   m_TagString: Indoors
   m_Icon: {fileID: 0}
@@ -110,7 +110,7 @@ GameObject:
   - component: {fileID: 8062902067146051355}
   - component: {fileID: 5936904404412445353}
   - component: {fileID: 7000680088754854694}
-  m_Layer: 7
+  m_Layer: 3
   m_Name: RuinedBuilding2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -177,7 +177,7 @@ GameObject:
   - component: {fileID: 3091902276131704878}
   - component: {fileID: 6871226558422874768}
   - component: {fileID: 6301266850963877289}
-  m_Layer: 7
+  m_Layer: 3
   m_Name: RuinedBuilding2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -271,6 +271,9 @@ MonoBehaviour:
   - Weight: 1
     Mat: {fileID: 2100000, guid: da6dca724d077544bbb5cc495a1fcdee, type: 2}
   oninit: 0
+  inheritmaterialchance: 0
+  inherittag: 
+  mat_count: 1
 --- !u!114 &3091902276131704878
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -323,6 +326,10 @@ PrefabInstance:
     - target: {fileID: 2537504915401768698, guid: 4b93a4738b96b034e8ced693bf3c12e1, type: 3}
       propertyPath: m_Name
       value: Stairspawn
+      objectReference: {fileID: 0}
+    - target: {fileID: 2537504915401768698, guid: 4b93a4738b96b034e8ced693bf3c12e1, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5779994075257690904, guid: 4b93a4738b96b034e8ced693bf3c12e1, type: 3}
       propertyPath: m_RootOrder
@@ -412,7 +419,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2099574092479165554, guid: 77161654641f2fa4a8cdde8084e146ef, type: 3}
       propertyPath: m_Layer
-      value: 7
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 77161654641f2fa4a8cdde8084e146ef, type: 3}

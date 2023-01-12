@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 174690447573091539}
   - component: {fileID: 4055852741732443229}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: IndoorZone
   m_TagString: Indoors
   m_Icon: {fileID: 0}
@@ -58,7 +58,7 @@ GameObject:
   - component: {fileID: 4731310871800429344}
   - component: {fileID: 3816588895871599400}
   - component: {fileID: 4760172980366407360}
-  m_Layer: 7
+  m_Layer: 3
   m_Name: GiantDome
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -187,6 +187,9 @@ MonoBehaviour:
   - Weight: 1
     Mat: {fileID: 2100000, guid: d4406ef3e6bf2864d842c92415405936, type: 2}
   oninit: 0
+  inheritmaterialchance: 0
+  inherittag: 
+  mat_count: 1
 --- !u!114 &4760172980366407360
 MonoBehaviour:
   m_ObjectHideFlags: 0

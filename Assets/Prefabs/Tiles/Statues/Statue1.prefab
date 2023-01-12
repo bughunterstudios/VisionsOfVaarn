@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 9193199841201615068}
   - component: {fileID: 9101950909684539401}
   - component: {fileID: 1518175444980688347}
-  m_Layer: 7
+  m_Layer: 3
   m_Name: Statue
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -98,6 +98,7 @@ MonoBehaviour:
   oninit: 0
   inheritmaterialchance: 1
   inherittag: statue
+  mat_count: 1
 --- !u!1 &3552792469004405930
 GameObject:
   m_ObjectHideFlags: 0
@@ -110,7 +111,7 @@ GameObject:
   - component: {fileID: 2625893018625428389}
   - component: {fileID: 3768788877076052262}
   - component: {fileID: 4171532830832659572}
-  m_Layer: 7
+  m_Layer: 3
   m_Name: Statue1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -197,7 +198,7 @@ GameObject:
   - component: {fileID: 2767732159868366703}
   - component: {fileID: 7240405917092570504}
   - component: {fileID: 6551429469389654168}
-  m_Layer: 7
+  m_Layer: 3
   m_Name: Statue LOD1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -283,6 +284,7 @@ MonoBehaviour:
   oninit: 0
   inheritmaterialchance: 1
   inherittag: statue
+  mat_count: 1
 --- !u!64 &6551429469389654168
 MeshCollider:
   m_ObjectHideFlags: 0

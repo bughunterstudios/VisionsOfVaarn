@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4574341317557682815}
   - component: {fileID: 832425590222234949}
   - component: {fileID: 3073602413487102389}
-  m_Layer: 7
+  m_Layer: 3
   m_Name: Icosphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -103,6 +103,9 @@ MonoBehaviour:
   - Weight: 1
     Mat: {fileID: 2100000, guid: efdc97267b6772d42a30039e2210ff77, type: 2}
   oninit: 0
+  inheritmaterialchance: 0
+  inherittag: 
+  mat_count: 1
 --- !u!64 &3073602413487102389
 MeshCollider:
   m_ObjectHideFlags: 0

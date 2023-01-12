@@ -54,7 +54,13 @@ public class AIControl : MonoBehaviour
 
             player_distance = Distance(player.position, ais[i].transform.position);
             if (ais[i].always_activate || player_distance <= ai_range_from_player)
+            {
                 nearbyais.Add(ais[i]);
+                if (ais[i].animator != null)
+                    ais[i].animator.enabled = true;
+            }
+            else if (ais[i].animator != null)
+                ais[i].animator.enabled = false;
         }
 
         nearbytags = new List<AITags>();

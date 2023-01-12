@@ -59,7 +59,7 @@ GameObject:
   - component: {fileID: 3053772142045535118}
   - component: {fileID: 2307457046962113177}
   - component: {fileID: 2540342097180047260}
-  m_Layer: 7
+  m_Layer: 3
   m_Name: Archway
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -173,6 +173,9 @@ MonoBehaviour:
   - Weight: 1
     Mat: {fileID: 2100000, guid: d4406ef3e6bf2864d842c92415405936, type: 2}
   oninit: 0
+  inheritmaterialchance: 0
+  inherittag: 
+  mat_count: 1
 --- !u!64 &2307457046962113177
 MeshCollider:
   m_ObjectHideFlags: 0

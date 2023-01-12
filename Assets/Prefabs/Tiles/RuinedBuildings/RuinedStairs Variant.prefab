@@ -77,7 +77,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3514844170969257343, guid: fda44c0815f1ced44a4835db3e278b00, type: 3}
       propertyPath: m_Layer
-      value: 7
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6562449980559595449, guid: fda44c0815f1ced44a4835db3e278b00, type: 3}
       propertyPath: m_Mesh
@@ -94,7 +94,7 @@ PrefabInstance:
     - target: {fileID: 7525877947738158458, guid: fda44c0815f1ced44a4835db3e278b00, type: 3}
       propertyPath: Bits.Array.data[1].Prefab
       value: 
-      objectReference: {fileID: 1541212318719976819, guid: 0e121cc009f7f184382f4659581ddfc9, type: 3}
+      objectReference: {fileID: 1541212318719976819}
     - target: {fileID: 7525877947738158458, guid: fda44c0815f1ced44a4835db3e278b00, type: 3}
       propertyPath: Bits.Array.data[1].Weight
       value: 1
@@ -105,11 +105,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7603930059564045946, guid: fda44c0815f1ced44a4835db3e278b00, type: 3}
       propertyPath: m_Layer
-      value: 7
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8133679092789085764, guid: fda44c0815f1ced44a4835db3e278b00, type: 3}
       propertyPath: m_Layer
-      value: 7
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8253911644119245368, guid: fda44c0815f1ced44a4835db3e278b00, type: 3}
       propertyPath: m_Mesh
@@ -117,3 +117,8 @@ PrefabInstance:
       objectReference: {fileID: 3587295463463238915, guid: 6369e98a21407154e9b763f367e8b237, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fda44c0815f1ced44a4835db3e278b00, type: 3}
+--- !u!1 &1541212318719976819 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7603930059564045946, guid: fda44c0815f1ced44a4835db3e278b00, type: 3}
+  m_PrefabInstance: {fileID: 8999857172396929801}
+  m_PrefabAsset: {fileID: 0}

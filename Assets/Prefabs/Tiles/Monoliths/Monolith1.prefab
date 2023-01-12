@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7834319809697053141}
   - component: {fileID: 611309228827451418}
   - component: {fileID: 3902477367971914495}
-  m_Layer: 7
+  m_Layer: 3
   m_Name: Monolith_LOD1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -98,6 +98,7 @@ MonoBehaviour:
   oninit: 0
   inheritmaterialchance: 1
   inherittag: monolith
+  mat_count: 1
 --- !u!1 &1215215604657301809
 GameObject:
   m_ObjectHideFlags: 0
@@ -111,7 +112,7 @@ GameObject:
   - component: {fileID: 8280437114828779734}
   - component: {fileID: 4064320962205200828}
   - component: {fileID: 1417821035411046484}
-  m_Layer: 7
+  m_Layer: 3
   m_Name: Monolith1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -211,6 +212,7 @@ MonoBehaviour:
   oninit: 0
   inheritmaterialchance: 1
   inherittag: monolith
+  mat_count: 1
 --- !u!1 &1926394731383119505
 GameObject:
   m_ObjectHideFlags: 0
@@ -222,7 +224,7 @@ GameObject:
   - component: {fileID: 8192712709817588907}
   - component: {fileID: 1118277997207378334}
   - component: {fileID: 2276253295878806919}
-  m_Layer: 7
+  m_Layer: 3
   m_Name: Monolith1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -293,7 +295,7 @@ GameObject:
   - component: {fileID: 6733040499206648375}
   - component: {fileID: 3517466132136710646}
   - component: {fileID: 5685110745847074002}
-  m_Layer: 7
+  m_Layer: 3
   m_Name: MonolithHolder
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3338190996747528415}
   - component: {fileID: 3256879407138871034}
   - component: {fileID: 1816317575412958495}
-  m_Layer: 7
+  m_Layer: 3
   m_Name: Icosphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -103,6 +103,9 @@ MonoBehaviour:
   - Weight: 1
     Mat: {fileID: 2100000, guid: efdc97267b6772d42a30039e2210ff77, type: 2}
   oninit: 0
+  inheritmaterialchance: 0
+  inherittag: 
+  mat_count: 1
 --- !u!64 &1816317575412958495
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -127,7 +130,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8514459067571622208}
   - component: {fileID: 8514459067571622211}
-  m_Layer: 7
+  m_Layer: 3
   m_Name: SmallArcology
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -172,7 +175,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8514459067931045357}
   - component: {fileID: 8514459067931045354}
-  m_Layer: 7
+  m_Layer: 3
   m_Name: RandomSand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
