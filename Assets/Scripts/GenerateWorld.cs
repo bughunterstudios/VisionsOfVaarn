@@ -155,8 +155,6 @@ public class GenerateWorld : MonoBehaviour
                     {
                         if (components[j].GetType() != typeof(Transform))
                             CopyComponent(components[j], chunk_parent);
-                        //UnityEditorInternal.ComponentUtility.CopyComponent(components[j]);
-                        //UnityEditorInternal.ComponentUtility.PasteComponentAsNew(chunk_parent);
                     }
                     chunk_parent.name = chosenhunk.name;
                     chunk_parent.transform.SetParent(transform);
@@ -173,7 +171,7 @@ public class GenerateWorld : MonoBehaviour
                     GameObject chunk = Instantiate(chosenhunk.transform.GetChild(i).gameObject, chunk_parent.transform);
                     chunk.transform.position = new Vector3(x * scale, chunk.transform.position.y, y * scale);
                     chunk.SendMessage("Generate", seed, SendMessageOptions.DontRequireReceiver);
-                    return chunk;
+                    return chunk_parent;
                 }
             }
         }

@@ -6,21 +6,26 @@ public class StumblingDroneScript : MonoBehaviour
 {
     public CharacterController controller;
     public AI ai;
-    public Rigidbody rb;
     public Animator animator;
     public List<GameObject> colliders;
+    private bool done;
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Player")
+        if (!done)
         {
-            ai.SendMessage("SetMood", "fall", SendMessageOptions.DontRequireReceiver);
-            controller.enabled = false;
-            rb.constraints = RigidbodyConstraints.None;
-            ai.enabled = false;
-            animator.SetTrigger("Fall");
-            foreach (GameObject col in colliders)
-                col.SetActive(true);
+            if (other.tag == "Player")
+            {
+                ai.SendMessage("SetMood", "fall", SendMessageOptions.DontRequireReceiver);
+                Rigidbody rb = controller.gameObject.AddComponent<Rigidbody>();
+                rb.mass = 10;
+                controller.enabled = false;
+                ai.enabled = false;
+                animator.SetTrigger("Fall");
+                foreach (GameObject col in colliders)
+                    col.SetActive(true);
+                done = true;
+            }
         }
     }
 }

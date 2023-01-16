@@ -9,8 +9,8 @@ Material:
   m_PrefabAsset: {fileID: 0}
   m_Name: Crystal
   m_Shader: {fileID: 4800000, guid: 94cb0d6305cd4a743b1d2ec684e277de, type: 3}
-  m_ShaderKeywords: DEPTH_WRITE DIFF_VERTEX SPEC_GOURAUD TRANSPARENT _ALPHABLEND_ON
-    _DIFFMODEL_VERTEX _DRAWDIST_ON _EMISSION _EMISSION_MAP _SPECMODEL_GOURAUD
+  m_ShaderKeywords: DIFF_VERTEX SPEC_GOURAUD TRANSPARENT _ALPHABLEND_ON _DIFFMODEL_VERTEX
+    _DRAWDIST_ON _EMISSION _EMISSION_MAP _SPECMODEL_GOURAUD
   m_LightmapFlags: 2
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -135,7 +135,7 @@ Material:
     - _Unlit: 0
     - _VertexInaccuracy: -1
     - _WorkflowMode: 1
-    - _ZWrite: 0
+    - _ZWrite: 1
     m_Colors:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 0.5176471}

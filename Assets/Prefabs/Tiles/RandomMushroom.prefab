@@ -371,6 +371,7 @@ GameObject:
   - component: {fileID: 2675745148118072157}
   - component: {fileID: 5357847393391875192}
   - component: {fileID: 7830277940548760218}
+  - component: {fileID: 4912651035227480465}
   m_Layer: 0
   m_Name: MushroomHolder
   m_TagString: Untagged
@@ -421,6 +422,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71afeb5ee9614d546b9ea331c678b739, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!205 &4912651035227480465
+LODGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4662774052211278266}
+  serializedVersion: 2
+  m_LocalReferencePoint: {x: -0.0737772, y: -0.21642101, z: 0.2143302}
+  m_Size: 8.915565
+  m_FadeMode: 0
+  m_AnimateCrossFading: 0
+  m_LastLODIsBillboard: 0
+  m_LODs:
+  - screenRelativeHeight: 0.044087566
+    fadeTransitionWidth: 0
+    renderers:
+    - renderer: {fileID: 4873085798305312309}
+  m_Enabled: 1
 --- !u!1 &4947582770157319432
 GameObject:
   m_ObjectHideFlags: 0
@@ -530,6 +550,9 @@ MonoBehaviour:
   - Weight: 3
     Mat: {fileID: 2100000, guid: 06fc323b6fa22bf4195f2e3166270533, type: 2}
   oninit: 0
+  inheritmaterialchance: 0
+  inherittag: 
+  mat_count: 1
 --- !u!1 &6165563692605265664
 GameObject:
   m_ObjectHideFlags: 0

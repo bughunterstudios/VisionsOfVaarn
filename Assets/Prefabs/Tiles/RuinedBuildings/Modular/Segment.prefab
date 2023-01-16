@@ -270,6 +270,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6583386932901090520}
   - component: {fileID: 6169549186236039397}
+  - component: {fileID: 8077116677219680198}
   m_Layer: 7
   m_Name: Segment
   m_TagString: Untagged
@@ -309,6 +310,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71afeb5ee9614d546b9ea331c678b739, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &8077116677219680198
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6583386932901090521}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7223294b0295810408a3bbddf356b27c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotationlimits: {x: 1, y: 1, z: 1}
+  translatelimits: {x: 0, y: 0, z: 0}
+  scalelimits: {x: 0, y: 0, z: 0}
+  discrete: 0
 --- !u!1 &6583386934451118129
 GameObject:
   m_ObjectHideFlags: 0
