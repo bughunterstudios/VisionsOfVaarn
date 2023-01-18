@@ -24,6 +24,7 @@ public class GenerateSandwormTrail : MonoBehaviour
             GameObject newtrail = Instantiate(prefab);
             newtrail.transform.position = position.position;
             newtrail.transform.rotation = position.rotation;
+            newtrail.transform.localScale *= (transform.parent.localScale.x);
             pos = position.position;
         }
     }

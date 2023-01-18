@@ -68,6 +68,9 @@ public class AI : MonoBehaviour
     private Vector3 forward_ray_pos;
     private int layer_mask;
 
+    private bool forwardintersect;
+    private bool downintersect;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -92,7 +95,11 @@ public class AI : MonoBehaviour
 
     /*private void OnDrawGizmos()
     {
+        stand_ray_pos = transform.position + (transform.TransformDirection(Vector3.down) * stand_ray_start);
+        forward_ray_pos = transform.position + (transform.up * 1) + (transform.TransformDirection(Vector3.forward) * forward_ray_start);
+        Gizmos.color = downintersect ? Color.red : Color.white;
         Gizmos.DrawRay(stand_ray_pos, transform.TransformDirection(Vector3.down) * stand_ray_length);
+        Gizmos.color = forwardintersect ? Color.red : Color.white;
         Gizmos.DrawRay(forward_ray_pos, transform.TransformDirection(Vector3.forward) * forward_ray_length);
     }//*/
 
@@ -105,6 +112,8 @@ public class AI : MonoBehaviour
             {
                 if (hit.transform == movingobject)
                 {
+                    if (movingobject.position != previousposition)
+                        Debug.Log("Moving: " + name);
                     controller.Move(movingobject.position - previousposition);
                     transform.Rotate(Vector3.up * (movingobject.eulerAngles.y - previousrotation));
                 }
@@ -112,19 +121,25 @@ public class AI : MonoBehaviour
                     movingobject = hit.transform;
                 previousposition = movingobject.position;
                 previousrotation = movingobject.eulerAngles.y;
+                downintersect = true;
             }
+            else
+                downintersect = false;
         }
 
         if (selectedmood != null)
         {
-            if (selectedmood.move != 0 && selectedmood.turn == 0 && movespeed > 0 && selectedmood.tag_in_range != "")
+            if (selectedmood.move != 0 && selectedmood.turn == 0 && movespeed > 0 && selectedmood.tag_in_range == "")
             {
                 if (Physics.Raycast(forward_ray_pos, transform.TransformDirection(Vector3.forward), out hit, forward_ray_length, layer_mask))
                 {
                     if (hit.collider.gameObject != this.gameObject && this.gameObject.name == "SandwormHead")
                         Debug.Log("hit something else");
                     time = 0;
+                    forwardintersect = true;
                 }
+                else
+                    forwardintersect = false;
             }
         }
 

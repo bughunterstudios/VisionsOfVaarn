@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 1957978837404104169}
   - component: {fileID: 4501593328622360987}
   - component: {fileID: 5819799982338274967}
-  - component: {fileID: 2178931770818813601}
   - component: {fileID: 8537154524031624891}
   m_Layer: 0
   m_Name: Garbage_TV_functional
@@ -139,6 +138,9 @@ MonoBehaviour:
   - Weight: 1
     Mat: {fileID: 2100000, guid: ba48c3de45c3bed4c961f4d3153540ac, type: 2}
   oninit: 0
+  inheritmaterialchance: 0
+  inherittag: 
+  mat_count: 1
 --- !u!82 &5819799982338274967
 AudioSource:
   m_ObjectHideFlags: 0
@@ -235,25 +237,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!95 &2178931770818813601
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4766532917965924441}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 01e37477b7d8fc2448e117fa40aad416, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &8537154524031624891
 MonoBehaviour:
   m_ObjectHideFlags: 0

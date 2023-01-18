@@ -54,7 +54,7 @@ public class SunScript : MonoBehaviour
             light.intensity = max_intensity;
             light.shadowNormalBias = 0.5f;
             RenderSettings.fogColor = fog.Evaluate(1);
-            RenderSettings.ambientLight = environment.Evaluate(1);
+            //RenderSettings.ambientLight = environment.Evaluate(1);
             if (star_particles != null)
             {
                 for (int i = 0; i < star_particles.Length; i++)
@@ -76,7 +76,7 @@ public class SunScript : MonoBehaviour
             light.intensity = 0.01f;
             light.shadowNormalBias = 1f;
             RenderSettings.fogColor = fog.Evaluate(0);
-            RenderSettings.ambientLight = environment.Evaluate(0);
+            //RenderSettings.ambientLight = environment.Evaluate(0);
             if (star_particles != null)
             {
                 for (int i = 0; i < star_particles.Length; i++)
@@ -99,7 +99,7 @@ public class SunScript : MonoBehaviour
             light.intensity = Mathf.Lerp(0.01f, max_intensity, duskscale);
             light.shadowNormalBias = Mathf.Lerp(1f, 0.5f, duskscale);
             RenderSettings.fogColor = fog.Evaluate(duskscale);
-            RenderSettings.ambientLight = environment.Evaluate(duskscale);
+            //RenderSettings.ambientLight = environment.Evaluate(duskscale);
             if (star_particles != null)
             {
                 for (int i = 0; i < star_particles.Length; i++)
@@ -124,7 +124,7 @@ public class SunScript : MonoBehaviour
             light.intensity = Mathf.Lerp(max_intensity, 0.01f, eclipsescale);
             light.shadowNormalBias = Mathf.Lerp(0.5f, 1f, eclipsescale);
             RenderSettings.fogColor = fog.Evaluate(1 - eclipsescale);
-            RenderSettings.ambientLight = environment.Evaluate(1 - eclipsescale);
+            //RenderSettings.ambientLight = environment.Evaluate(1 - eclipsescale);
         }
 
         if (Input.GetKey(KeyCode.T))
