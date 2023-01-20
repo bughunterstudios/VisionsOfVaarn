@@ -106,14 +106,12 @@ public class AI : MonoBehaviour
     public void UpdateFrame()
     {
         //Check for following moving object
-        if (controller != null && movespeed > 0)
+        if (controller != null && movespeed > 0 && stand_ray_length > 0)
         {
             if (Physics.Raycast(stand_ray_pos, Vector3.down, out hit, stand_ray_length, layer_mask))
             {
                 if (hit.transform == movingobject)
                 {
-                    if (movingobject.position != previousposition)
-                        Debug.Log("Moving: " + name);
                     controller.Move(movingobject.position - previousposition);
                     transform.Rotate(Vector3.up * (movingobject.eulerAngles.y - previousrotation));
                 }
@@ -133,8 +131,6 @@ public class AI : MonoBehaviour
             {
                 if (Physics.Raycast(forward_ray_pos, transform.TransformDirection(Vector3.forward), out hit, forward_ray_length, layer_mask))
                 {
-                    if (hit.collider.gameObject != this.gameObject && this.gameObject.name == "SandwormHead")
-                        Debug.Log("hit something else");
                     time = 0;
                     forwardintersect = true;
                 }

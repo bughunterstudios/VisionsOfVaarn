@@ -129,12 +129,14 @@ public class AIControl : MonoBehaviour
         {
             if (tagindex >= resetframes)
             {
+                Debug.Log("reset > nearby" + tagindex.ToString());
                 tagindex = 0;
                 ResetNearby();
             }
         }
         else if (tagindex >= nearbytags.Count)
         {
+            Debug.Log("reset < nearby" + tagindex.ToString());
             tagindex = 0;
             ResetNearby();
         }
@@ -161,5 +163,13 @@ public class AIControl : MonoBehaviour
         //distanceSquared = vector.x * vector.x + vector.y * vector.y + vector.z * vector.z;
 
         //return (float)System.Math.Sqrt(distanceSquared);
+    }
+
+    void OnGUI()
+    {
+        GUI.Label(new Rect(0, 15, 200, 100), "AIS: " + ais.Count.ToString());
+        GUI.Label(new Rect(0, 30, 200, 100), "Tags: " + tags.Count.ToString());
+        GUI.Label(new Rect(0, 45, 200, 100), "Nearby AIS: " + nearbyais.Count.ToString());
+        GUI.Label(new Rect(0, 60, 200, 100), "Nearby AI Tags: " + nearbytags.Count.ToString());
     }
 }
