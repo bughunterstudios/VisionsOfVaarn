@@ -9,7 +9,7 @@ Material:
   m_PrefabAsset: {fileID: 0}
   m_Name: Mesa2
   m_Shader: {fileID: 4800000, guid: 94cb0d6305cd4a743b1d2ec684e277de, type: 3}
-  m_ShaderKeywords: DIFF_VERTEX OPAQUE SPEC_GOURAUD _DIFFMODEL_VERTEX _DRAWDIST_ON
+  m_ShaderKeywords: DIFF_FRAGMENT OPAQUE SPEC_GOURAUD _DIFFMODEL_VERTEX _DRAWDIST_ON
     _EMISSION _EMISSION_MAP _METAL_MAP _SPECMODEL_GOURAUD
   m_LightmapFlags: 2
   m_EnableInstancingVariants: 0
@@ -110,7 +110,7 @@ Material:
     - _CutoutThreshold: 0.5
     - _DetailAlbedoMapScale: 1
     - _DetailNormalMapScale: 1
-    - _DiffModel: 0
+    - _DiffModel: 1
     - _DrawDist: 1
     - _DstBlend: 0
     - _EnvironmentReflections: 1
@@ -119,7 +119,7 @@ Material:
     - _GlossyReflections: 0
     - _LODAmt: 0
     - _Metallic: 0
-    - _NormalMapDepth: 1
+    - _NormalMapDepth: 0.8
     - _OcclusionStrength: 1
     - _Parallax: 0.005
     - _QueueOffset: 0
@@ -128,7 +128,7 @@ Material:
     - _Smoothness: 0.8
     - _SmoothnessTextureChannel: 0
     - _SpecModel: 0
-    - _Specular: 21.23
+    - _Specular: 5
     - _SpecularHighlights: 1
     - _SrcBlend: 1
     - _Surface: 0

@@ -1,0 +1,104 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-1131545456119599785
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6063010533678530282}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7223294b0295810408a3bbddf356b27c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotationlimits: {x: 0, y: 0, z: 0}
+  translatelimits: {x: 0, y: 0, z: 0}
+  scalelimits: {x: 0, y: 0, z: 0}
+  discrete: 0
+--- !u!1001 &5813505071945586765
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 326963949232957095, guid: 7755be57ab080354db5ac3664e367433, type: 3}
+      propertyPath: m_Name
+      value: ChunkDune3 Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 2036258939021632175, guid: 7755be57ab080354db5ac3664e367433, type: 3}
+      propertyPath: m_Name
+      value: Dune3_lod
+      objectReference: {fileID: 0}
+    - target: {fileID: 4424908385778117040, guid: 7755be57ab080354db5ac3664e367433, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4424908385778117040, guid: 7755be57ab080354db5ac3664e367433, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4424908385778117040, guid: 7755be57ab080354db5ac3664e367433, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4424908385778117040, guid: 7755be57ab080354db5ac3664e367433, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4424908385778117040, guid: 7755be57ab080354db5ac3664e367433, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4424908385778117040, guid: 7755be57ab080354db5ac3664e367433, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4424908385778117040, guid: 7755be57ab080354db5ac3664e367433, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4424908385778117040, guid: 7755be57ab080354db5ac3664e367433, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4424908385778117040, guid: 7755be57ab080354db5ac3664e367433, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4424908385778117040, guid: 7755be57ab080354db5ac3664e367433, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4424908385778117040, guid: 7755be57ab080354db5ac3664e367433, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7422928311159313030, guid: 7755be57ab080354db5ac3664e367433, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -4900493266058896153, guid: 87cd2cc328a5a9644bcd8e8e3de75557, type: 3}
+    - target: {fileID: 8026597150705624370, guid: 7755be57ab080354db5ac3664e367433, type: 3}
+      propertyPath: m_Name
+      value: Dune3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8594094783388075959, guid: 7755be57ab080354db5ac3664e367433, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -7854029231825516212, guid: 87cd2cc328a5a9644bcd8e8e3de75557, type: 3}
+    - target: {fileID: 9205775441745432236, guid: 7755be57ab080354db5ac3664e367433, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -4900493266058896153, guid: 87cd2cc328a5a9644bcd8e8e3de75557, type: 3}
+    - target: {fileID: 9205775441745432236, guid: 7755be57ab080354db5ac3664e367433, type: 3}
+      propertyPath: m_Convex
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 7755be57ab080354db5ac3664e367433, type: 3}
+--- !u!1 &6063010533678530282 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 326963949232957095, guid: 7755be57ab080354db5ac3664e367433, type: 3}
+  m_PrefabInstance: {fileID: 5813505071945586765}
+  m_PrefabAsset: {fileID: 0}

@@ -1,0 +1,100 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-6214589756251476400
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2574351331506682715}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7223294b0295810408a3bbddf356b27c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotationlimits: {x: 0, y: 0, z: 0}
+  translatelimits: {x: 0, y: 0, z: 0}
+  scalelimits: {x: 0, y: 0, z: 0}
+  discrete: 0
+--- !u!1001 &5042992263971509696
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 418749389870602938, guid: 192731eab97537149887ef41e8333c9d, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 7282008443485355996, guid: 87cd2cc328a5a9644bcd8e8e3de75557, type: 3}
+    - target: {fileID: 984045544186440974, guid: 192731eab97537149887ef41e8333c9d, type: 3}
+      propertyPath: m_Name
+      value: Dune12
+      objectReference: {fileID: 0}
+    - target: {fileID: 1551595682913259403, guid: 192731eab97537149887ef41e8333c9d, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -7254203263457193308, guid: 87cd2cc328a5a9644bcd8e8e3de75557, type: 3}
+    - target: {fileID: 2093400169666119312, guid: 192731eab97537149887ef41e8333c9d, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 7282008443485355996, guid: 87cd2cc328a5a9644bcd8e8e3de75557, type: 3}
+    - target: {fileID: 6891726900260168076, guid: 192731eab97537149887ef41e8333c9d, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6891726900260168076, guid: 192731eab97537149887ef41e8333c9d, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6891726900260168076, guid: 192731eab97537149887ef41e8333c9d, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6891726900260168076, guid: 192731eab97537149887ef41e8333c9d, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6891726900260168076, guid: 192731eab97537149887ef41e8333c9d, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6891726900260168076, guid: 192731eab97537149887ef41e8333c9d, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6891726900260168076, guid: 192731eab97537149887ef41e8333c9d, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6891726900260168076, guid: 192731eab97537149887ef41e8333c9d, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6891726900260168076, guid: 192731eab97537149887ef41e8333c9d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6891726900260168076, guid: 192731eab97537149887ef41e8333c9d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6891726900260168076, guid: 192731eab97537149887ef41e8333c9d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7369472679081078427, guid: 192731eab97537149887ef41e8333c9d, type: 3}
+      propertyPath: m_Name
+      value: ChunkDune12 Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 9119231891443575443, guid: 192731eab97537149887ef41e8333c9d, type: 3}
+      propertyPath: m_Name
+      value: Dune12_lod
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 192731eab97537149887ef41e8333c9d, type: 3}
+--- !u!1 &2574351331506682715 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7369472679081078427, guid: 192731eab97537149887ef41e8333c9d, type: 3}
+  m_PrefabInstance: {fileID: 5042992263971509696}
+  m_PrefabAsset: {fileID: 0}

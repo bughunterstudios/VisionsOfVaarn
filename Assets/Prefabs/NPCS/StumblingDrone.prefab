@@ -285,6 +285,7 @@ GameObject:
   - component: {fileID: 5654203772855673888}
   - component: {fileID: 4792976053069855330}
   - component: {fileID: 7211127070846922656}
+  - component: {fileID: 7216737416884430216}
   m_Layer: 0
   m_Name: StumblingDrone
   m_TagString: Untagged
@@ -347,6 +348,43 @@ MonoBehaviour:
   turnspeed: 60
   move_acceleration: 5
   turn_acceleration: 5
+  always_activate: 0
+  forward_ray_start: 2.22
+  forward_ray_length: 5
+  stand_ray_start: 0.1
+  stand_ray_length: 2
+--- !u!114 &7211127070846922656
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2794130711488841979}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e30c2bee0866cf40b33040a045d6730, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Tags:
+  - Predator
+  - Synth
+  - StumblingDrone
+  vision_range: 40
+  tagsinrange: []
+--- !u!114 &7216737416884430216
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2794130711488841979}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de5892eeb9d6dff428fd5578e55b03a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 3384653106721948288}
+  moving_mood: 1
   moods:
   - name: stand
     weight: 1
@@ -396,29 +434,6 @@ MonoBehaviour:
     move: 1
     turn: -1
     tag_in_range: 
-  always_activate: 0
-  forward_ray_start: 2.22
-  forward_ray_length: 5
-  stand_ray_start: 0.1
-  stand_ray_length: 2
---- !u!114 &7211127070846922656
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2794130711488841979}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e30c2bee0866cf40b33040a045d6730, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Tags:
-  - Predator
-  - Synth
-  - StumblingDrone
-  vision_range: 40
-  tagsinrange: []
 --- !u!1 &3912539728519512571
 GameObject:
   m_ObjectHideFlags: 0

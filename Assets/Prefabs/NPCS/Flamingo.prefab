@@ -253,6 +253,7 @@ GameObject:
   - component: {fileID: 5157156933624755319}
   - component: {fileID: 4794464751545949258}
   - component: {fileID: 256211640553642534}
+  - component: {fileID: 7920510893638037254}
   m_Layer: 0
   m_Name: Flamingo
   m_TagString: Untagged
@@ -314,6 +315,43 @@ MonoBehaviour:
   turnspeed: 40
   move_acceleration: 5
   turn_acceleration: 5
+  always_activate: 0
+  forward_ray_start: 0.27
+  forward_ray_length: 2
+  stand_ray_start: 0
+  stand_ray_length: 0.4
+--- !u!114 &256211640553642534
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3141195372689523726}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e30c2bee0866cf40b33040a045d6730, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Tags:
+  - Prey
+  - Friend
+  - Flamingo
+  vision_range: 40
+  tagsinrange: []
+--- !u!114 &7920510893638037254
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3141195372689523726}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de5892eeb9d6dff428fd5578e55b03a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 3633476231842812654}
+  moving_mood: 1
   moods:
   - name: StandHeadStill
     weight: 2
@@ -419,29 +457,6 @@ MonoBehaviour:
     move: 1
     turn: -1
     tag_in_range: 
-  always_activate: 0
-  forward_ray_start: 0.27
-  forward_ray_length: 2
-  stand_ray_start: 0
-  stand_ray_length: 0.4
---- !u!114 &256211640553642534
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3141195372689523726}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e30c2bee0866cf40b33040a045d6730, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Tags:
-  - Prey
-  - Friend
-  - Flamingo
-  vision_range: 40
-  tagsinrange: []
 --- !u!1 &3924605972730203762
 GameObject:
   m_ObjectHideFlags: 0

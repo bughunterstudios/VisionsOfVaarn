@@ -270,6 +270,7 @@ GameObject:
   - component: {fileID: 5250217689763275036}
   - component: {fileID: 146884058836338036}
   - component: {fileID: 4875259451847119550}
+  - component: {fileID: 1886185048774612611}
   m_Layer: 0
   m_Name: ArgentShepherd
   m_TagString: Untagged
@@ -332,6 +333,55 @@ MonoBehaviour:
   turnspeed: 40
   move_acceleration: 5
   turn_acceleration: 5
+  always_activate: 1
+  forward_ray_start: 1
+  forward_ray_length: 4
+  stand_ray_start: 0
+  stand_ray_length: 0.67
+--- !u!114 &146884058836338036
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5250217689763275034}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c2131c73b277114598d9b202620894a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &4875259451847119550
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5250217689763275034}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e30c2bee0866cf40b33040a045d6730, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Tags:
+  - Predator
+  - Synth
+  - ArgentShepherd
+  vision_range: 100
+  tagsinrange: []
+--- !u!114 &1886185048774612611
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5250217689763275034}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de5892eeb9d6dff428fd5578e55b03a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 2616888469416068273}
+  moving_mood: 1
   moods:
   - name: slowwalk
     weight: 3
@@ -381,41 +431,6 @@ MonoBehaviour:
     move: 1
     turn: -1
     tag_in_range: 
-  always_activate: 1
-  forward_ray_start: 1
-  forward_ray_length: 4
-  stand_ray_start: 0
-  stand_ray_length: 0.67
---- !u!114 &146884058836338036
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5250217689763275034}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2c2131c73b277114598d9b202620894a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &4875259451847119550
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5250217689763275034}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e30c2bee0866cf40b33040a045d6730, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Tags:
-  - Predator
-  - Synth
-  - ArgentShepherd
-  vision_range: 100
-  tagsinrange: []
 --- !u!1 &7130479587523068702
 GameObject:
   m_ObjectHideFlags: 0

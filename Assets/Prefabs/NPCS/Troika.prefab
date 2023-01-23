@@ -44,6 +44,7 @@ GameObject:
   - component: {fileID: 396085494050859983}
   - component: {fileID: 1732269475370204481}
   - component: {fileID: 3084406604850193111}
+  - component: {fileID: 4380262678215651731}
   m_Layer: 0
   m_Name: Troika
   m_TagString: Untagged
@@ -89,47 +90,6 @@ MonoBehaviour:
   turnspeed: 60
   move_acceleration: 5
   turn_acceleration: 2
-  moods:
-  - name: Forward
-    weight: 5
-    min_time: 1
-    max_time: 4
-    animation: 
-    move: 1
-    turn: 0
-    tag_in_range: 
-  - name: Attack
-    weight: 10
-    min_time: 1
-    max_time: 4
-    animation: 
-    move: 1
-    turn: 1
-    tag_in_range: Prey
-  - name: Attack
-    weight: 10
-    min_time: 1
-    max_time: 4
-    animation: 
-    move: 1
-    turn: 1
-    tag_in_range: Player
-  - name: Right
-    weight: 1
-    min_time: 1
-    max_time: 4
-    animation: 
-    move: 1
-    turn: 1
-    tag_in_range: 
-  - name: Left
-    weight: 1
-    min_time: 1
-    max_time: 4
-    animation: 
-    move: 1
-    turn: -1
-    tag_in_range: 
   always_activate: 1
   forward_ray_start: 5.39
   forward_ray_length: 10
@@ -185,6 +145,61 @@ MonoBehaviour:
   - Troika
   vision_range: 100
   tagsinrange: []
+--- !u!114 &4380262678215651731
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 396085494050859980}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de5892eeb9d6dff428fd5578e55b03a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 3637721150047890855}
+  moving_mood: 1
+  moods:
+  - name: Forward
+    weight: 5
+    min_time: 1
+    max_time: 4
+    animation: 
+    move: 1
+    turn: 0
+    tag_in_range: 
+  - name: Attack
+    weight: 10
+    min_time: 1
+    max_time: 4
+    animation: 
+    move: 1
+    turn: 1
+    tag_in_range: Prey
+  - name: Attack
+    weight: 10
+    min_time: 1
+    max_time: 4
+    animation: 
+    move: 1
+    turn: 1
+    tag_in_range: Player
+  - name: Right
+    weight: 1
+    min_time: 1
+    max_time: 4
+    animation: 
+    move: 1
+    turn: 1
+    tag_in_range: 
+  - name: Left
+    weight: 1
+    min_time: 1
+    max_time: 4
+    animation: 
+    move: 1
+    turn: -1
+    tag_in_range: 
 --- !u!1 &700022228333834184
 GameObject:
   m_ObjectHideFlags: 0

@@ -723,6 +723,7 @@ GameObject:
   - component: {fileID: 6705629764488412649}
   - component: {fileID: 1508372759788690581}
   - component: {fileID: 6734322107290110966}
+  - component: {fileID: 2319819831543982651}
   m_Layer: 0
   m_Name: LittleTorino
   m_TagString: Untagged
@@ -784,6 +785,43 @@ MonoBehaviour:
   turnspeed: 40
   move_acceleration: 5
   turn_acceleration: 5
+  always_activate: 0
+  forward_ray_start: 1
+  forward_ray_length: 4
+  stand_ray_start: 0
+  stand_ray_length: 0.28
+--- !u!114 &6734322107290110966
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8517792412149325395}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e30c2bee0866cf40b33040a045d6730, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Tags:
+  - Prey
+  - Friend
+  - Torino
+  vision_range: 40
+  tagsinrange: []
+--- !u!114 &2319819831543982651
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8517792412149325395}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de5892eeb9d6dff428fd5578e55b03a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 5829952404542234242}
+  moving_mood: 1
   moods:
   - name: stand
     weight: 4
@@ -913,26 +951,3 @@ MonoBehaviour:
     move: 0
     turn: 0
     tag_in_range: Friend
-  always_activate: 0
-  forward_ray_start: 1
-  forward_ray_length: 4
-  stand_ray_start: 0
-  stand_ray_length: 0.28
---- !u!114 &6734322107290110966
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8517792412149325395}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e30c2bee0866cf40b33040a045d6730, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Tags:
-  - Prey
-  - Friend
-  - Torino
-  vision_range: 40
-  tagsinrange: []

@@ -134,6 +134,7 @@ GameObject:
   - component: {fileID: 4237959365566047809}
   - component: {fileID: 7336154390970778377}
   - component: {fileID: 4466308999667712734}
+  - component: {fileID: 2914507805321324229}
   m_Layer: 0
   m_Name: Yurling
   m_TagString: Untagged
@@ -195,6 +196,43 @@ MonoBehaviour:
   turnspeed: 40
   move_acceleration: 5
   turn_acceleration: 5
+  always_activate: 0
+  forward_ray_start: 0.42
+  forward_ray_length: 4
+  stand_ray_start: 0
+  stand_ray_length: 0.67
+--- !u!114 &4466308999667712734
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4463039718649726687}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e30c2bee0866cf40b33040a045d6730, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Tags:
+  - Prey
+  - Friend
+  - Yurling
+  vision_range: 40
+  tagsinrange: []
+--- !u!114 &2914507805321324229
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4463039718649726687}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de5892eeb9d6dff428fd5578e55b03a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 2110919864909074132}
+  moving_mood: 1
   moods:
   - name: stand
     weight: 4
@@ -292,29 +330,6 @@ MonoBehaviour:
     move: 0
     turn: 0
     tag_in_range: 
-  always_activate: 0
-  forward_ray_start: 0.42
-  forward_ray_length: 4
-  stand_ray_start: 0
-  stand_ray_length: 0.67
---- !u!114 &4466308999667712734
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4463039718649726687}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e30c2bee0866cf40b33040a045d6730, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Tags:
-  - Prey
-  - Friend
-  - Yurling
-  vision_range: 40
-  tagsinrange: []
 --- !u!1 &7716790311609921715
 GameObject:
   m_ObjectHideFlags: 0

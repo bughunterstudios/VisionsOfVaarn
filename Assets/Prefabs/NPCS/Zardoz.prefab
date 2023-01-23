@@ -516,6 +516,7 @@ GameObject:
   - component: {fileID: 1160266728931735282}
   - component: {fileID: 3480921324658285319}
   - component: {fileID: 341285222968402237}
+  - component: {fileID: 8163929924340058602}
   m_Layer: 0
   m_Name: Zardoz
   m_TagString: Untagged
@@ -552,7 +553,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2bbe25d83d497245b5e25970443670e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tags: []
   controller: {fileID: 0}
   rb: {fileID: 0}
   animator: {fileID: 1160266728931735282}
@@ -561,49 +561,11 @@ MonoBehaviour:
   turnspeed: 30
   move_acceleration: 5
   turn_acceleration: 5
-  moods:
-  - name: Forward
-    weight: 2
-    min_time: 2
-    max_time: 10
-    animation: 
-    move: 1
-    turn: 0
-    tag_in_range: 
-  - name: Right
-    weight: 1
-    min_time: 2
-    max_time: 6
-    animation: 
-    move: 1
-    turn: 1
-    tag_in_range: 
-  - name: Left
-    weight: 1
-    min_time: 2
-    max_time: 6
-    animation: 
-    move: 1
-    turn: -1
-    tag_in_range: 
-  - name: Pause
-    weight: 1
-    min_time: 2
-    max_time: 10
-    animation: 
-    move: 0.5
-    turn: 0
-    tag_in_range: 
-  - name: Descend
-    weight: 1
-    min_time: 1
-    max_time: 2
-    animation: Descend
-    move: 1
-    turn: 0
-    tag_in_range: 
-  aitags: {fileID: 0}
   always_activate: 1
+  forward_ray_start: 1
+  forward_ray_length: 3
+  stand_ray_start: 1
+  stand_ray_length: 1
 --- !u!114 &6866419188331657071
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -665,6 +627,62 @@ MonoBehaviour:
   - Predator
   - Zardoz
   vision_range: 0
+  tagsinrange: []
+--- !u!114 &8163929924340058602
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7307331708337971869}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de5892eeb9d6dff428fd5578e55b03a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 1160266728931735282}
+  moving_mood: 1
+  moods:
+  - name: Forward
+    weight: 2
+    min_time: 2
+    max_time: 10
+    animation: 
+    move: 1
+    turn: 0
+    tag_in_range: 
+  - name: Right
+    weight: 1
+    min_time: 2
+    max_time: 6
+    animation: 
+    move: 1
+    turn: 1
+    tag_in_range: 
+  - name: Left
+    weight: 1
+    min_time: 2
+    max_time: 6
+    animation: 
+    move: 1
+    turn: -1
+    tag_in_range: 
+  - name: Pause
+    weight: 1
+    min_time: 2
+    max_time: 10
+    animation: 
+    move: 0.5
+    turn: 0
+    tag_in_range: 
+  - name: Descend
+    weight: 1
+    min_time: 1
+    max_time: 2
+    animation: Descend
+    move: 1
+    turn: 0
+    tag_in_range: 
 --- !u!1 &7307331708339541062
 GameObject:
   m_ObjectHideFlags: 0

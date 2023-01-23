@@ -15,7 +15,6 @@ public class AITags : MonoBehaviour
         vision_range = vision_range * vision_range;
         tagsinrange = new List<string>();
         npcsinrange = new List<Transform>();
-        GameObject.Find("TheWorld").GetComponent<AIControl>().AddTag(this);
     }
 
     public bool TagInRange(string tag)

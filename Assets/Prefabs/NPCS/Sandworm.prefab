@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4540790403508743885}
   - component: {fileID: 4390401175104258538}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: SandwormRumble
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -139,7 +139,7 @@ GameObject:
   - component: {fileID: 7708671001784818227}
   - component: {fileID: 5618715066090026472}
   - component: {fileID: 7471705157449491974}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Sphere
   m_TagString: Moving
   m_Icon: {fileID: 0}
@@ -232,7 +232,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3543535591145645854}
   - component: {fileID: 4625764550579970456}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: SandwormThroatSinging
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -358,7 +358,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9123489132817068273}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: TrailPosition
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -390,7 +390,7 @@ GameObject:
   - component: {fileID: 7193916841880299931}
   - component: {fileID: 6190380279238056760}
   - component: {fileID: 3234171153282356465}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Dust (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5204,7 +5204,7 @@ GameObject:
   - component: {fileID: 380346773895567775}
   - component: {fileID: 5658817016668522344}
   - component: {fileID: 8112550445053960201}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Dust
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10018,7 +10018,7 @@ GameObject:
   - component: {fileID: 8960334309786039394}
   - component: {fileID: 3055330433932294444}
   - component: {fileID: 3572503113369358163}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: SandwormBaleen
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10099,7 +10099,7 @@ GameObject:
   - component: {fileID: 1796631916158236991}
   - component: {fileID: 5980098840202235975}
   - component: {fileID: 8980782725045226660}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: GiantCactus
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10180,7 +10180,7 @@ GameObject:
   - component: {fileID: 6317997866036525160}
   - component: {fileID: 5945046813560310418}
   - component: {fileID: 1696706864311954249}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Sandworm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10277,7 +10277,8 @@ GameObject:
   - component: {fileID: 1740642663800831698}
   - component: {fileID: 5628420714593647327}
   - component: {fileID: 7104299030485723499}
-  m_Layer: 0
+  - component: {fileID: 5743300660210095520}
+  m_Layer: 10
   m_Name: SandwormHead
   m_TagString: Moving
   m_Icon: {fileID: 0}
@@ -10391,31 +10392,6 @@ MonoBehaviour:
   turnspeed: 20
   move_acceleration: 5
   turn_acceleration: 5
-  moods:
-  - name: Forward
-    weight: 2
-    min_time: 2
-    max_time: 10
-    animation: 
-    move: 1
-    turn: 0
-    tag_in_range: 
-  - name: Right
-    weight: 1
-    min_time: 2
-    max_time: 6
-    animation: 
-    move: 1
-    turn: 1
-    tag_in_range: 
-  - name: Left
-    weight: 1
-    min_time: 2
-    max_time: 6
-    animation: 
-    move: 1
-    turn: -1
-    tag_in_range: 
   always_activate: 1
   forward_ray_start: 18.17
   forward_ray_length: 60
@@ -10447,13 +10423,13 @@ CharacterController:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Height: 0.01
+  m_Height: 0.11
   m_Radius: 0.05
-  m_SlopeLimit: 70
-  m_StepOffset: 0.01
-  m_SkinWidth: 0.1
+  m_SlopeLimit: 90
+  m_StepOffset: 0.11
+  m_SkinWidth: 0.05
   m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: 0.02, z: 0.22}
+  m_Center: {x: 0, y: 0.01, z: 0.22}
 --- !u!114 &5628420714593647327
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10483,6 +10459,45 @@ MonoBehaviour:
   - Sandworm
   vision_range: 0
   tagsinrange: []
+--- !u!114 &5743300660210095520
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8173741272660629545}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de5892eeb9d6dff428fd5578e55b03a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 0}
+  moving_mood: 1
+  moods:
+  - name: Forward
+    weight: 2
+    min_time: 2
+    max_time: 10
+    animation: 
+    move: 1
+    turn: 0
+    tag_in_range: 
+  - name: Right
+    weight: 1
+    min_time: 2
+    max_time: 6
+    animation: 
+    move: 1
+    turn: 1
+    tag_in_range: 
+  - name: Left
+    weight: 1
+    min_time: 2
+    max_time: 6
+    animation: 
+    move: 1
+    turn: -1
+    tag_in_range: 
 --- !u!1 &8178681642416171734
 GameObject:
   m_ObjectHideFlags: 0
@@ -10494,7 +10509,7 @@ GameObject:
   - component: {fileID: 219006853353295424}
   - component: {fileID: 6059098018378514949}
   - component: {fileID: 5182683851918302450}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Dust (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15308,7 +15323,7 @@ GameObject:
   - component: {fileID: 2694968128417980834}
   - component: {fileID: 3232795939405366146}
   - component: {fileID: 5295209380853019420}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Sphere (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}

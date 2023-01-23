@@ -210,10 +210,11 @@ GameObject:
   - component: {fileID: 6787908322382999111}
   - component: {fileID: 5236058938558244018}
   - component: {fileID: 2631588940078508075}
-  - component: {fileID: 6327242309012456891}
-  - component: {fileID: 6034580846657046266}
-  - component: {fileID: 6709087334550077709}
   - component: {fileID: 6804208745599682361}
+  - component: {fileID: 2923074452486839143}
+  - component: {fileID: 7533195734291421378}
+  - component: {fileID: 6634177114281716528}
+  - component: {fileID: 5555360374866692623}
   m_Layer: 0
   m_Name: Addax
   m_TagString: Untagged
@@ -315,6 +316,43 @@ MonoBehaviour:
   turnspeed: 50
   move_acceleration: 5
   turn_acceleration: 5
+  always_activate: 0
+  forward_ray_start: 2.1
+  forward_ray_length: 6
+  stand_ray_start: 0
+  stand_ray_length: 0.51
+--- !u!114 &6804208745599682361
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2631588940078508072}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e30c2bee0866cf40b33040a045d6730, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Tags:
+  - Prey
+  - Friend
+  - Addax
+  vision_range: 40
+  tagsinrange: []
+--- !u!114 &2923074452486839143
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2631588940078508072}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de5892eeb9d6dff428fd5578e55b03a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 673469239032040199}
+  moving_mood: 1
   moods:
   - name: Stand
     weight: 4
@@ -412,12 +450,7 @@ MonoBehaviour:
     move: 1
     turn: -1
     tag_in_range: 
-  always_activate: 0
-  forward_ray_start: 2.1
-  forward_ray_length: 6
-  stand_ray_start: 0
-  stand_ray_length: 0.51
---- !u!114 &6327242309012456891
+--- !u!114 &7533195734291421378
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -426,17 +459,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 2631588940078508072}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d2bbe25d83d497245b5e25970443670e, type: 3}
+  m_Script: {fileID: 11500000, guid: de5892eeb9d6dff428fd5578e55b03a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  controller: {fileID: 0}
-  rb: {fileID: 0}
   animator: {fileID: 673469239032040199}
-  headaim: {fileID: 0}
-  movespeed: 0
-  turnspeed: 0
-  move_acceleration: 0
-  turn_acceleration: 0
+  moving_mood: 0
   moods:
   - name: TailCurl
     weight: 1
@@ -454,12 +481,7 @@ MonoBehaviour:
     move: 0
     turn: 0
     tag_in_range: 
-  always_activate: 0
-  forward_ray_start: 1
-  forward_ray_length: 0
-  stand_ray_start: 1
-  stand_ray_length: 0
---- !u!114 &6034580846657046266
+--- !u!114 &6634177114281716528
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -468,17 +490,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 2631588940078508072}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d2bbe25d83d497245b5e25970443670e, type: 3}
+  m_Script: {fileID: 11500000, guid: de5892eeb9d6dff428fd5578e55b03a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  controller: {fileID: 0}
-  rb: {fileID: 0}
   animator: {fileID: 673469239032040199}
-  headaim: {fileID: 0}
-  movespeed: 0
-  turnspeed: 0
-  move_acceleration: 0
-  turn_acceleration: 0
+  moving_mood: 0
   moods:
   - name: EarsBack
     weight: 1
@@ -504,12 +520,7 @@ MonoBehaviour:
     move: 0
     turn: 0
     tag_in_range: 
-  always_activate: 0
-  forward_ray_start: 1
-  forward_ray_length: 0
-  stand_ray_start: 1
-  stand_ray_length: 0
---- !u!114 &6709087334550077709
+--- !u!114 &5555360374866692623
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -518,17 +529,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 2631588940078508072}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d2bbe25d83d497245b5e25970443670e, type: 3}
+  m_Script: {fileID: 11500000, guid: de5892eeb9d6dff428fd5578e55b03a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  controller: {fileID: 0}
-  rb: {fileID: 0}
   animator: {fileID: 673469239032040199}
-  headaim: {fileID: 0}
-  movespeed: 0
-  turnspeed: 0
-  move_acceleration: 0
-  turn_acceleration: 0
+  moving_mood: 0
   moods:
   - name: HeadStill
     weight: 2
@@ -562,29 +567,6 @@ MonoBehaviour:
     move: 0
     turn: 0
     tag_in_range: 
-  always_activate: 0
-  forward_ray_start: 1
-  forward_ray_length: 0
-  stand_ray_start: 1
-  stand_ray_length: 0
---- !u!114 &6804208745599682361
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2631588940078508072}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e30c2bee0866cf40b33040a045d6730, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Tags:
-  - Prey
-  - Friend
-  - Addax
-  vision_range: 40
-  tagsinrange: []
 --- !u!1 &3013249937035034649
 GameObject:
   m_ObjectHideFlags: 0

@@ -43,11 +43,13 @@ public class AIControl : MonoBehaviour
     private void ResetNearby()
     {
         nearbyais = new List<AI>();
+        nearbytags = new List<AITags>();
         for (i = 0; i < ais.Count; i++)
         {
-            if (ais[i] == null)
+            if (ais[i] == null || tags[i] == null)
             {
                 ais.RemoveAt(i);
+                tags.RemoveAt(i);
                 i--;
                 continue;
             }
@@ -61,21 +63,8 @@ public class AIControl : MonoBehaviour
             }
             else if (ais[i].animator != null)
                 ais[i].animator.enabled = false;
-        }
-
-        nearbytags = new List<AITags>();
-        for (i = 0; i < tags.Count; i++)
-        {
-            if (tags[i] == null)
-            {
-                tags.RemoveAt(i);
-                i--;
-                continue;
-            }
 
             tags[i].ResetTags();
-
-            player_distance = Distance(player.position, tags[i].transform.position);
             if (player_distance <= ai_tag_range_from_player)
             {
                 nearbytags.Add(tags[i]);
@@ -129,14 +118,12 @@ public class AIControl : MonoBehaviour
         {
             if (tagindex >= resetframes)
             {
-                Debug.Log("reset > nearby" + tagindex.ToString());
                 tagindex = 0;
                 ResetNearby();
             }
         }
         else if (tagindex >= nearbytags.Count)
         {
-            Debug.Log("reset < nearby" + tagindex.ToString());
             tagindex = 0;
             ResetNearby();
         }
@@ -145,11 +132,7 @@ public class AIControl : MonoBehaviour
     public void AddAI(AI ai)
     {
         ais.Add(ai);
-    }
-
-    public void AddTag(AITags tag)
-    {
-        tags.Add(tag);
+        tags.Add(ai.GetTag());
     }
 
     public static float Distance(Vector3 a, Vector3 b)
