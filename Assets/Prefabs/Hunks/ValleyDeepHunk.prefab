@@ -226,6 +226,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6740344588066724157}
     m_Modifications:
+    - target: {fileID: 1446099753520190024, guid: a0ec383411f814341ad6b89a0ec98ff3, type: 3}
+      propertyPath: Bits.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1446099753520190024, guid: a0ec383411f814341ad6b89a0ec98ff3, type: 3}
+      propertyPath: Bits.Array.data[2].Prefab
+      value: 
+      objectReference: {fileID: 1908676258440653317, guid: d52750452ce5e9f40b6445b365dac9df, type: 3}
+    - target: {fileID: 1446099753520190024, guid: a0ec383411f814341ad6b89a0ec98ff3, type: 3}
+      propertyPath: Bits.Array.data[2].Weight
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1446099753520190025, guid: a0ec383411f814341ad6b89a0ec98ff3, type: 3}
       propertyPath: m_Name
       value: Chunk

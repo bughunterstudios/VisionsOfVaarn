@@ -724,6 +724,8 @@ GameObject:
   - component: {fileID: 1508372759788690581}
   - component: {fileID: 6734322107290110966}
   - component: {fileID: 2319819831543982651}
+  - component: {fileID: 2796626992788719003}
+  - component: {fileID: 6847953056234092498}
   m_Layer: 0
   m_Name: LittleTorino
   m_TagString: Untagged
@@ -951,3 +953,43 @@ MonoBehaviour:
     move: 0
     turn: 0
     tag_in_range: Friend
+--- !u!114 &2796626992788719003
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8517792412149325395}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d633035bba8883845b687369f2632e8e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 1
+  bones:
+  - {fileID: 6312868121442092619}
+  - {fileID: 8494677407837814889}
+  - {fileID: 3723874997190359402}
+  - {fileID: 2541881833728375052}
+  - {fileID: 8168394264734163194}
+  boneradius: 0.01
+  bonelimits: 45
+  destroyComponentsInObjects:
+  - {fileID: 3147791101540839226}
+  - {fileID: 1538498658033789418}
+  - {fileID: 6984254814525654540}
+  - {fileID: 2780280472457353440}
+--- !u!136 &6847953056234092498
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8517792412149325395}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.2562436
+  m_Height: 1.6002682
+  m_Direction: 2
+  m_Center: {x: 0, y: 0.47682923, z: 0.100134075}

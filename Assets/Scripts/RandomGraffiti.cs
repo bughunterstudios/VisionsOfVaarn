@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class RandomGraffiti : MonoBehaviour
 {
+    public bool random_color;
+    public Color set_color;
     public float emissionChance;
     public List<Texture2D> textures;
     public AnimationCurve size;
@@ -19,9 +21,18 @@ public class RandomGraffiti : MonoBehaviour
         newproj.Mat.mainTexture = textures[Random.Range(0, textures.Count)];
         ProjectionRenderer projectionrenderer = gameObject.AddComponent<ProjectionRenderer>();
         projectionrenderer.Projection = newproj;
-        projectionrenderer.SetColor(0, Random.ColorHSV());
-        if (Random.Range(0f, 1f) <= emissionChance)
-            projectionrenderer.SetColor(1, Random.ColorHSV() * 4f);
+        if (random_color)
+        {
+            projectionrenderer.SetColor(0, Random.ColorHSV());
+            if (Random.Range(0f, 1f) <= emissionChance)
+                projectionrenderer.SetColor(1, Random.ColorHSV() * 4f);
+        }
+        else
+        {
+            projectionrenderer.SetColor(0, set_color);
+            if (Random.Range(0f, 1f) <= emissionChance)
+                projectionrenderer.SetColor(1, set_color * 4f);
+        }
         projectionrenderer.MaskMethod = MaskMethod.OnlyDrawOn;
         projectionrenderer.MaskLayer1 = true;
         projectionrenderer.UpdateProjection();

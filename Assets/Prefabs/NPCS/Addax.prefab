@@ -215,6 +215,7 @@ GameObject:
   - component: {fileID: 7533195734291421378}
   - component: {fileID: 6634177114281716528}
   - component: {fileID: 5555360374866692623}
+  - component: {fileID: 2970025098153969615}
   m_Layer: 0
   m_Name: Addax
   m_TagString: Untagged
@@ -567,6 +568,38 @@ MonoBehaviour:
     move: 0
     turn: 0
     tag_in_range: 
+--- !u!114 &2970025098153969615
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2631588940078508072}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d633035bba8883845b687369f2632e8e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 4
+  bones:
+  - {fileID: 2539604491293234053}
+  - {fileID: 4476325122036721010}
+  - {fileID: 5386812255958826496}
+  - {fileID: 7375629276977828670}
+  - {fileID: 3036062287544619718}
+  - {fileID: 5263788610140523922}
+  - {fileID: 4102782016627058586}
+  - {fileID: 4817480915750469750}
+  - {fileID: 8284222674145938412}
+  - {fileID: 3288996516304945095}
+  - {fileID: 84190092045875065}
+  - {fileID: 5356585866758483872}
+  - {fileID: 3055912266390649243}
+  - {fileID: 3013249937035034649}
+  boneradius: 0.004
+  bonelimits: 45
+  destroyComponentsInObjects:
+  - {fileID: 5323685347561121862}
 --- !u!1 &3013249937035034649
 GameObject:
   m_ObjectHideFlags: 0

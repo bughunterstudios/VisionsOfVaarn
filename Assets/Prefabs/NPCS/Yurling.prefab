@@ -135,6 +135,8 @@ GameObject:
   - component: {fileID: 7336154390970778377}
   - component: {fileID: 4466308999667712734}
   - component: {fileID: 2914507805321324229}
+  - component: {fileID: 7810752631421459149}
+  - component: {fileID: 1537879358176966970}
   m_Layer: 0
   m_Name: Yurling
   m_TagString: Untagged
@@ -330,6 +332,50 @@ MonoBehaviour:
     move: 0
     turn: 0
     tag_in_range: 
+--- !u!114 &7810752631421459149
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4463039718649726687}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d633035bba8883845b687369f2632e8e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 3
+  bones:
+  - {fileID: 7716790311609921715}
+  - {fileID: 7758123792927541612}
+  - {fileID: 8977192167347482440}
+  - {fileID: 2853215469063342064}
+  - {fileID: 8014428095650401076}
+  - {fileID: 4373092562926220948}
+  - {fileID: 2551655248347746538}
+  - {fileID: 8758324781944622837}
+  - {fileID: 3180987199879288873}
+  - {fileID: 7957285656261763327}
+  boneradius: 0.001
+  bonelimits: 45
+  destroyComponentsInObjects:
+  - {fileID: 8692371551161796379}
+  - {fileID: 7758123792927541612}
+  - {fileID: 9064771200897855725}
+--- !u!136 &1537879358176966970
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4463039718649726687}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.4
+  m_Height: 1.2
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.7, z: 0}
 --- !u!1 &7716790311609921715
 GameObject:
   m_ObjectHideFlags: 0

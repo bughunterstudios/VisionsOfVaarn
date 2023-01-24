@@ -94,6 +94,9 @@ public class AIControl : MonoBehaviour
         // Check all other tags in range
         for (j = tagindex + 1; j < nearbytags.Count; j++)
         {
+            if (nearbytags[tagindex] == null)
+                break;
+
             if (nearbytags[j] == null)
                 continue;
 
