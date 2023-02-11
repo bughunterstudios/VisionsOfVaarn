@@ -10,17 +10,17 @@ public class Health : MonoBehaviour
     public float bonelimits;
     public List<GameObject> destroyComponentsInObjects;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    private bool killed;
 
     public void Damage(int value, float force)
     {
+        if (killed)
+            return;
+
         health -= value;
         if (health <= 0)
         {
+            killed = true;
             var components = GetComponents<Component>();
             foreach (GameObject obj in destroyComponentsInObjects)
             {

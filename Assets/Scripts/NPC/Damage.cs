@@ -10,7 +10,11 @@ public class Damage : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.GetComponent<Health>())
+        if (transform.IsChildOf(other.transform))
+            return;
+        var health = other.GetComponent<Health>();
+        var player_health = other.GetComponent<PlayerHealth>();
+        if (health != null || player_health != null)
         {
             int dmg = 0;
             if (dice == 0)
@@ -22,7 +26,10 @@ public class Damage : MonoBehaviour
                 for (int i = 0; i < dice; i++)
                     dmg += Random.Range(1, damage);
             }
-            other.GetComponent<Health>().Damage(dmg, force);
+            if (health != null)
+                health.Damage(dmg, force);
+            else if (player_health != null)
+                player_health.Damage(dmg, transform);
         }
     }
 }

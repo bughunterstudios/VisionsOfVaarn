@@ -151,11 +151,11 @@ public class AIControl : MonoBehaviour
         //return (float)System.Math.Sqrt(distanceSquared);
     }
 
-    void OnGUI()
+    /*void OnGUI()
     {
         GUI.Label(new Rect(0, 15, 200, 100), "AIS: " + ais.Count.ToString());
         GUI.Label(new Rect(0, 30, 200, 100), "Tags: " + tags.Count.ToString());
         GUI.Label(new Rect(0, 45, 200, 100), "Nearby AIS: " + nearbyais.Count.ToString());
         GUI.Label(new Rect(0, 60, 200, 100), "Nearby AI Tags: " + nearbytags.Count.ToString());
-    }
+    }*/
 }

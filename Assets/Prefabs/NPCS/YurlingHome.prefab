@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8407067518432595554}
+  - component: {fileID: 8255030592196446355}
   - component: {fileID: 156188579455591267}
   m_Layer: 0
   m_Name: SometimesYurling
@@ -31,6 +32,22 @@ Transform:
   m_Father: {fileID: 5088368407798204406}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8255030592196446355
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1058999188880089069}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7223294b0295810408a3bbddf356b27c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotationlimits: {x: 0, y: 180, z: 0}
+  translatelimits: {x: 0, y: 0, z: 0}
+  scalelimits: {x: 0, y: 0, z: 0}
+  discrete: 0
 --- !u!114 &156188579455591267
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -169,6 +186,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4757287222007003552}
+  - component: {fileID: 4035120716829803701}
   - component: {fileID: 8674381224416125713}
   m_Layer: 0
   m_Name: SometimesYurling (1)
@@ -191,6 +209,22 @@ Transform:
   m_Father: {fileID: 5088368407798204406}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4035120716829803701
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3338434530606721423}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7223294b0295810408a3bbddf356b27c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotationlimits: {x: 0, y: 180, z: 0}
+  translatelimits: {x: 0, y: 0, z: 0}
+  scalelimits: {x: 0, y: 0, z: 0}
+  discrete: 0
 --- !u!114 &8674381224416125713
 MonoBehaviour:
   m_ObjectHideFlags: 0

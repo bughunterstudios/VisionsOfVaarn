@@ -36,11 +36,17 @@ public class SunScript : MonoBehaviour
     {
         yield return new WaitForSeconds(0.1f);
 
-        star_particles = new ParticleSystem.Particle[stars.particleCount];
-        stars.GetParticles(star_particles);
+        if (stars != null)
+        {
+            star_particles = new ParticleSystem.Particle[stars.particleCount];
+            stars.GetParticles(star_particles);
+        }
 
-        satelite_particles = new ParticleSystem.Particle[satelites.particleCount];
-        satelites.GetParticles(satelite_particles);
+        if (satelites != null)
+        {
+            satelite_particles = new ParticleSystem.Particle[satelites.particleCount];
+            satelites.GetParticles(satelite_particles);
+        }
 
         transition = true;
     }

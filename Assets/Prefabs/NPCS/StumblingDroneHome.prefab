@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4166236639434895580}
+  - component: {fileID: 3736201350578824230}
   - component: {fileID: 8535569765740989098}
   m_Layer: 0
   m_Name: SomtimesDrone
@@ -31,6 +32,22 @@ Transform:
   m_Father: {fileID: 4408283404882147178}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3736201350578824230
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 779166596004746448}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7223294b0295810408a3bbddf356b27c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotationlimits: {x: 0, y: 180, z: 0}
+  translatelimits: {x: 0, y: 0, z: 0}
+  scalelimits: {x: 0, y: 0, z: 0}
+  discrete: 0
 --- !u!114 &8535569765740989098
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -58,6 +75,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3083544836787144834}
+  - component: {fileID: 1774784704986585674}
   - component: {fileID: 2073429234932208760}
   m_Layer: 0
   m_Name: SomtimesDrone
@@ -80,6 +98,22 @@ Transform:
   m_Father: {fileID: 4408283404882147178}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1774784704986585674
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1321564795068687473}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7223294b0295810408a3bbddf356b27c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotationlimits: {x: 0, y: 180, z: 0}
+  translatelimits: {x: 0, y: 0, z: 0}
+  scalelimits: {x: 0, y: 0, z: 0}
+  discrete: 0
 --- !u!114 &2073429234932208760
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -107,6 +141,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4158403523352283452}
+  - component: {fileID: 8157703337008143706}
   - component: {fileID: 275086534438949773}
   m_Layer: 0
   m_Name: SomtimesDrone
@@ -129,6 +164,22 @@ Transform:
   m_Father: {fileID: 4408283404882147178}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8157703337008143706
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6189171815934859539}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7223294b0295810408a3bbddf356b27c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotationlimits: {x: 0, y: 180, z: 0}
+  translatelimits: {x: 0, y: 0, z: 0}
+  scalelimits: {x: 0, y: 0, z: 0}
+  discrete: 0
 --- !u!114 &275086534438949773
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -269,6 +320,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1088530945121222398}
+  - component: {fileID: 5717790556895763572}
   - component: {fileID: 8762385098351989759}
   m_Layer: 0
   m_Name: SomtimesDrone
@@ -291,6 +343,22 @@ Transform:
   m_Father: {fileID: 4408283404882147178}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5717790556895763572
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8431451380547448689}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7223294b0295810408a3bbddf356b27c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotationlimits: {x: 0, y: 180, z: 0}
+  translatelimits: {x: 0, y: 0, z: 0}
+  scalelimits: {x: 0, y: 0, z: 0}
+  discrete: 0
 --- !u!114 &8762385098351989759
 MonoBehaviour:
   m_ObjectHideFlags: 0

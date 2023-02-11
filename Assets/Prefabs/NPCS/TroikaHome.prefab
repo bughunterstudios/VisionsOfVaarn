@@ -119,6 +119,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6294440583490424997}
+  - component: {fileID: 2749679481117260699}
   - component: {fileID: 2439644428386041252}
   m_Layer: 0
   m_Name: Troika
@@ -141,6 +142,22 @@ Transform:
   m_Father: {fileID: 7308281280208591153}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2749679481117260699
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3261711307824841002}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7223294b0295810408a3bbddf356b27c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotationlimits: {x: 0, y: 180, z: 0}
+  translatelimits: {x: 0, y: 0, z: 0}
+  scalelimits: {x: 0, y: 0, z: 0}
+  discrete: 0
 --- !u!114 &2439644428386041252
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -7,6 +7,6 @@ public class AddToMusicSilencer : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Camera.main.GetComponentInChildren<MusicSilencer>().AddObject(transform);
+        GameObject.Find("Sounds").GetComponentInChildren<MusicSilencer>().AddObject(transform);
     }
 }

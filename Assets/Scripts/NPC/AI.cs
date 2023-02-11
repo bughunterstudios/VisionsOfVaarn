@@ -9,6 +9,7 @@ public class AI : MonoBehaviour
     public Rigidbody rb;
     public Animator animator;
     public AimConstraint headaim;
+    public GameObject normal_surface_child;
 
     public float movespeed;
     private float movevelocity;
@@ -54,6 +55,8 @@ public class AI : MonoBehaviour
     private bool forwardintersect;
     private bool downintersect;
 
+    private Vector3 normal;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -74,7 +77,7 @@ public class AI : MonoBehaviour
         cam = Camera.main.transform;
         aitags = GetComponent<AITags>();
         layer_mask = ~LayerMask.GetMask("Ignore Raycast");
-        moving_object_mask = LayerMask.GetMask("MovingObject");
+        moving_object_mask = layer_mask;//LayerMask.GetMask("MovingObject");
 
         stand_ray_pos = transform.position + (transform.TransformDirection(Vector3.down) * stand_ray_start);
         forward_ray_pos = transform.position + (transform.up * 1) + (transform.TransformDirection(Vector3.forward) * forward_ray_start);
@@ -87,7 +90,7 @@ public class AI : MonoBehaviour
         return aitags;
     }
 
-    /*private void OnDrawGizmos()
+    private void OnDrawGizmos()
     {
         stand_ray_pos = transform.position + (transform.TransformDirection(Vector3.down) * stand_ray_start);
         forward_ray_pos = transform.position + (transform.up * 1) + (transform.TransformDirection(Vector3.forward) * forward_ray_start);
@@ -102,6 +105,7 @@ public class AI : MonoBehaviour
         //Check for following moving object
         if (controller != null && movespeed > 0 && stand_ray_length > 0)
         {
+            stand_ray_pos = transform.position + (transform.TransformDirection(Vector3.down) * stand_ray_start);
             if (Physics.Raycast(stand_ray_pos, Vector3.down, out hit, stand_ray_length, moving_object_mask))
             {
                 if (hit.transform == movingobject)
@@ -114,9 +118,19 @@ public class AI : MonoBehaviour
                 previousposition = movingobject.position;
                 previousrotation = movingobject.eulerAngles.y;
                 downintersect = true;
+
+                if (normal_surface_child != null)
+                {
+                    normal = hit.normal;
+                }
             }
             else
                 downintersect = false;
+        }
+
+        if (normal_surface_child != null)
+        {
+            normal_surface_child.transform.localRotation = Quaternion.Slerp(normal_surface_child.transform.localRotation, Quaternion.FromToRotation(transform.up, normal), Time.deltaTime);
         }
 
         waittime -= Time.deltaTime;
@@ -130,6 +144,7 @@ public class AI : MonoBehaviour
         {
             if (selectedmood.move != 0 && selectedmood.turn == 0 && movespeed > 0 && selectedmood.tag_in_range == "")
             {
+                forward_ray_pos = transform.position + (transform.up * 1) + (transform.TransformDirection(Vector3.forward) * forward_ray_start);
                 if (Physics.Raycast(forward_ray_pos, transform.TransformDirection(Vector3.forward), out hit, forward_ray_length, layer_mask))
                 {
                     // // Set mood time
