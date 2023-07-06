@@ -2,10 +2,6 @@
 #define __PSXEFFECTS_CGINC__
 
 sampler2D _MainTex;
-float _HeightMin;
-float _HeightMax;
-fixed4 _ColorMin;
-fixed4 _ColorMax;
 sampler2D _EmissionMap;
 sampler2D _NormalMap;
 sampler2D _SpecularMap;

@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1490758942931811268}
   - component: {fileID: 2807503024968060270}
+  - component: {fileID: 8873468524983576302}
   m_Layer: 0
   m_Name: RuinInnerChunk
   m_TagString: Untagged
@@ -39,6 +40,54 @@ MonoBehaviour:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 239568735182897842}
   m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70a1c106998d404459f36e33baf28ca0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Bits:
+  - Weight: 1
+    Prefab: {fileID: 1275163788343110045, guid: 96bd3ec784bf29b4d9ca241b6819b521, type: 3}
+  - Weight: 0
+    Prefab: {fileID: 8581711439864285935, guid: 9785038b496abaf4f8e57b85c41f9662, type: 3}
+  - Weight: 0
+    Prefab: {fileID: 5086685724297485199, guid: 7ef70289193d42e47a2f9c2e61c950fb, type: 3}
+  - Weight: 0
+    Prefab: {fileID: 3082526439942318130, guid: 3761e4a984c598a4a87c29ed07fa1e6b, type: 3}
+  - Weight: 0
+    Prefab: {fileID: 8691482260056549794, guid: 0648bafdbfc48754d8e1ba24f9a4cfa0, type: 3}
+  - Weight: 0
+    Prefab: {fileID: 5531540784764913097, guid: 522ea12c6178d0b4abb3f43e78d0eed1, type: 3}
+  - Weight: 0
+    Prefab: {fileID: 6112829250866001823, guid: 8a630fb710201c64eb32cbba352da5bf, type: 3}
+  - Weight: 0
+    Prefab: {fileID: 1115978279233846818, guid: e63f9a25f23603a449f9bbe84309af73, type: 3}
+  - Weight: 3
+    Prefab: {fileID: 4732371765883024081, guid: 6966943802059e34f9c94a2f18278c70, type: 3}
+  - Weight: 3
+    Prefab: {fileID: 699903177915828100, guid: 948fa1978438eeb46bdf11b746c4771d, type: 3}
+  - Weight: 3
+    Prefab: {fileID: 3802875560497543076, guid: 6e74dd24d57aa0447b6dad541a759f22, type: 3}
+  - Weight: 3
+    Prefab: {fileID: 7970577659988538241, guid: 3ffe9c0eaa11e2845a97fbd24b218ce2, type: 3}
+  - Weight: 0
+    Prefab: {fileID: 7859000517384764508, guid: 2a6fdb452798be04687fdc83b9f23bf2, type: 3}
+  - Weight: 3
+    Prefab: {fileID: 1085303598271056594, guid: 5b73c908ca49b9e418d621b130274a43, type: 3}
+  - Weight: 0
+    Prefab: {fileID: 6414404269755434252, guid: e42692fd98660a74cbe58c69c68c52a8, type: 3}
+  - Weight: 1
+    Prefab: {fileID: 4377671906210722909, guid: 1cbb25af01e0e2342b66ecc2869d13ad, type: 3}
+  - Weight: 1
+    Prefab: {fileID: 1908676258440653317, guid: d52750452ce5e9f40b6445b365dac9df, type: 3}
+  player_distance: -1
+--- !u!114 &8873468524983576302
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 239568735182897842}
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 70a1c106998d404459f36e33baf28ca0, type: 3}
   m_Name: 

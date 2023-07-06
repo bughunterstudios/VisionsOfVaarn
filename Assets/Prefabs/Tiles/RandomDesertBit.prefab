@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3893404835823299603}
-  - component: {fileID: 8140936884548913458}
+  - component: {fileID: 879699181741705009}
   m_Layer: 0
   m_Name: RandomDesertBit
   m_TagString: Untagged
@@ -31,7 +31,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8140936884548913458
+--- !u!114 &879699181741705009
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -40,14 +40,298 @@ MonoBehaviour:
   m_GameObject: {fileID: 3490182523244829317}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 70a1c106998d404459f36e33baf28ca0, type: 3}
+  m_Script: {fileID: 11500000, guid: c519b82087930424cbc03a2c1bb50327, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Bits:
-  - Weight: 1500
-    Prefab: {fileID: 2771739825291290316, guid: 139ad9af39ab5794196fa425344f8449, type: 3}
-  - Weight: 10
+  - Base_Weight: 1500
+    Max_Weight: 0
+    InfluenceCurve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 0
+      m_PostInfinity: 0
+      m_RotationOrder: 0
+    Prefab: {fileID: 0}
+    EffectingRegions: 
+  - Base_Weight: 10
+    Max_Weight: 30
+    InfluenceCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 0
     Prefab: {fileID: 6235487561536788545, guid: b002dc17d534d8441b5d63bb908e7862, type: 3}
-  - Weight: 1
+    EffectingRegions: 0400000005000000060000000700000008000000090000000a0000000b0000000c0000000e0000000f00000010000000
+  - Base_Weight: 1
+    Max_Weight: 5
+    InfluenceCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 0
     Prefab: {fileID: 9118832360827894846, guid: 7252d54f8b2d3b74fbf8d012291c9ed0, type: 3}
+    EffectingRegions: 0400000005000000060000000700000008000000090000000a0000000b0000000c0000000e0000000f00000010000000
+  - Base_Weight: 0
+    Max_Weight: 1000
+    InfluenceCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 0
+    Prefab: {fileID: 2138807532965439214, guid: c2ab5cda5dfc20844968f41c115bdc79, type: 3}
+    EffectingRegions: 0d000000
+  - Base_Weight: 0
+    Max_Weight: 1000
+    InfluenceCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 0
+    Prefab: {fileID: 4410290261680583579, guid: f557c47945fc3be4684afcae0b5a1586, type: 3}
+    EffectingRegions: 13000000
+  - Base_Weight: 0
+    Max_Weight: 1000
+    InfluenceCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 0
+    Prefab: {fileID: 1847090450513678068, guid: a239ea20cf5fda549ba712d914a5b969, type: 3}
+    EffectingRegions: 12000000
+  - Base_Weight: 0
+    Max_Weight: 1000
+    InfluenceCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 0
+    Prefab: {fileID: 1814921659513814012, guid: aafb69d9dbeafd64eb503bafbf533964, type: 3}
+    EffectingRegions: 0c000000
+  - Base_Weight: 0
+    Max_Weight: 1000
+    InfluenceCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 0
+    Prefab: {fileID: 6453715422112889396, guid: 86a12f614554cf14ca3f0705b0bfe802, type: 3}
+    EffectingRegions: 0e000000
+  - Base_Weight: 0
+    Max_Weight: 1000
+    InfluenceCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 0
+    Prefab: {fileID: 2849612572372507812, guid: 8c24764e8fe3ef34bab26af48b7ab10d, type: 3}
+    EffectingRegions: 0f000000
+  - Base_Weight: 0
+    Max_Weight: 1000
+    InfluenceCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 0
+    Prefab: {fileID: 4927575320071697122, guid: 5743eec17561a1d489087bd28e17855c, type: 3}
+    EffectingRegions: 11000000
+  - Base_Weight: 0
+    Max_Weight: 1000
+    InfluenceCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 0
+    Prefab: {fileID: 6075382469278653863, guid: d7ceb3ca6bfc5bf4985b919f53cdeaf4, type: 3}
+    EffectingRegions: 10000000
   player_distance: -1

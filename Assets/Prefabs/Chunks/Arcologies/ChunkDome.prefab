@@ -149,7 +149,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1219391779752766362}
-  - {fileID: 6817441368666950838}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -165,21 +164,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71afeb5ee9614d546b9ea331c678b739, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1001 &3495203137419473823
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 6946008773698655442}
-    m_Modifications:
-    - target: {fileID: 7934531592931098409, guid: c140194794c1a4f439e5bee88bcf5f88, type: 3}
-      propertyPath: m_RootOrder
-      value: 1
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: c140194794c1a4f439e5bee88bcf5f88, type: 3}
---- !u!4 &6817441368666950838 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 7934531592931098409, guid: c140194794c1a4f439e5bee88bcf5f88, type: 3}
-  m_PrefabInstance: {fileID: 3495203137419473823}
-  m_PrefabAsset: {fileID: 0}

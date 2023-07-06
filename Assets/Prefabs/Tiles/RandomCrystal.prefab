@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4410290261680583578}
   - component: {fileID: 1249919132547876688}
+  - component: {fileID: 4879454983793394276}
   m_Layer: 0
   m_Name: RandomCrystal
   m_TagString: Untagged
@@ -29,7 +30,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1026634045176727662}
-  - {fileID: 1374273538417994841}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -43,6 +43,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 71afeb5ee9614d546b9ea331c678b739, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &4879454983793394276
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4410290261680583579}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60334810f9e60e24e9d65edc58328d48, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &6260899068151424759
@@ -180,21 +192,3 @@ MonoBehaviour:
   inheritmaterialchance: 0
   inherittag: 
   mat_count: 1
---- !u!1001 &3242938594615814752
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 4410290261680583578}
-    m_Modifications:
-    - target: {fileID: 4473022178163770937, guid: b43fa0cabb4d7024da15eaee71619b7b, type: 3}
-      propertyPath: m_RootOrder
-      value: 1
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: b43fa0cabb4d7024da15eaee71619b7b, type: 3}
---- !u!4 &1374273538417994841 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4473022178163770937, guid: b43fa0cabb4d7024da15eaee71619b7b, type: 3}
-  m_PrefabInstance: {fileID: 3242938594615814752}
-  m_PrefabAsset: {fileID: 0}

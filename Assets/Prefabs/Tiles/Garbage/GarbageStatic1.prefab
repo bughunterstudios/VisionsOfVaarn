@@ -125,6 +125,7 @@ MonoBehaviour:
   inheritmaterialchance: 1
   inherittag: Garbage
   mat_count: 1
+  from_noise_color: 0
 --- !u!1 &3873623155619732222
 GameObject:
   m_ObjectHideFlags: 0
@@ -134,6 +135,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3873623155619732100}
+  - component: {fileID: 3836335703014397299}
   - component: {fileID: 3873623155619729843}
   m_Layer: 0
   m_Name: GarbageStatic1
@@ -154,10 +156,25 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4615202851251132958}
-  - {fileID: 1304738931551722631}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3836335703014397299
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3873623155619732222}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60334810f9e60e24e9d65edc58328d48, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AlignToNormal: 1
+  AverageOfCorners: 1
+  BottomOfCorners: 0
+  CornerDistance: 4
 --- !u!114 &3873623155619729843
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -170,6 +187,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71afeb5ee9614d546b9ea331c678b739, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  FrameStep: 0
 --- !u!1 &5496654204479095970
 GameObject:
   m_ObjectHideFlags: 0
@@ -245,6 +263,7 @@ MonoBehaviour:
   inheritmaterialchance: 0
   inherittag: Garbage
   mat_count: 5
+  from_noise_color: 0
 --- !u!114 &9203838739048093328
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -273,6 +292,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71afeb5ee9614d546b9ea331c678b739, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  FrameStep: 0
 --- !u!205 &6433986734542557572
 LODGroup:
   m_ObjectHideFlags: 0
@@ -421,21 +441,4 @@ MonoBehaviour:
   inheritmaterialchance: 1
   inherittag: Garbage
   mat_count: 1
---- !u!1001 &3172786890598652606
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 3873623155619732100}
-    m_Modifications:
-    - target: {fileID: 4473022178163770937, guid: b43fa0cabb4d7024da15eaee71619b7b, type: 3}
-      propertyPath: m_RootOrder
-      value: 1
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: b43fa0cabb4d7024da15eaee71619b7b, type: 3}
---- !u!4 &1304738931551722631 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4473022178163770937, guid: b43fa0cabb4d7024da15eaee71619b7b, type: 3}
-  m_PrefabInstance: {fileID: 3172786890598652606}
-  m_PrefabAsset: {fileID: 0}
+  from_noise_color: 0

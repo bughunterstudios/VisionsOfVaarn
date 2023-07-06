@@ -41,7 +41,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1703888867606242539}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 774ea02cc137e1d408c71fcea451e1b7, type: 3}
   m_Name: 
@@ -65,6 +65,7 @@ MonoBehaviour:
   inheritmaterialchance: 0.7
   inherittag: Mesa
   mat_count: 7
+  from_noise_color: 0
 --- !u!114 &4355675205233744937
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -77,6 +78,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71afeb5ee9614d546b9ea331c678b739, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  FrameStep: 0
 --- !u!205 &500523437398843745
 LODGroup:
   m_ObjectHideFlags: 0
@@ -145,6 +147,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71afeb5ee9614d546b9ea331c678b739, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  FrameStep: 0
 --- !u!1 &3026971862270842068
 GameObject:
   m_ObjectHideFlags: 0
@@ -258,6 +261,7 @@ MonoBehaviour:
   inheritmaterialchance: 1
   inherittag: Mesa
   mat_count: 1
+  from_noise_color: 1
 --- !u!1 &8656121311206821324
 GameObject:
   m_ObjectHideFlags: 0
@@ -386,3 +390,4 @@ MonoBehaviour:
   inheritmaterialchance: 1
   inherittag: Mesa
   mat_count: 1
+  from_noise_color: 1

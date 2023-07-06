@@ -222,7 +222,6 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 8493445079376790183}
   - {fileID: 2641193432038528702}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -239,6 +238,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71afeb5ee9614d546b9ea331c678b739, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  FrameStep: 0
 --- !u!1 &1963774856564162616
 GameObject:
   m_ObjectHideFlags: 0
@@ -821,55 +821,6 @@ MonoBehaviour:
     m_RotationOrder: 4
   size_min: 1
   size_max: 1
---- !u!1 &4948545269046996494
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 8493445079376790183}
-  - component: {fileID: 7690637205471031268}
-  m_Layer: 0
-  m_Name: SometimesDune
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &8493445079376790183
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4948545269046996494}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1908676258440653319}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7690637205471031268
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4948545269046996494}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 70a1c106998d404459f36e33baf28ca0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Bits:
-  - Weight: 5
-    Prefab: {fileID: 7754458176935965822, guid: 6183a5f13c7b3eb4bb18350123e2c87e, type: 3}
-  - Weight: 1
-    Prefab: {fileID: 5086685724297485199, guid: 7ef70289193d42e47a2f9c2e61c950fb, type: 3}
-  player_distance: -1
 --- !u!1 &5352431701880293487
 GameObject:
   m_ObjectHideFlags: 0
@@ -879,6 +830,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2641193432038528702}
+  - component: {fileID: 6343095258596355800}
   - component: {fileID: 2524688513267087210}
   - component: {fileID: 8080399901748191965}
   m_Layer: 0
@@ -911,8 +863,24 @@ Transform:
   - {fileID: 952897685386063771}
   - {fileID: 6164773256172298688}
   m_Father: {fileID: 1908676258440653319}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6343095258596355800
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5352431701880293487}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60334810f9e60e24e9d65edc58328d48, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AlignToNormal: 1
+  AverageOfCorners: 0
+  BottomOfCorners: 0
+  CornerDistance: 10
 --- !u!114 &2524688513267087210
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -941,6 +909,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71afeb5ee9614d546b9ea331c678b739, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  FrameStep: 0
 --- !u!1 &6895754052163641395
 GameObject:
   m_ObjectHideFlags: 0
@@ -1157,7 +1126,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8950493793876479872}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.92, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2641193432038528702}
@@ -1795,7 +1764,7 @@ ParticleSystem:
     length: 5
     boxThickness: {x: 0, y: 0, z: 0}
     radiusThickness: 1
-    donutRadius: 0.2
+    donutRadius: 0.0001
     m_Position: {x: 0, y: 0, z: 0}
     m_Rotation: {x: 90, y: 0, z: 0}
     m_Scale: {x: 1, y: 1, z: 1}
@@ -1877,7 +1846,7 @@ ParticleSystem:
     sphericalDirectionAmount: 0
     randomPositionAmount: 0
     radius:
-      value: 18.51
+      value: 18.4
       mode: 0
       spread: 0
       speed:
@@ -3979,7 +3948,7 @@ ParticleSystem:
     scrollSpeed:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0
+      scalar: 0.18
       minScalar: 0
       maxCurve:
         serializedVersion: 2

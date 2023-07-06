@@ -58,6 +58,7 @@ GameObject:
   - component: {fileID: 5036346718674646745}
   - component: {fileID: 6418313716539504422}
   - component: {fileID: 3119636747800837657}
+  - component: {fileID: 8024955631265825241}
   m_Layer: 0
   m_Name: WormTrail
   m_TagString: Untagged
@@ -142,3 +143,21 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -704082365725878761, guid: ede91e63cae5bf540a00f4b7eb8f979f, type: 3}
+--- !u!114 &8024955631265825241
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9011039000621555650}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 774ea02cc137e1d408c71fcea451e1b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Mats: []
+  oninit: 1
+  inheritmaterialchance: 0
+  inherittag: 
+  mat_count: 1
+  from_noise_color: 1

@@ -167,7 +167,7 @@ Transform:
   - {fileID: 8641950388222795023}
   - {fileID: 5658018795288989877}
   m_Father: {fileID: 463380728635336780}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &6142705334441911987
 MonoBehaviour:
@@ -269,6 +269,7 @@ GameObject:
   m_Component:
   - component: {fileID: 463380728635336780}
   - component: {fileID: 4522958934354361265}
+  - component: {fileID: 607871448138906025}
   m_Layer: 0
   m_Name: HologramBillboard
   m_TagString: Untagged
@@ -287,7 +288,6 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 6261538419539577304}
   - {fileID: 2632123242279488776}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -302,6 +302,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 71afeb5ee9614d546b9ea331c678b739, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &607871448138906025
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4791866769049033399}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60334810f9e60e24e9d65edc58328d48, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &4933060056167672293
@@ -639,21 +651,3 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!1001 &7563278789442752481
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 463380728635336780}
-    m_Modifications:
-    - target: {fileID: 4473022178163770937, guid: b43fa0cabb4d7024da15eaee71619b7b, type: 3}
-      propertyPath: m_RootOrder
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: b43fa0cabb4d7024da15eaee71619b7b, type: 3}
---- !u!4 &6261538419539577304 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4473022178163770937, guid: b43fa0cabb4d7024da15eaee71619b7b, type: 3}
-  m_PrefabInstance: {fileID: 7563278789442752481}
-  m_PrefabAsset: {fileID: 0}

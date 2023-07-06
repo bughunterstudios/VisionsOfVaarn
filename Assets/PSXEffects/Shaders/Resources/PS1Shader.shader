@@ -8,10 +8,6 @@ Shader "PSXEffects/PS1Shader"
 		_Color("Color", Color) = (1,1,1,1)
 		[KeywordEnum(Vertex, Fragment)] _DiffModel("Diffuse Model", Float) = 0.0
 		_MainTex("Texture", 2D) = "white" {}
-		_HeightMin("Height Min", Float) = -1
-		_HeightMax("Height Max", Float) = 1
-		_ColorMin("Tint Color At Min", Color) = (0,0,0,1)
-		_ColorMax("Tint Color At Max", Color) = (1,1,1,1)
 		_DetailAlbedoMap("Detail Texture", 2D) = "white" {}
 		_LODTex("LOD Texture", 2D) = "white" {}
 		_LODAmt("LOD Amount", Float) = 0.0
@@ -84,11 +80,6 @@ Shader "PSXEffects/PS1Shader"
 			#pragma shader_feature_local _METAL_MAP
 			#pragma shader_feature_local _CUBE_MAP
 			#pragma shader_feature_local _LOD_TEX
-
-			#pragma shader_feature_local _HeightMin
-			#pragma shader_feature_local _HeightMax
-			#pragma shader_feature_local _ColorMin
-			#pragma shader_feature_local _ColorMax
 
 			#pragma target 3.0
 

@@ -18,16 +18,17 @@ public class Seed
 }
 
 [System.Serializable]
-public class SetHunk
+public class SetChunk
 {
     public int X, Y;
     public GameObject Prefab;
 }
 
 [System.Serializable]
-public class RandomHunk
+public class RandomChunk
 {
     public int Weight;
+    public bool Tiles;
     public GameObject Prefab;
 }
 
@@ -35,8 +36,10 @@ public class GenerateWorld : MonoBehaviour
 {
     public int seedoffset;
     public Transform player;
-    public List<SetHunk> SetHunks;
-    public List<RandomHunk> Hunks;
+    public GameObject DynamicGround;
+    public List<SetChunk> SetHunks;
+    public List<RandomChunk> RandomChunks;
+    public List<RandomBit_NoiseWeighted> Tiles;
     public int scale;
     public int viewscale;
 
@@ -47,9 +50,21 @@ public class GenerateWorld : MonoBehaviour
 
     private bool[,] mask;
 
+    private List<Transform> tile_queue_parent;
+    private List<Seed> tile_queue_seed;
+    private float totalweight;
+    private float chosenvalue;
+    private Region region;
+    private float smooth;
+    private int sub_x;
+    private int sub_y;
+
     // Start is called before the first frame update
     void Start()
     {
+        tile_queue_parent = new List<Transform>();
+        tile_queue_seed = new List<Seed>();
+
         Initialize();
     }
 
@@ -72,6 +87,11 @@ public class GenerateWorld : MonoBehaviour
         }
     }
 
+    void OnGUI()
+    {
+        GUI.Label(new Rect(0, 15, 100, 100), tile_queue_parent.Count.ToString());
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -85,8 +105,53 @@ public class GenerateWorld : MonoBehaviour
             X = new_X;
             Y = new_Y;
             Shift(change_X, change_Y);
+        }
 
-            //Debug.Log(X.ToString() + ", " + Y.ToString());
+        if (tile_queue_parent.Count > 0)
+        {
+            if (tile_queue_parent[0] == null)
+            {
+                tile_queue_parent.RemoveAt(0);
+                tile_queue_seed.RemoveAt(0);
+            }
+            else
+            {
+                for (sub_x = -20; sub_x <= 20; sub_x += 10)
+                {
+                    for (sub_y = -20; sub_y <= 20; sub_y += 10)
+                    {
+                        region = NoiseControl.Tile_Regions_value(tile_queue_parent[0].position.x + sub_x, tile_queue_parent[0].position.z + sub_y);
+                        smooth = NoiseControl.Regions_smooth(tile_queue_parent[0].position.x + sub_x, tile_queue_parent[0].position.z + sub_y);
+
+                        totalweight = 0;
+                        foreach (RandomBit_NoiseWeighted tile in Tiles)
+                        {
+                            totalweight += tile.GetWeight(region, smooth);
+                        }
+                        Random.InitState(tile_queue_seed[0].seed);
+                        Seed newseed = new Seed(Random.Range(int.MinValue, int.MaxValue), tile_queue_seed[0].X, tile_queue_seed[0].Y);
+                        tile_queue_seed[0] = newseed;
+                        chosenvalue = Random.Range(0f, totalweight);
+                        totalweight = 0;
+                        foreach (RandomBit_NoiseWeighted tile in Tiles)
+                        {
+                            totalweight += tile.GetWeight(region, smooth);
+                            if (chosenvalue <= totalweight)
+                            {
+                                if (tile.Prefab != null)
+                                {
+                                    GameObject newtile = Instantiate(tile.Prefab, tile_queue_parent[0]);
+                                    newtile.transform.position = new Vector3(tile_queue_parent[0].position.x + sub_x, 0, tile_queue_parent[0].position.z + sub_y);
+                                    newtile.SendMessage("Generate", newseed, SendMessageOptions.DontRequireReceiver);
+                                }
+                                break;
+                            }
+                        }
+                    }
+                }
+                tile_queue_parent.RemoveAt(0);
+                tile_queue_seed.RemoveAt(0);
+            }
         }
     }
 
@@ -118,91 +183,53 @@ public class GenerateWorld : MonoBehaviour
 
     private GameObject GenerateChunk(int x, int y)
     {
-        int hunk_X = Mathf.RoundToInt(x / 5f);
-        int hunk_Y = Mathf.RoundToInt(y / 5f);
-
-        Random.InitState(seedoffset);
-        Random.InitState(Random.Range(int.MinValue, int.MaxValue) + hunk_X);
-        Random.InitState(Random.Range(int.MinValue, int.MaxValue) + hunk_Y);
-
-        GameObject chosenhunk = ChooseObject(Hunks);
-
         Random.InitState(seedoffset);
         Random.InitState(Random.Range(int.MinValue, int.MaxValue) + x);
         Random.InitState(Random.Range(int.MinValue, int.MaxValue) + y);
         Seed seed = new Seed(Random.Range(int.MinValue, int.MaxValue), x, y);
 
-        foreach (SetHunk C in SetHunks)
+        GameObject chunk = new GameObject();
+        chunk.name = "Chunk " + x.ToString() + ", " + y.ToString();
+        chunk.transform.SetParent(transform);
+        chunk.transform.position = new Vector3(x * scale, 0, y * scale);
+
+        GameObject ground = Instantiate(DynamicGround, chunk.transform);
+        ground.transform.position = new Vector3(x * scale, 0, y * scale);
+        ground.SendMessage("Generate", seed, SendMessageOptions.DontRequireReceiver);
+
+        RandomChunk chosen = ChooseObject(RandomChunks);
+
+        if (chosen.Tiles)
         {
-            if (C.X == hunk_X && C.Y == hunk_Y)
-                chosenhunk = C.Prefab;
+            tile_queue_parent.Add(chunk.transform);
+            tile_queue_seed.Add(seed);
+        }
+        else
+        {
+            GameObject chunk_child = Instantiate(chosen.Prefab, chunk.transform);
+            chunk_child.transform.position = new Vector3(x * scale, 0, y * scale);
+            chunk_child.SendMessage("Generate", seed, SendMessageOptions.DontRequireReceiver);
         }
 
-        if (chosenhunk)
-        {
-            int inner_x = (x - (hunk_X * 5)) * scale;
-            int inner_y = (y - (hunk_Y * 5)) * scale;
-
-            for (int i = 0; i < chosenhunk.transform.childCount; i++)
-            {
-                if (chosenhunk.transform.GetChild(i).transform.localPosition.x == inner_x &&
-                    chosenhunk.transform.GetChild(i).transform.localPosition.z == inner_y)
-                {
-                    //Copy components of chosen hunk to a new parent.
-                    GameObject chunk_parent = new GameObject();
-                    var components = chosenhunk.GetComponents<Component>();
-                    for (int j = 0; j < components.Length; j++)
-                    {
-                        if (components[j].GetType() != typeof(Transform))
-                            CopyComponent(components[j], chunk_parent);
-                    }
-                    chunk_parent.name = chosenhunk.name;
-                    chunk_parent.transform.SetParent(transform);
-                    chunk_parent.transform.position = new Vector3(x * scale, 0, y * scale);
-                    if (components.Length > 0)
-                    {
-                        Random.InitState(seedoffset);
-                        Random.InitState(Random.Range(int.MinValue, int.MaxValue) + hunk_X);
-                        Random.InitState(Random.Range(int.MinValue, int.MaxValue) + hunk_Y);
-                        Seed hunk_seed = new Seed(Random.Range(int.MinValue, int.MaxValue), x, y);
-                        chunk_parent.SendMessage("Generate", hunk_seed, SendMessageOptions.DontRequireReceiver);
-                    }
-
-                    GameObject chunk = Instantiate(chosenhunk.transform.GetChild(i).gameObject, chunk_parent.transform);
-                    chunk.transform.position = new Vector3(x * scale, chunk.transform.position.y, y * scale);
-                    chunk.SendMessage("Generate", seed, SendMessageOptions.DontRequireReceiver);
-                    return chunk_parent;
-                }
-            }
-        }
-
-        return null;
+        return chunk;
     }
 
-    public static T CopyComponent<T>(T original, GameObject destination) where T : Component
+    private RandomChunk ChooseObject(List<RandomChunk> randomchunks)
     {
-        var type = original.GetType();
-        var copy = destination.AddComponent(type);
-        var fields = type.GetFields();
-        foreach (var field in fields) field.SetValue(copy, field.GetValue(original));
-        return copy as T;
-    }
 
-    private GameObject ChooseObject(List<RandomHunk> randomhunks)
-    {
         int totalweight = 0;
-        foreach (RandomHunk Hunk in randomhunks)
+        foreach (RandomChunk Chunk in RandomChunks)
         {
-            totalweight += Hunk.Weight;
+            totalweight += Chunk.Weight;
         }
         int chosenvalue = Random.Range(1, totalweight + 1);
         totalweight = 0;
-        foreach (RandomHunk Hunk in randomhunks)
+        foreach (RandomChunk Chunk in randomchunks)
         {
-            totalweight += Hunk.Weight;
+            totalweight += Chunk.Weight;
             if (chosenvalue <= totalweight)
             {
-                return Hunk.Prefab;
+                return Chunk;
             }
         }
 

@@ -113,6 +113,7 @@ MonoBehaviour:
   inheritmaterialchance: 0.7
   inherittag: Mesa
   mat_count: 1
+  from_noise_color: 1
 --- !u!1 &4641141524114298957
 GameObject:
   m_ObjectHideFlags: 0
@@ -158,6 +159,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71afeb5ee9614d546b9ea331c678b739, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  FrameStep: 0
 --- !u!205 &5854678620293176775
 LODGroup:
   m_ObjectHideFlags: 0

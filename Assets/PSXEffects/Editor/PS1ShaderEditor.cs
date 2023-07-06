@@ -69,10 +69,6 @@ public class PS1ShaderEditor : ShaderGUI
 	}
 
 	MaterialProperty _MainTex = null;
-	MaterialProperty _HeightMin = null;
-	MaterialProperty _HeightMax = null;
-	MaterialProperty _ColorMin = null;
-	MaterialProperty _ColorMax = null;
 	MaterialProperty _Color = null;
 	MaterialProperty _RenderMode = null;
 	MaterialProperty _BlendOp = null;
@@ -97,10 +93,6 @@ public class PS1ShaderEditor : ShaderGUI
 
 	public void FindProperties(MaterialProperty[] props) {
 		_MainTex = FindProperty("_MainTex", props);
-		_HeightMin = FindProperty("_HeightMin", props);
-		_HeightMax = FindProperty("_HeightMax", props);
-		_ColorMin = FindProperty("_ColorMin", props);
-		_ColorMax = FindProperty("_ColorMax", props);
 		_Color = FindProperty("_Color", props);
 		_RenderMode = FindProperty("_RenderMode", props);
 		_BlendOp = FindProperty("_BlendOp", props);
@@ -147,10 +139,6 @@ public class PS1ShaderEditor : ShaderGUI
 
 		EditorGUILayout.LabelField(Styles.texturesText, EditorStyles.boldLabel);
 		materialEditor.TexturePropertySingleLine(Styles.mainTexText, _MainTex, _Color);
-		_HeightMin.floatValue = EditorGUILayout.FloatField("HeightMin", _HeightMin.floatValue);
-		_HeightMax.floatValue = EditorGUILayout.FloatField("HeightMax", _HeightMax.floatValue);
-		_ColorMin.colorValue = EditorGUILayout.ColorField("ColorMin", _ColorMin.colorValue);
-		_ColorMax.colorValue = EditorGUILayout.ColorField("ColorMax", _ColorMax.colorValue);
 		if (_NormalMap.textureValue == null)
 			_DiffModel.floatValue = EditorGUILayout.Popup(Styles.diffuseModeText, (int)_DiffModel.floatValue, Styles.diffuseNames);
 		materialEditor.TexturePropertySingleLine(Styles.normalMapText, _NormalMap, _NormalMapDepth);

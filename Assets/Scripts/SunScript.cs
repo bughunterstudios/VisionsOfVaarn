@@ -80,7 +80,7 @@ public class SunScript : MonoBehaviour
         else if (dotproduct < 0.4f && transition) //Night
         {
             light.intensity = 0.01f;
-            light.shadowNormalBias = 1f;
+            light.shadowNormalBias = 3f;
             RenderSettings.fogColor = fog.Evaluate(0);
             RenderSettings.ambientLight = environment.Evaluate(0);
             if (star_particles != null)
@@ -103,7 +103,7 @@ public class SunScript : MonoBehaviour
         {
             float duskscale = (dotproduct - 0.4f) * 5f;
             light.intensity = Mathf.Lerp(0.01f, max_intensity, duskscale);
-            light.shadowNormalBias = Mathf.Lerp(1f, 0.5f, duskscale);
+            light.shadowNormalBias = Mathf.Lerp(3f, 0.5f, duskscale);
             RenderSettings.fogColor = fog.Evaluate(duskscale);
             RenderSettings.ambientLight = environment.Evaluate(duskscale);
             if (star_particles != null)

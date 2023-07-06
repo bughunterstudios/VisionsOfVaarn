@@ -17,6 +17,9 @@ public class RandomMaterial : MonoBehaviour
     public string inherittag;
     public int mat_count = 1;
 
+    public bool from_noise_color;
+    public bool index_from_noise;
+
     private Material[] chosenmat;
 
     private void Start()
@@ -38,14 +41,21 @@ public class RandomMaterial : MonoBehaviour
         var renderer = GetComponent<MeshRenderer>();
         if (renderer != null)
         {
-            Material[] currentmats = renderer.materials;
-            chosenmat = new Material[currentmats.Length];
-            for (int i = 0; i < currentmats.Length; i++)
+            if (from_noise_color)
             {
-                chosenmat[i] = ChooseMaterial(i);
-                currentmats[i] = chosenmat[i];
+                renderer.material.color = NoiseControl.NoiseColorMap(transform.position.x, transform.position.z);
             }
-            renderer.materials = currentmats;
+            else
+            {
+                Material[] currentmats = renderer.materials;
+                chosenmat = new Material[currentmats.Length];
+                for (int i = 0; i < currentmats.Length; i++)
+                {
+                    chosenmat[i] = ChooseMaterial(i);
+                    currentmats[i] = chosenmat[i];
+                }
+                renderer.materials = currentmats;
+            }
         }
         else
         {
@@ -80,7 +90,11 @@ public class RandomMaterial : MonoBehaviour
         {
             totalweight += Mat.Weight;
         }
-        int chosenvalue = Random.Range(1, totalweight + 1);
+        int chosenvalue;
+        if (index_from_noise)
+            chosenvalue = Mathf.RoundToInt(Mathf.PingPong(NoiseControl.Regions_value_next_level(transform.position.x, transform.position.z, totalweight, 10), totalweight-1)) + 1;
+        else
+            chosenvalue = Random.Range(1, totalweight + 1);
         totalweight = 0;
         foreach (RandomMaterialItem Mat in Mats)
         {

@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 8966168090325500359}
   - component: {fileID: 8966168090325500358}
   - component: {fileID: 2943579993380776294}
+  - component: {fileID: 449825712642817334}
   m_Layer: 0
   m_Name: Rubble
   m_TagString: Untagged
@@ -62,7 +63,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: fe48bcf95942e9046978c95798b91c81, type: 2}
+  - {fileID: 2100000, guid: bdfb5f4db8061a64caaa0c15754464db, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -127,3 +128,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 2
   lifetime: 20
+--- !u!114 &449825712642817334
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8966168090325500354}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 774ea02cc137e1d408c71fcea451e1b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Mats: []
+  oninit: 1
+  inheritmaterialchance: 0
+  inherittag: 
+  mat_count: 1
+  from_noise_color: 1

@@ -4,16 +4,46 @@ using UnityEngine;
 
 public class PassOnGenerate : MonoBehaviour
 {
+    public bool FrameStep;
+    private bool generating;
+    private int i;
+    private Seed seed;
+
+    private void Update()
+    {
+        if (generating && FrameStep)
+        {
+            if (i < transform.childCount)
+            {
+                if (transform.GetChild(i).parent == transform)
+                {
+                    Seed newseed = new Seed(Random.Range(int.MinValue, int.MaxValue), seed.X, seed.Y);
+                    transform.GetChild(i).SendMessage("Generate", newseed, SendMessageOptions.DontRequireReceiver);
+                }
+                i++;
+            }
+            else
+                generating = false;
+        }
+    }
+
     public void Generate(Seed seed)
     {
         Random.InitState(seed.seed);
-        for (int i = 0; i < transform.childCount; i++)
+        this.seed = seed;
+
+        if (!FrameStep)
         {
-            if (transform.GetChild(i).parent == transform)
+            for (i = 0; i < transform.childCount; i++)
             {
-                Seed newseed = new Seed(Random.Range(int.MinValue, int.MaxValue), seed.X, seed.Y);
-                transform.GetChild(i).SendMessage("Generate", newseed, SendMessageOptions.DontRequireReceiver);
+                if (transform.GetChild(i).parent == transform)
+                {
+                    Seed newseed = new Seed(Random.Range(int.MinValue, int.MaxValue), seed.X, seed.Y);
+                    transform.GetChild(i).SendMessage("Generate", newseed, SendMessageOptions.DontRequireReceiver);
+                }
             }
         }
+        else
+            generating = true;
     }
 }

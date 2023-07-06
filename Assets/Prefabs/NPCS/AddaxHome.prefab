@@ -91,14 +91,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Bits:
-  - Weight: 15
+  - Weight: 1
     Prefab: {fileID: 4999002877351904388, guid: f6dbf058e3d7dc24bb52974f46684410, type: 3}
-  - Weight: 10
-    Prefab: {fileID: 6227834077691360842, guid: 64ef7f5d53441ab449216bfb9debf97b, type: 3}
-  - Weight: 2
-    Prefab: {fileID: 7402810569297146502, guid: 68f73ed73917e5b4b84a9ee2419990dd, type: 3}
-  - Weight: 2
-    Prefab: {fileID: 2765926836625972122, guid: a0374283bee07e44cb27692bfb692e07, type: 3}
+  - Weight: 1
+    Prefab: {fileID: 0}
   player_distance: -1
 --- !u!1 &7470747966548267792
 GameObject:
@@ -109,6 +105,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 911095681200148778}
+  - component: {fileID: 8931420947782307559}
   - component: {fileID: 2398863966454669940}
   m_Layer: 0
   m_Name: AddaxHome
@@ -133,6 +130,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8931420947782307559
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7470747966548267792}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60334810f9e60e24e9d65edc58328d48, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &2398863966454669940
 MonoBehaviour:
   m_ObjectHideFlags: 0
