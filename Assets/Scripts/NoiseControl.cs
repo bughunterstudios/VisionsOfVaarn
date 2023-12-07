@@ -590,7 +590,9 @@ public class NoiseControl : MonoBehaviour
 
         float h, s, v;
         Color.RGBToHSV(col, out h, out s, out v);
+        float a = col.a;
         col = Color.HSVToRGB(Mathf.Repeat(h + hueshift, 1f), s, v);
+        col.a = a;
 
         return col;
     }
