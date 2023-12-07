@@ -95,7 +95,7 @@ public class PlayerControl : MonoBehaviour
             rotationX = Mathf.Clamp(rotationX, -verticalviewangle, verticalviewangle);
             camholder.localRotation = Quaternion.Euler(rotationX, 0, 0);
 
-            Debug.Log(Physics.CheckSphere(transform.position + (Vector3.down * 0.5f), 0.6f, ~LayerMask.GetMask("Ignore Raycast")));
+            //Debug.Log(Physics.CheckSphere(transform.position + (Vector3.down * 0.5f), 0.6f, ~LayerMask.GetMask("Ignore Raycast")));
             if (Physics.CheckSphere(transform.position + (Vector3.down * 0.5f), 0.6f, ~LayerMask.GetMask("Ignore Raycast")))
             {
                 Vector3 moveDirection = gameObject.transform.forward * Input.GetAxis("Vertical");
