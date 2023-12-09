@@ -27,7 +27,6 @@ public class Moon : MonoBehaviour
         Shader.SetGlobalVector("_MoonAngles", new Vector3(rotations, y, z));
 
         float dotproduct = (Vector3.Dot(transform.forward, sun.forward) + 1f) / 2f;
-        Debug.Log(dotproduct);
         Shader.SetGlobalFloat("_Eclipse", dotproduct);
     }
 }

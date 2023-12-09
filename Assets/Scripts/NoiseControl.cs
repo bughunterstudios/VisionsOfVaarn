@@ -174,12 +174,14 @@ public class NoiseControl : MonoBehaviour
         RegionsNoise_value.SetFrequency(0.01f);
         RegionsNoise_value.SetCellularDistanceFunction(FastNoise.CellularDistanceFunction.Euclidean);
         RegionsNoise_value.SetCellularReturnType(FastNoise.CellularReturnType.CellValue);
+        RegionsNoise_value.SetSeed(WorldSeed.seed);
 
         RegionsNoise_smooth = new FastNoise();
         RegionsNoise_smooth.SetNoiseType(FastNoise.NoiseType.Cellular);
         RegionsNoise_smooth.SetFrequency(0.01f);
         RegionsNoise_smooth.SetCellularDistanceFunction(FastNoise.CellularDistanceFunction.Euclidean);
         RegionsNoise_smooth.SetCellularReturnType(FastNoise.CellularReturnType.Distance2Sub);
+        RegionsNoise_smooth.SetSeed(WorldSeed.seed);
 
         RegionsNoise_Offset = new FastNoise();
         RegionsNoise_Offset.SetNoiseType(FastNoise.NoiseType.SimplexFractal);
@@ -188,6 +190,7 @@ public class NoiseControl : MonoBehaviour
         RegionsNoise_Offset.SetFractalOctaves(1);
         RegionsNoise_Offset.SetFractalLacunarity(2f);
         RegionsNoise_Offset.SetFractalGain(0.5f);
+        RegionsNoise_Offset.SetSeed(WorldSeed.seed);
 
         FlattenDunesNoise = new FastNoise();
         FlattenDunesNoise.SetNoiseType(FastNoise.NoiseType.SimplexFractal);
@@ -196,18 +199,21 @@ public class NoiseControl : MonoBehaviour
         FlattenDunesNoise.SetFractalOctaves(2);
         FlattenDunesNoise.SetFractalLacunarity(2);
         FlattenDunesNoise.SetFractalGain(0.5f);
+        FlattenDunesNoise.SetSeed(WorldSeed.seed);
 
         GiantDunesNoise = new FastNoise();
         GiantDunesNoise.SetNoiseType(FastNoise.NoiseType.Cellular);
         GiantDunesNoise.SetFrequency(0.01f);
         GiantDunesNoise.SetCellularDistanceFunction(FastNoise.CellularDistanceFunction.Euclidean);
         GiantDunesNoise.SetCellularReturnType(FastNoise.CellularReturnType.Distance2Add);
+        GiantDunesNoise.SetSeed(WorldSeed.seed);
 
         LargeDunesNoise = new FastNoise();
         LargeDunesNoise.SetNoiseType(FastNoise.NoiseType.Cellular);
         LargeDunesNoise.SetFrequency(0.01f);
         LargeDunesNoise.SetCellularDistanceFunction(FastNoise.CellularDistanceFunction.Euclidean);
         LargeDunesNoise.SetCellularReturnType(FastNoise.CellularReturnType.Distance2Add);
+        LargeDunesNoise.SetSeed(WorldSeed.seed);
 
         SmallDunesNoise = new FastNoise();
         SmallDunesNoise.SetNoiseType(FastNoise.NoiseType.SimplexFractal);
@@ -216,6 +222,7 @@ public class NoiseControl : MonoBehaviour
         SmallDunesNoise.SetFractalOctaves(4);
         SmallDunesNoise.SetFractalLacunarity(2);
         SmallDunesNoise.SetFractalGain(0.5f);
+        SmallDunesNoise.SetSeed(WorldSeed.seed);
 
         // Regions
         FlatCurve_private = FlatCurve;
@@ -229,6 +236,7 @@ public class NoiseControl : MonoBehaviour
         CanyonNoise.SetFractalOctaves(6);
         CanyonNoise.SetFractalLacunarity(1.9f);
         CanyonNoise.SetFractalGain(0.5f);
+        CanyonNoise.SetSeed(WorldSeed.seed);
 
         MountainCurve_private = MountainCurve;
         MountainNoise = new FastNoise();
@@ -238,6 +246,7 @@ public class NoiseControl : MonoBehaviour
         MountainNoise.SetFractalOctaves(6);
         MountainNoise.SetFractalLacunarity(1.9f);
         MountainNoise.SetFractalGain(0.5f);
+        MountainNoise.SetSeed(WorldSeed.seed);
 
         LakeCurve_private = LakeCurve;
         LakeNoise = new FastNoise();
@@ -247,6 +256,7 @@ public class NoiseControl : MonoBehaviour
         LakeNoise.SetFractalOctaves(4);
         LakeNoise.SetFractalLacunarity(1.5f);
         LakeNoise.SetFractalGain(0.5f);
+        LakeNoise.SetSeed(WorldSeed.seed);
 
         RiverCurve_private = RiverCurve;
         RiverShapeCurve_private = RiverShapeCurve;
@@ -257,6 +267,7 @@ public class NoiseControl : MonoBehaviour
         RiverNoise.SetFractalOctaves(1);
         RiverNoise.SetFractalLacunarity(1.5f);
         RiverNoise.SetFractalGain(0.5f);
+        RiverNoise.SetSeed(WorldSeed.seed);
 
         MesaCurve_private = MesaCurve;
         MesaShapeCurve_private = MesaShapeCurve;
@@ -268,6 +279,7 @@ public class NoiseControl : MonoBehaviour
         MesaNoise.SetFractalOctaves(4);
         MesaNoise.SetFractalLacunarity(2f);
         MesaNoise.SetFractalGain(0.5f);
+        MesaNoise.SetSeed(WorldSeed.seed);
         MesaHeightNoise = new FastNoise();
         MesaHeightNoise.SetNoiseType(FastNoise.NoiseType.SimplexFractal);
         MesaHeightNoise.SetFractalType(FastNoise.FractalType.FBM);
@@ -275,6 +287,7 @@ public class NoiseControl : MonoBehaviour
         MesaHeightNoise.SetFractalOctaves(5);
         MesaHeightNoise.SetFractalLacunarity(0.7f);
         MesaHeightNoise.SetFractalGain(1.7f);
+        MesaHeightNoise.SetSeed(WorldSeed.seed);
 
         RippleCurve_private = RippleCurve;
         RippleNoise = new FastNoise();
@@ -284,6 +297,7 @@ public class NoiseControl : MonoBehaviour
         RippleNoise.SetFractalOctaves(1);
         RippleNoise.SetFractalLacunarity(2f);
         RippleNoise.SetFractalGain(0.5f);
+        RippleNoise.SetSeed(WorldSeed.seed);
 
         // Colors
 
@@ -295,6 +309,7 @@ public class NoiseControl : MonoBehaviour
         SandColorNoise.SetFractalOctaves(4);
         SandColorNoise.SetFractalLacunarity(2);
         SandColorNoise.SetFractalGain(0.5f);
+        SandColorNoise.SetSeed(WorldSeed.seed);
 
         BandedColorGradient_private = BandedColorGradient;
         BandedColorGradient_a_1_private = BandedColorGradient_a_1;
@@ -317,6 +332,7 @@ public class NoiseControl : MonoBehaviour
         BandedColorNoise.SetFractalOctaves(4);
         BandedColorNoise.SetFractalLacunarity(2);
         BandedColorNoise.SetFractalGain(0.5f);
+        BandedColorNoise.SetSeed(WorldSeed.seed);
     }
 
     public static Color NoiseColorMap(float x, float y)

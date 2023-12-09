@@ -198,7 +198,7 @@ TextureImporter:
       213: 4342314658504565570
     second: VaarnGamebookTilingLine_animated_64
   externalObjects: {}
-  serializedVersion: 11
+  serializedVersion: 12
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -215,10 +215,12 @@ TextureImporter:
     externalNormalMap: 0
     heightScale: 0.25
     normalMapFilter: 0
+    flipGreenChannel: 0
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMipmapLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -257,6 +259,8 @@ TextureImporter:
   textureFormatSet: 0
   ignorePngGamma: 0
   applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -268,6 +272,7 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
@@ -280,6 +285,7 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
@@ -292,6 +298,20 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
@@ -1672,9 +1692,74 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-  spritePackingTag: 
+    nameFileIdTable:
+      VaarnGamebookTilingLine_animated_0: 4405113241675428301
+      VaarnGamebookTilingLine_animated_1: 2266939652258251260
+      VaarnGamebookTilingLine_animated_10: -1052927097664686197
+      VaarnGamebookTilingLine_animated_11: 853024129941713598
+      VaarnGamebookTilingLine_animated_12: -6235151915082803839
+      VaarnGamebookTilingLine_animated_13: 7867919313594817476
+      VaarnGamebookTilingLine_animated_14: 1408936890844694731
+      VaarnGamebookTilingLine_animated_15: 6097324920844944467
+      VaarnGamebookTilingLine_animated_16: -6925468858276214429
+      VaarnGamebookTilingLine_animated_17: 7326893727144778443
+      VaarnGamebookTilingLine_animated_18: -6674133564898573121
+      VaarnGamebookTilingLine_animated_19: -7451767832833127526
+      VaarnGamebookTilingLine_animated_2: -6763934817502110229
+      VaarnGamebookTilingLine_animated_20: -7271090154006275942
+      VaarnGamebookTilingLine_animated_21: -6565657529114774362
+      VaarnGamebookTilingLine_animated_22: -5482052169311656424
+      VaarnGamebookTilingLine_animated_23: -5606059016525305627
+      VaarnGamebookTilingLine_animated_24: 9065833408469988015
+      VaarnGamebookTilingLine_animated_25: -8046600887763758923
+      VaarnGamebookTilingLine_animated_26: 1176184360696355060
+      VaarnGamebookTilingLine_animated_27: 3724155062953076562
+      VaarnGamebookTilingLine_animated_28: 9069883561080773823
+      VaarnGamebookTilingLine_animated_29: -8252543583707299146
+      VaarnGamebookTilingLine_animated_3: -8971670087291200397
+      VaarnGamebookTilingLine_animated_30: 8809332663905933828
+      VaarnGamebookTilingLine_animated_31: -1198613253638701433
+      VaarnGamebookTilingLine_animated_32: -3466465365132084750
+      VaarnGamebookTilingLine_animated_33: 3963651113547042997
+      VaarnGamebookTilingLine_animated_34: -2776444154575624235
+      VaarnGamebookTilingLine_animated_35: 3974787406581065325
+      VaarnGamebookTilingLine_animated_36: -7598003485090438824
+      VaarnGamebookTilingLine_animated_37: -1516802206340462268
+      VaarnGamebookTilingLine_animated_38: 8238700192600602775
+      VaarnGamebookTilingLine_animated_39: 4467205517001025907
+      VaarnGamebookTilingLine_animated_4: 4821808439057850808
+      VaarnGamebookTilingLine_animated_40: 9006562597682821277
+      VaarnGamebookTilingLine_animated_41: -8498135705100061555
+      VaarnGamebookTilingLine_animated_42: -2446513537603345594
+      VaarnGamebookTilingLine_animated_43: 4153054229072010689
+      VaarnGamebookTilingLine_animated_44: 3051581213226675251
+      VaarnGamebookTilingLine_animated_45: -5483447672348037479
+      VaarnGamebookTilingLine_animated_46: -5235952532729278718
+      VaarnGamebookTilingLine_animated_47: -945093010376426033
+      VaarnGamebookTilingLine_animated_48: 5946829138040908153
+      VaarnGamebookTilingLine_animated_49: 3326603136353566778
+      VaarnGamebookTilingLine_animated_5: 8031342360501182905
+      VaarnGamebookTilingLine_animated_50: -4787224960393153506
+      VaarnGamebookTilingLine_animated_51: -5405936729305283580
+      VaarnGamebookTilingLine_animated_52: -7894151509616871009
+      VaarnGamebookTilingLine_animated_53: -8897285656927440780
+      VaarnGamebookTilingLine_animated_54: 4268492848211780948
+      VaarnGamebookTilingLine_animated_55: -585957917317393215
+      VaarnGamebookTilingLine_animated_56: -7978976694943494187
+      VaarnGamebookTilingLine_animated_57: 3937638217479820194
+      VaarnGamebookTilingLine_animated_58: -738303003560435914
+      VaarnGamebookTilingLine_animated_59: -1855025156847032875
+      VaarnGamebookTilingLine_animated_6: 1418333002947822687
+      VaarnGamebookTilingLine_animated_60: -384259727565165874
+      VaarnGamebookTilingLine_animated_61: 6932266611114716524
+      VaarnGamebookTilingLine_animated_62: 8924583279243150080
+      VaarnGamebookTilingLine_animated_63: 5325694614300094815
+      VaarnGamebookTilingLine_animated_64: 4342314658504565570
+      VaarnGamebookTilingLine_animated_7: 150452780514960700
+      VaarnGamebookTilingLine_animated_8: -4719249075755038084
+      VaarnGamebookTilingLine_animated_9: 2497918309633424481
+  mipmapLimitGroupName: 
   pSDRemoveMatte: 0
-  pSDShowRemoveMatteOption: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 

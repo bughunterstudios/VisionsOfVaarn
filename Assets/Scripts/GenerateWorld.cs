@@ -34,9 +34,7 @@ public class RandomChunk
 
 public class GenerateWorld : MonoBehaviour
 {
-    public int seedoffset;
     public Transform player;
-    public GameObject DynamicGround;
     public List<SetChunk> SetHunks;
     public List<RandomChunk> RandomChunks;
     public List<RandomBit_NoiseWeighted> Tiles;
@@ -47,7 +45,6 @@ public class GenerateWorld : MonoBehaviour
     private int Y;
 
     private GameObject[,] chunks;
-
     private bool[,] mask;
 
     private List<Transform> tile_queue_parent;
@@ -62,6 +59,8 @@ public class GenerateWorld : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //Application.targetFrameRate = 140;
+
         tile_queue_parent = new List<Transform>();
         tile_queue_seed = new List<Seed>();
 
@@ -70,16 +69,18 @@ public class GenerateWorld : MonoBehaviour
 
     private void Initialize()
     {
-        chunks = new GameObject[viewscale, viewscale];
-        mask = new bool[viewscale, viewscale];
-        for (int i = 0; i < viewscale; i++)
+        chunks = new GameObject[viewscale + 4, viewscale + 4];
+        mask = new bool[viewscale + 4, viewscale + 4];
+        X = Mathf.RoundToInt(player.position.x / scale);
+        Y = Mathf.RoundToInt(player.position.z / scale);
+        for (int i = 0; i < viewscale + 4; i++)
         {
-            for (int j = 0; j < viewscale; j++)
+            for (int j = 0; j < viewscale + 4; j++)
             {
-                if (Vector2.Distance(new Vector2(i - (viewscale / 2), j - (viewscale / 2)), Vector2.zero) <= viewscale / 2)
+                if (Vector2.Distance(new Vector2(i - ((viewscale + 4) / 2), j - ((viewscale + 4) / 2)), Vector2.zero) <= viewscale / 2)
                 {
                     mask[i, j] = true;
-                    chunks[i, j] = GenerateChunk(i - (viewscale / 2), j - (viewscale / 2));
+                    chunks[i, j] = GenerateChunk(X + i - ((viewscale + 4) / 2), Y + j - ((viewscale + 4) / 2));
                 }
                 else
                     mask[i, j] = false;
@@ -157,23 +158,37 @@ public class GenerateWorld : MonoBehaviour
 
     private void Shift(int X_Shift, int Y_Shift)
     {
-        GameObject[,] newchunks = new GameObject[viewscale, viewscale];
+        GameObject[,] newchunks = new GameObject[viewscale + 4, viewscale + 4];
 
-        for (int i = 0; i < viewscale; i++)
+        //Shift over everything
+        for (int i = 0; i < viewscale + 4; i++)
         {
-            for (int j = 0; j < viewscale; j++)
+            for (int j = 0; j < viewscale + 4; j++)
             {
-                if (chunks[i, j] != null && (i - X_Shift < 0 || i - X_Shift > viewscale - 1 || j - Y_Shift < 0 || j - Y_Shift > viewscale - 1))
+                if (chunks[i, j] != null && (i - X_Shift < 0 || i - X_Shift > viewscale + 4 - 1 || j - Y_Shift < 0 || j - Y_Shift > viewscale + 4 - 1))
+                {
                     Destroy(chunks[i, j], Random.Range(0f, 3f));
-                if (chunks[i, j] != null && !mask[i, j])
-                    Destroy(chunks[i, j], Random.Range(0f, 3f));
-                if (i + X_Shift >= 0 && i + X_Shift < viewscale && j + Y_Shift >= 0 && j + Y_Shift < viewscale)
+                }
+                if (i + X_Shift >= 0 && i + X_Shift < viewscale + 4 && j + Y_Shift >= 0 && j + Y_Shift < viewscale + 4)
                 {
                     newchunks[i, j] = chunks[i + X_Shift, j + Y_Shift];
                 }
+            }
+        }
+
+        // Destroy and allocate for creation
+        for (int i = 0; i < viewscale + 4; i++)
+        {
+            for (int j = 0; j < viewscale + 4; j++)
+            {
+                if (newchunks[i, j] != null && !mask[i, j])
+                {
+                    Destroy(newchunks[i, j], Random.Range(0f, 3f));
+                    newchunks[i, j] = null;
+                }
                 if (newchunks[i, j] == null && mask[i, j])
                 {
-                    newchunks[i, j] = GenerateChunk(i - (viewscale / 2) + X, j - (viewscale / 2) + Y);
+                    newchunks[i, j] = GenerateChunk(i - ((viewscale + 4) / 2) + X, j - ((viewscale + 4) / 2) + Y);
                 }
             }
         }
@@ -183,7 +198,12 @@ public class GenerateWorld : MonoBehaviour
 
     private GameObject GenerateChunk(int x, int y)
     {
-        Random.InitState(seedoffset);
+        RandomChunk chosen = ChooseObject(RandomChunks);
+
+        if (chosen == null)
+            return null;
+
+        Random.InitState(WorldSeed.seed);
         Random.InitState(Random.Range(int.MinValue, int.MaxValue) + x);
         Random.InitState(Random.Range(int.MinValue, int.MaxValue) + y);
         Seed seed = new Seed(Random.Range(int.MinValue, int.MaxValue), x, y);
@@ -192,12 +212,6 @@ public class GenerateWorld : MonoBehaviour
         chunk.name = "Chunk " + x.ToString() + ", " + y.ToString();
         chunk.transform.SetParent(transform);
         chunk.transform.position = new Vector3(x * scale, 0, y * scale);
-
-        GameObject ground = Instantiate(DynamicGround, chunk.transform);
-        ground.transform.position = new Vector3(x * scale, 0, y * scale);
-        ground.SendMessage("Generate", seed, SendMessageOptions.DontRequireReceiver);
-
-        RandomChunk chosen = ChooseObject(RandomChunks);
 
         if (chosen.Tiles)
         {
