@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2154892746638943207}
   - component: {fileID: 6192029080345350038}
   - component: {fileID: 8576252908674167622}
-  m_Layer: 9
+  m_Layer: 12
   m_Name: Sand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -62,7 +62,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -876546973899608171, guid: 3d3539c785c4c4492acd1a419fb729a3, type: 3}
+  - {fileID: 2100000, guid: bdfb5f4db8061a64caaa0c15754464db, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -101,7 +101,7 @@ MonoBehaviour:
   player_distance: -1
   parts: 20
   cutposition: 0
-  setcolor: 0
+  setcolor: 1
 --- !u!1 &4892532936487050740
 GameObject:
   m_ObjectHideFlags: 0

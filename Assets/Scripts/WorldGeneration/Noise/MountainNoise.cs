@@ -33,11 +33,10 @@ public class MountainNoise : NoiseFunction
     {
         int chosen_val = SecondRegion.Regions_value_next_level(x, y, 100, 100);
         float alpha = 0.5f;
-        if (chosen_val < 20)
+        if (chosen_val < 10)
             alpha = 0.25f;
-        if (chosen_val < 5)
+        if (chosen_val < 3)
             alpha = 0f;
-        alpha = 0f;
 
         float scale = 0.2f;
         float height = 1.5f;
