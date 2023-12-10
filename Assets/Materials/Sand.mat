@@ -2,20 +2,26 @@
 %TAG !u! tag:unity3d.com,2011:
 --- !u!21 &2100000
 Material:
-  serializedVersion: 6
+  serializedVersion: 8
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Sand
   m_Shader: {fileID: -6465566751694194690, guid: 75b46b3217678dc4d8bd81f3b936e9a7, type: 3}
-  m_ShaderKeywords: 
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
+  m_ValidKeywords:
+  - FOG_LINEAR
+  m_InvalidKeywords:
+  - _FOG_LINEAR
   m_LightmapFlags: 2
   m_EnableInstancingVariants: 1
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
   stringTagMap: {}
   disabledShaderPasses: []
+  m_LockedProperties: 
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
@@ -24,7 +30,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - Texture2D_431094340d464a0290770ae1a5bc1c27:
-        m_Texture: {fileID: 2800000, guid: f3f0c956d52f3314faa07c579cff4172, type: 3}
+        m_Texture: {fileID: 2800000, guid: f12123c453b7a584cabeeca25c072955, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - Texture2D_8db95f431976413ebd95077e965325ae:
@@ -37,6 +43,26 @@ Material:
         m_Offset: {x: 0, y: 0}
     - _BumpMap:
         m_Texture: {fileID: 2800000, guid: a40415fccfb849044b5e88fead400ccb, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Cracked_Normal:
+        m_Texture: {fileID: 2800000, guid: 1c43348c7c1950c40854640204c9ea98, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _CrystalGround_36d7c2d3d00942abb6c0ea42c91558e1_CrystalGlow_1538325208_Texture2D:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Crystal_Glow:
+        m_Texture: {fileID: 2800000, guid: b8f175ab49ae3ce489ac77f739663292, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Crystal_Normal:
+        m_Texture: {fileID: 2800000, guid: c6974370775bdfe4781096a1391e2251, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Crystal_Smoothness:
+        m_Texture: {fileID: 2800000, guid: 4ab9fe5fda56b5e4a84c5c0e32ad1315, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Cube:
@@ -87,6 +113,18 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _Rock_Normal:
+        m_Texture: {fileID: 2800000, guid: 1d3f473ee48cdbb44a16183b172b1b0f, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Rock_Smoothness:
+        m_Texture: {fileID: 2800000, guid: 89d4aacef7fca2447b4b693b4cd49f14, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Sand_Smoothness:
+        m_Texture: {fileID: 2800000, guid: f3f0c956d52f3314faa07c579cff4172, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _SpecGlossMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -107,7 +145,11 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    m_Ints: []
     m_Floats:
+    - FOG_EXP: 0
+    - FOG_EXP2: 0
+    - FOG_LINEAR: 1
     - Vector1_1a91e86e4f53481b9ecfb21e4cb43e77: 3
     - Vector1_529b0b0a71f34272840dbbf7eaed163c: 0.2
     - Vector1_b220bec8e93c4c8baf39663369f4af70: 0.1
@@ -117,6 +159,8 @@ Material:
     - _BumpScale: 0.2
     - _ClearCoatMask: 0
     - _ClearCoatSmoothness: 0
+    - _Cracked_NormalStrength: 0.4
+    - _Crystal_NormalStrength: 0.1
     - _Cul: 0
     - _Cull: 2
     - _Cutoff: 0.5
@@ -127,6 +171,9 @@ Material:
     - _DrawDist: 1
     - _DstBlend: 0
     - _EnvironmentReflections: 1
+    - _FOG_EXP: 0
+    - _FOG_EXP2: 0
+    - _FOG_LINEAR: 1
     - _GlossMapScale: 0
     - _Glossiness: 0
     - _GlossyReflections: 0
