@@ -108,6 +108,8 @@ public class NoiseControl : MonoBehaviour
 
     public static Color NoiseColorMap(float x, float y)
     {
+        x *= 100f;
+        y *= 100f;
         x = Mathf.RoundToInt(x * 10f) / 10f;
         y = Mathf.RoundToInt(y * 10f) / 10f;
 
@@ -135,6 +137,8 @@ public class NoiseControl : MonoBehaviour
 
     public static float NoiseMapHeight(float x, float y)
     {
+        x *= 100f;
+        y *= 100f;
         x = Mathf.RoundToInt(x * 10f) / 10f;
         y = Mathf.RoundToInt(y * 10f) / 10f;
 
@@ -151,6 +155,8 @@ public class NoiseControl : MonoBehaviour
         last_region = region;
         last_x = x;
         last_y = y;
+
+        noise *= 0.01f;
 
         return noise;
     }

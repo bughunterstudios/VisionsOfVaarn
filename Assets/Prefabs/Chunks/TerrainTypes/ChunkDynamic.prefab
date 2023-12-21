@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9016668639318000608}
   - component: {fileID: 5769299910729987462}
-  - component: {fileID: 8243412568902314353}
+  - component: {fileID: 8677123068121330935}
   m_Layer: 0
   m_Name: ChunkDynamic
   m_TagString: Untagged
@@ -48,29 +48,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   FrameStep: 0
---- !u!205 &8243412568902314353
-LODGroup:
+--- !u!114 &8677123068121330935
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1596549546965680602}
-  serializedVersion: 2
-  m_LocalReferencePoint: {x: 0, y: 0, z: 0}
-  m_Size: 52.381016
-  m_FadeMode: 1
-  m_AnimateCrossFading: 1
-  m_LastLODIsBillboard: 0
-  m_LODs:
-  - screenRelativeHeight: 0.16799296
-    fadeTransitionWidth: 0
-    renderers:
-    - renderer: {fileID: 5524556149834143260}
-  - screenRelativeHeight: 0
-    fadeTransitionWidth: 0
-    renderers:
-    - renderer: {fileID: 4852145198745678639}
   m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd782e4ec02e91b48b661834e6e17330, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  grounds:
+  - {fileID: 7787776474873499381}
+  - {fileID: 893893946404431462}
+  distances: 05000000ffffffff
 --- !u!1 &3916682667632990388
 GameObject:
   m_ObjectHideFlags: 0
@@ -318,6 +311,6 @@ MonoBehaviour:
   triangle_index: 1
   delete_edges: 1
   player_distance: 5
-  parts: 50
+  parts: 25
   cutposition: 0.2501
   setcolor: 1

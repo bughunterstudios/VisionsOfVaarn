@@ -25,8 +25,8 @@ public class SunScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        rotations += Time.deltaTime * (360f / (DayLengthInMinutes * 60f));
-        transform.Rotate(Time.deltaTime * (360f / (DayLengthInMinutes * 60f)), 0, 0, Space.Self);
+        rotations += Time.deltaTime * (360f / ((DayLengthInMinutes / (Input.GetKey(KeyCode.I) ? 100f : 1f)) * 60f));
+        transform.Rotate(Time.deltaTime * (360f / ((DayLengthInMinutes / (Input.GetKey(KeyCode.I) ? 100f : 1f)) * 60f)), 0, 0, Space.Self);
 
         Shader.SetGlobalVector("_SunDirection", transform.forward);
         Shader.SetGlobalVector("_SunAngles", new Vector3(rotations, y, z));

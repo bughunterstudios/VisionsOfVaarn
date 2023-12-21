@@ -12,6 +12,7 @@ public class DynamicGround : MonoBehaviour
     private static int[] triangles_to_delete2;
     private static int[] triangles_to_delete3;
     private static int[] triangles_to_delete4;
+    private static int[] triangles_to_delete5;
 
     public int triangle_index;
     public bool delete_edges;
@@ -45,6 +46,11 @@ public class DynamicGround : MonoBehaviour
         cam = Camera.main.transform;
     }
 
+    public bool DoneGenerating()
+    {
+        return generated;
+    }
+
     private void Update()
     {
         if (!generated && received_seed && !generating)
@@ -57,7 +63,10 @@ public class DynamicGround : MonoBehaviour
             }
             else
             {
-                if (Vector3.Distance(cam.position, transform.position) < (current_player_distance * 50))
+                Vector3 campos = cam.transform.position;
+                campos.y = 0;
+
+                if (Vector3.Distance(campos, transform.position) < (current_player_distance * 50))
                     current_player_distance = -1;
             }
         }
@@ -150,7 +159,7 @@ public class DynamicGround : MonoBehaviour
 
         if (delete_edges && !already_generated_once)
         {
-            if ((triangles_to_delete1 == null && triangle_index == 1) || (triangles_to_delete2 == null && triangle_index == 2) || (triangles_to_delete3 == null && triangle_index == 3) || (triangles_to_delete4 == null && triangle_index == 4))
+            if ((triangles_to_delete1 == null && triangle_index == 1) || (triangles_to_delete2 == null && triangle_index == 2) || (triangles_to_delete3 == null && triangle_index == 3) || (triangles_to_delete4 == null && triangle_index == 4) || (triangles_to_delete5 == null && triangle_index == 5))
             {
                 List<int> border_indices = new List<int>();
                 for (int i = 0; i < vertices.Length; i++)
@@ -181,6 +190,8 @@ public class DynamicGround : MonoBehaviour
                     triangles_to_delete3 = new_triangles.ToArray();
                 if (triangle_index == 4)
                     triangles_to_delete4 = new_triangles.ToArray();
+                if (triangle_index == 5)
+                    triangles_to_delete5 = new_triangles.ToArray();
             }
 
             if (triangle_index == 1)
@@ -191,6 +202,8 @@ public class DynamicGround : MonoBehaviour
                 clonedMesh.triangles = triangles_to_delete3;
             if (triangle_index == 4)
                 clonedMesh.triangles = triangles_to_delete4;
+            if (triangle_index == 5)
+                clonedMesh.triangles = triangles_to_delete5;
         }
 
         clonedMesh.RecalculateBounds();

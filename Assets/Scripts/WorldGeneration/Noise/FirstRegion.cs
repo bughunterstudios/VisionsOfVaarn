@@ -5,6 +5,9 @@ using UnityEngine;
 
 public class FirstRegion : MonoBehaviour
 {
+    public float scale;
+    private static float private_scale;
+
     public RegionType[] regionTypes;
     private static RegionType[] privateRegionTypes;
     private static int Max_Weight;
@@ -19,6 +22,7 @@ public class FirstRegion : MonoBehaviour
 
     private void Awake()
     {
+        private_scale = scale;
         privateRegionTypes = regionTypes;
 
         RegionsNoise_value = new FastNoise();
@@ -47,16 +51,15 @@ public class FirstRegion : MonoBehaviour
 
     public static float Offset(float x, float y)
     {
-        float offset_scale = 0.6f;
-        float offset_size = 20f;
+        float offset_scale = 0.2f;
+        float offset_size = 5f;
         return RegionsNoise_Offset.GetNoise(x * offset_scale, y * offset_scale) * offset_size;
     }
 
     public static float GetNoise(float x, float y)
     {
-        float scale = 0.1f;
         float offset = Offset(x, y);
-        return (RegionsNoise_value.GetNoise((x * scale) + offset, (y * scale) + offset) + 1f) / 2f;
+        return (RegionsNoise_value.GetNoise((x * private_scale) + offset, (y * private_scale) + offset) + 1f) / 2f;
     }
 
     public static RegionType GetRegion(float x, float y)
@@ -96,9 +99,8 @@ public class FirstRegion : MonoBehaviour
 
     public static float Regions_smooth(float x, float y)
     {
-        float scale = .1f;
         float offset = Offset(x, y);
-        float smooth = RegionsNoise_smooth.GetNoise((x * scale) + offset, (y * scale) + offset);
+        float smooth = RegionsNoise_smooth.GetNoise((x * private_scale) + offset, (y * private_scale) + offset);
         return smooth;
     }
 }

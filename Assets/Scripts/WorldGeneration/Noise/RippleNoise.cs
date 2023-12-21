@@ -21,7 +21,7 @@ public class RippleNoise : NoiseFunction
 
     public override float GetValue(float currentvalue, float smoothingvalue, float x, float y)
     {
-        float scale1 = 1f;
+        float scale1 = 0.5f;
         float scale2 = 4f;
         float height = 0.002f;
         float rip = Mathf.Sin((y * scale1) + (noise.GetNoise(x * scale2, y * scale2) * 10)) * height;

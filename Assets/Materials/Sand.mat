@@ -53,7 +53,15 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _CrystalGround_36d7c2d3d00942abb6c0ea42c91558e1_CrystalHeight_1998249236_Texture2D:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _Crystal_Glow:
+        m_Texture: {fileID: 2800000, guid: b8f175ab49ae3ce489ac77f739663292, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Crystal_Height:
         m_Texture: {fileID: 2800000, guid: b8f175ab49ae3ce489ac77f739663292, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
@@ -113,12 +121,20 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _Rock_Height:
+        m_Texture: {fileID: 2800000, guid: 49f7625922f106d4881fe2b3fd21582e, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _Rock_Normal:
         m_Texture: {fileID: 2800000, guid: 1d3f473ee48cdbb44a16183b172b1b0f, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Rock_Smoothness:
         m_Texture: {fileID: 2800000, guid: 89d4aacef7fca2447b4b693b4cd49f14, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _RockyGround_79eb2a8ded8b4c989be7789099af628a_RockHeight_341336525_Texture2D:
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Sand_Smoothness:
@@ -151,7 +167,7 @@ Material:
     - FOG_EXP2: 0
     - FOG_LINEAR: 1
     - Vector1_1a91e86e4f53481b9ecfb21e4cb43e77: 3
-    - Vector1_529b0b0a71f34272840dbbf7eaed163c: 0.2
+    - Vector1_529b0b0a71f34272840dbbf7eaed163c: 0.5
     - Vector1_b220bec8e93c4c8baf39663369f4af70: 0.1
     - _AlphaClip: 0
     - _Blend: 0
@@ -159,8 +175,8 @@ Material:
     - _BumpScale: 0.2
     - _ClearCoatMask: 0
     - _ClearCoatSmoothness: 0
-    - _Cracked_NormalStrength: 0.4
-    - _Crystal_NormalStrength: 0.03
+    - _Cracked_NormalStrength: 1
+    - _Crystal_NormalStrength: 0.1
     - _Cul: 0
     - _Cull: 2
     - _Cutoff: 0.5

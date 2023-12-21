@@ -37,7 +37,7 @@ public class RiverNoise : NoiseFunction
 
         Color toreturn = currentcolor;
 
-        if (chosen_val < 20)
+        if (chosen_val < 30)
             toreturn.a = NoiseControl.FloatLerp(currentcolor.a, 0.75f, smoothingvalue);
 
         return toreturn;
