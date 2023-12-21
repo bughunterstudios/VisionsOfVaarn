@@ -5,8 +5,10 @@ using UnityEngine;
 
 public class FirstRegion : MonoBehaviour
 {
-    public float scale;
-    private static float private_scale;
+    public float scale_min;
+    private static float private_scale_min;
+    public float scale_max;
+    private static float private_scale_max;
 
     public RegionType[] regionTypes;
     private static RegionType[] privateRegionTypes;
@@ -15,6 +17,9 @@ public class FirstRegion : MonoBehaviour
     private static FastNoise RegionsNoise_value;
     private static FastNoise RegionsNoise_smooth;
     private static FastNoise RegionsNoise_Offset;
+    private static FastNoise RegionsNoise_scale;
+    public AnimationCurve RegionScale;
+    private static AnimationCurve private_RegionScale;
 
     private static float last_x;
     private static float last_y;
@@ -22,8 +27,10 @@ public class FirstRegion : MonoBehaviour
 
     private void Awake()
     {
-        private_scale = scale;
+        private_scale_min = scale_min;
+        private_scale_max = scale_max;
         privateRegionTypes = regionTypes;
+        private_RegionScale = RegionScale;
 
         RegionsNoise_value = new FastNoise();
         RegionsNoise_value.SetNoiseType(FastNoise.NoiseType.Cellular);
@@ -47,6 +54,15 @@ public class FirstRegion : MonoBehaviour
         RegionsNoise_Offset.SetFractalLacunarity(2f);
         RegionsNoise_Offset.SetFractalGain(0.5f);
         RegionsNoise_Offset.SetSeed(WorldSeed.seed);
+
+        RegionsNoise_scale = new FastNoise();
+        RegionsNoise_scale.SetNoiseType(FastNoise.NoiseType.SimplexFractal);
+        RegionsNoise_scale.SetFractalType(FastNoise.FractalType.FBM);
+        RegionsNoise_scale.SetFrequency(0.01f);
+        RegionsNoise_scale.SetFractalOctaves(1);
+        RegionsNoise_scale.SetFractalLacunarity(2f);
+        RegionsNoise_scale.SetFractalGain(0.3f);
+        RegionsNoise_scale.SetSeed(WorldSeed.seed);
     }
 
     public static float Offset(float x, float y)
@@ -59,7 +75,9 @@ public class FirstRegion : MonoBehaviour
     public static float GetNoise(float x, float y)
     {
         float offset = Offset(x, y);
-        return (RegionsNoise_value.GetNoise((x * private_scale) + offset, (y * private_scale) + offset) + 1f) / 2f;
+        float new_scale = private_RegionScale.Evaluate(RegionsNoise_scale.GetNoise(x * 0.01f, y * 0.01f));
+        new_scale = (new_scale * (private_scale_max - private_scale_min)) + private_scale_min;
+        return (RegionsNoise_value.GetNoise((x * new_scale) + offset, (y * new_scale) + offset) + 1f) / 2f;
     }
 
     public static RegionType GetRegion(float x, float y)
@@ -100,7 +118,9 @@ public class FirstRegion : MonoBehaviour
     public static float Regions_smooth(float x, float y)
     {
         float offset = Offset(x, y);
-        float smooth = RegionsNoise_smooth.GetNoise((x * private_scale) + offset, (y * private_scale) + offset);
+        float new_scale = private_RegionScale.Evaluate(RegionsNoise_scale.GetNoise(x * 0.01f, y * 0.01f));
+        new_scale = (new_scale * (private_scale_max - private_scale_min)) + private_scale_min;
+        float smooth = RegionsNoise_smooth.GetNoise((x * new_scale) + offset, (y * new_scale) + offset);
         return smooth;
     }
 }

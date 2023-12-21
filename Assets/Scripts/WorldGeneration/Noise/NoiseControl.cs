@@ -68,6 +68,9 @@ public class NoiseControl : MonoBehaviour
     public AnimationCurve ColorCurve;
     private static AnimationCurve ColorCurve_private;
 
+    public float scale_map;
+    private static float private_scale_map;
+
     /*private static RegionType[] tileRegionTypes = {
         new RegionType(4, Region.Empty),
         new RegionType(3, Region.Rocks),
@@ -90,6 +93,7 @@ public class NoiseControl : MonoBehaviour
     {
         privateBaseNoise = baseNoise;
         ColorCurve_private = ColorCurve;
+        private_scale_map = scale_map;
 
         /*Tile_Max_Weight = 0;
         foreach (RegionType r in tileRegionTypes)
@@ -108,8 +112,8 @@ public class NoiseControl : MonoBehaviour
 
     public static Color NoiseColorMap(float x, float y)
     {
-        x *= 100f;
-        y *= 100f;
+        x *= private_scale_map;
+        y *= private_scale_map;
         x = Mathf.RoundToInt(x * 10f) / 10f;
         y = Mathf.RoundToInt(y * 10f) / 10f;
 
@@ -137,8 +141,8 @@ public class NoiseControl : MonoBehaviour
 
     public static float NoiseMapHeight(float x, float y)
     {
-        x *= 100f;
-        y *= 100f;
+        x *= private_scale_map;
+        y *= private_scale_map;
         x = Mathf.RoundToInt(x * 10f) / 10f;
         y = Mathf.RoundToInt(y * 10f) / 10f;
 
@@ -156,7 +160,7 @@ public class NoiseControl : MonoBehaviour
         last_x = x;
         last_y = y;
 
-        noise *= 0.01f;
+        noise /= private_scale_map;
 
         return noise;
     }
