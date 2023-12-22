@@ -61,7 +61,7 @@ public class PlayerControl : MonoBehaviour
 
     void OnGUI()
     {
-        GUI.Label(new Rect(0, 0, 100, 100), ((int)(1.0f / Time.smoothDeltaTime)).ToString());
+        GUI.Label(new Rect(400, 0, 100, 100), ((int)(1.0f / Time.smoothDeltaTime)).ToString());
     }
 
     public void LockCursor()

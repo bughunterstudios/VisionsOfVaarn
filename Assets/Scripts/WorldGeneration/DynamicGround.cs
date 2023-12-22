@@ -1,12 +1,22 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading;
+using System.Threading.Tasks;
 using UnityEngine;
+
+public enum generating_stage
+{
+    Waiting,
+    Generating,
+    VerticesDone,
+    Generated
+}
 
 public class DynamicGround : MonoBehaviour
 {
-    private float time;
-    private bool generated;
+    public static int threads;
+
     private bool received_seed;
     private static int[] triangles_to_delete1;
     private static int[] triangles_to_delete2;
@@ -20,8 +30,6 @@ public class DynamicGround : MonoBehaviour
     public int player_distance = -1;
     private int current_player_distance;
 
-    public int parts;
-
     public double cutposition;
 
     public bool setcolor;
@@ -30,12 +38,12 @@ public class DynamicGround : MonoBehaviour
 
     private Seed seed;
     private Vector3[] vertices;
+    private float[] xs;
+    private float[] zs;
     private Color[] colors;
     private Mesh clonedMesh;
-    private int i;
-    private bool generating;
 
-    private bool urgent;
+    private generating_stage stage;
 
     private bool already_generated_once;
 
@@ -48,18 +56,19 @@ public class DynamicGround : MonoBehaviour
 
     public bool DoneGenerating()
     {
-        return generated;
+        return stage == generating_stage.Generated;
     }
 
     private void Update()
     {
-        if (!generated && received_seed && !generating)
+        if (stage == generating_stage.Waiting && received_seed)
         {
-            if (current_player_distance == -1)
+            if (current_player_distance == -1 && threads >= 1)
+                Debug.Log(threads);
+
+            if (current_player_distance == -1 && threads < 1)
             {
-                time -= Time.deltaTime;
-                if (time < 0)
-                    ActuallyGenerate();
+                ActuallyGenerate(false);
             }
             else
             {
@@ -71,15 +80,14 @@ public class DynamicGround : MonoBehaviour
             }
         }
 
-        if (generating)
-            Generate_Part();
+        if (stage == generating_stage.VerticesDone)
+            Generate_Final();
     }
 
     public void GenerateUrgent(Seed seed)
     {
-        urgent = true;
         Generate(seed);
-        ActuallyGenerate();
+        ActuallyGenerate(true);
     }
 
     public void Generate(Seed seed)
@@ -87,19 +95,26 @@ public class DynamicGround : MonoBehaviour
         if (already_generated_once)
             GetComponent<MeshRenderer>().enabled = false;
 
-        generated = false;
-        generating = false;
+        stage = generating_stage.Waiting;
         received_seed = true;
         current_player_distance = player_distance;
         this.seed = seed;
-        time = Random.Range(0f, 0.5f);
     }
 
-    public void ActuallyGenerate()
+    private void ActuallyGenerate(bool urgent)
     {
+        //if (gameObject.transform.parent.name != "Ground: 0, 0")
+        //    return;
+
         if (already_generated_once)
         {
             clonedMesh.triangles = original_triangles;
+
+            for (int i = 0; i < vertices.Length; i++)
+            {
+                xs[i] = transform.TransformPoint(vertices[i]).x;
+                zs[i] = transform.TransformPoint(vertices[i]).z;
+            }
         }
         else
         {
@@ -117,40 +132,43 @@ public class DynamicGround : MonoBehaviour
 
             vertices = clonedMesh.vertices;
             colors = new Color[vertices.Length];
-        }
+            xs = new float[vertices.Length];
+            zs = new float[vertices.Length];
 
-        generating = true;
-        i = 0;
-
-        if (urgent)
-            Generate_Part();
-    }
-
-    private void Generate_Part()
-    {
-        for (; i < vertices.Length; i++)
-        {
-            vertices[i].z = NoiseControl.NoiseMapHeight(transform.TransformPoint(vertices[i]).x, transform.TransformPoint(vertices[i]).z);
-            if (setcolor)
-                colors[i] = NoiseControl.NoiseColorMap(transform.TransformPoint(vertices[i]).x, transform.TransformPoint(vertices[i]).z);
-
-            if (i % parts == 0)
+            for (int i = 0; i < vertices.Length; i++)
             {
-                i++;
-                break;
+                xs[i] = transform.TransformPoint(vertices[i]).x;
+                zs[i] = transform.TransformPoint(vertices[i]).z;
             }
         }
 
-        if (i >= vertices.Length)
-            Generate_Final();
-        else if (urgent)
-            Generate_Part();
+        stage = generating_stage.Generating;
+
+        threads++;
+        if (urgent)
+            Generate_Vertices();
+        else
+        {
+            Thread thread = new Thread(Generate_Vertices);
+            thread.Start();
+        }
+    }
+
+    private void Generate_Vertices()
+    {
+        for (int i = 0; i < vertices.Length; i++)
+        {
+            vertices[i].z = NoiseControl.NoiseMapHeight(xs[i], zs[i]);
+            if (setcolor)
+                colors[i] = NoiseControl.NoiseColorMap(xs[i], zs[i]);
+        }
+
+        stage = generating_stage.VerticesDone;
+        threads--;
     }
 
     private void Generate_Final()
     {
-        generating = false;
-
         clonedMesh.vertices = vertices;
         clonedMesh.colors = colors;
 
@@ -211,7 +229,7 @@ public class DynamicGround : MonoBehaviour
         if (GetComponent<MeshCollider>())
             GetComponent<MeshCollider>().sharedMesh = clonedMesh;
 
-        generated = true;
+        stage = generating_stage.Generated;
         already_generated_once = true;
         GetComponent<MeshRenderer>().enabled = true;
     }

@@ -88,10 +88,10 @@ public class GenerateWorld : MonoBehaviour
         }
     }
 
-    void OnGUI()
+    /*void OnGUI()
     {
         GUI.Label(new Rect(0, 15, 100, 100), tile_queue_parent.Count.ToString());
-    }
+    }*/
 
     // Update is called once per frame
     void Update()
