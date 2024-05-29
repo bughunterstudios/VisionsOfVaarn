@@ -2306,6 +2306,31 @@
 
 {
     "m_SGVersion": 0,
+    "m_Type": "UnityEditor.ShaderGraph.Vector4MaterialSlot",
+    "m_ObjectId": "157ee277b6b24c0bbfb6ca989cc70bf6",
+    "m_Id": 1122003310,
+    "m_DisplayName": "Alt_Color",
+    "m_SlotType": 0,
+    "m_Hidden": false,
+    "m_ShaderOutputName": "_Alt_Color",
+    "m_StageCapability": 2,
+    "m_Value": {
+        "x": 1.0,
+        "y": 1.0,
+        "z": 1.0,
+        "w": 1.0
+    },
+    "m_DefaultValue": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0,
+        "w": 0.0
+    },
+    "m_Labels": []
+}
+
+{
+    "m_SGVersion": 0,
     "m_Type": "UnityEditor.ShaderGraph.TangentMaterialSlot",
     "m_ObjectId": "1594e223fd6848c5af7a98bd545ab51f",
     "m_Id": 0,
@@ -5992,6 +6017,9 @@
             "m_Id": "ab68e51c7de245dbbf5b5806fc8a3c47"
         },
         {
+            "m_Id": "157ee277b6b24c0bbfb6ca989cc70bf6"
+        },
+        {
             "m_Id": "615d02b06e244d27a72335a218e60fae"
         },
         {
@@ -6024,7 +6052,8 @@
         "9b0efb78-e1b8-47c1-bb4f-831ab2634488",
         "96380682-9d45-47e7-88ff-7815bec0ee81",
         "2c23683a-9161-47a7-ab82-9541e2a2ac22",
-        "189894e6-e0d7-4baf-afa9-407553bc2f32"
+        "189894e6-e0d7-4baf-afa9-407553bc2f32",
+        "fb4ef2d6-a17d-44c5-b7a2-f17b72989a86"
     ],
     "m_PropertyIds": [
         -730710189,
@@ -6034,7 +6063,8 @@
         1309161161,
         1162454257,
         146659602,
-        341336525
+        341336525,
+        1122003310
     ],
     "m_Dropdowns": [],
     "m_DropdownSelectedEntries": []
