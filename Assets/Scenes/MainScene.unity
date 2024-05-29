@@ -134,6 +134,7 @@ GameObject:
   - component: {fileID: 77815665}
   - component: {fileID: 77815667}
   - component: {fileID: 77815666}
+  - component: {fileID: 77815668}
   m_Layer: 2
   m_Name: VeryDistantCam
   m_TagString: MainCamera
@@ -253,6 +254,20 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
+--- !u!114 &77815668
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 77815664}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59feecb9600533b45afe11eeb1c38476, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fog_val_start: -3000
+  fog_val_end: 6000
 --- !u!1 &127261148
 GameObject:
   m_ObjectHideFlags: 0
@@ -13121,8 +13136,9 @@ GameObject:
   - component: {fileID: 1317276421}
   - component: {fileID: 1317276419}
   - component: {fileID: 1317276420}
+  - component: {fileID: 1317276423}
   m_Layer: 2
-  m_Name: MainCam
+  m_Name: CloseCam
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13254,6 +13270,20 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
+--- !u!114 &1317276423
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1317276416}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59feecb9600533b45afe11eeb1c38476, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fog_val_start: 5000
+  fog_val_end: 6000
 --- !u!1 &1349781310
 GameObject:
   m_ObjectHideFlags: 0
@@ -19666,6 +19696,7 @@ GameObject:
   - component: {fileID: 986419144}
   - component: {fileID: 1717533330}
   - component: {fileID: 1717533331}
+  - component: {fileID: 1717533332}
   m_Layer: 2
   m_Name: DistantCam
   m_TagString: MainCamera
@@ -19768,6 +19799,20 @@ MonoBehaviour:
     mipBias: 0
     varianceClampScale: 0.9
     contrastAdaptiveSharpening: 0
+--- !u!114 &1717533332
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1717533329}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59feecb9600533b45afe11eeb1c38476, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fog_val_start: 500
+  fog_val_end: 6000
 --- !u!1 &1718228563
 GameObject:
   m_ObjectHideFlags: 0
@@ -20827,7 +20872,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!23 &2020944071
 MeshRenderer:
   m_ObjectHideFlags: 0

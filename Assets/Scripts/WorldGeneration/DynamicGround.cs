@@ -63,8 +63,8 @@ public class DynamicGround : MonoBehaviour
     {
         if (stage == generating_stage.Waiting && received_seed)
         {
-            if (current_player_distance == -1 && threads >= 1)
-                Debug.Log(threads);
+            //if (current_player_distance == -1 && threads >= 1)
+            //    Debug.Log(threads);
 
             if (current_player_distance == -1 && threads < 1)
             {
