@@ -74,8 +74,9 @@ public class FirstRegion : MonoBehaviour
 
     public static float GetNoise(float x, float y)
     {
+        AnimationCurve private_RegionScale_threaded = new AnimationCurve(private_RegionScale.keys);
         float offset = Offset(x, y);
-        float new_scale = private_RegionScale.Evaluate(RegionsNoise_scale.GetNoise(x * 0.01f, y * 0.01f));
+        float new_scale = private_RegionScale_threaded.Evaluate(RegionsNoise_scale.GetNoise(x * 0.01f, y * 0.01f));
         new_scale = (new_scale * (private_scale_max - private_scale_min)) + private_scale_min;
         return (RegionsNoise_value.GetNoise((x * new_scale) + offset, (y * new_scale) + offset) + 1f) / 2f;
     }
@@ -117,8 +118,9 @@ public class FirstRegion : MonoBehaviour
 
     public static float Regions_smooth(float x, float y)
     {
+        AnimationCurve private_RegionScale_threaded = new AnimationCurve(private_RegionScale.keys);
         float offset = Offset(x, y);
-        float new_scale = private_RegionScale.Evaluate(RegionsNoise_scale.GetNoise(x * 0.01f, y * 0.01f));
+        float new_scale = private_RegionScale_threaded.Evaluate(RegionsNoise_scale.GetNoise(x * 0.01f, y * 0.01f));
         new_scale = (new_scale * (private_scale_max - private_scale_min)) + private_scale_min;
         float smooth = RegionsNoise_smooth.GetNoise((x * new_scale) + offset, (y * new_scale) + offset);
         return smooth;

@@ -128,14 +128,6 @@ public class NoiseControl : MonoBehaviour
         col = region1.Function.Coloring(col, smoothed1, x, y);
         col = region2.Function.Coloring(col, smoothed2, x, y);
 
-        //float coloringsmoothed = region1.Function.Coloring(smoothed1, x, y);
-        //coloringsmoothed = Mathf.Max(coloringsmoothed, region2.Function.Coloring(smoothed2, x, y));
-
-        /*if (region == Region.Canyon || region == Region.Mountain || region == Region.Mesa) // Canyon, Mountainous, Mesa
-        {
-            col = Color.Lerp(col, BandedColor(x, y), BandedColorCurve_private.Evaluate(Regions_smooth(x, y)));
-        }*/
-
         return col;
     }
 
